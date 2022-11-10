@@ -1,3 +1,2 @@
-﻿main.obj : error LNK2019: símbolo externo "public: void __cdecl InputManager::Update(void)" (?Update@InputManager@@QEAAXXZ) sin resolver al que se hace referencia en la función SDL_main
-main.obj : error LNK2019: símbolo externo "public: bool __cdecl InputManager::GetKey(int)" (?GetKey@InputManager@@QEAA_NH@Z) sin resolver al que se hace referencia en la función "public: void __cdecl Dot::move(int)" (?move@Dot@@QEAAXH@Z)
-C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Engines-SDL\x64\Debug\Game.exe : fatal error LNK1120: 2 externos sin resolver
+﻿  main.cpp
+  Game.vcxproj -> C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Engines-SDL\x64\Debug\Game.exe

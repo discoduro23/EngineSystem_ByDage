@@ -488,9 +488,9 @@ bool loadMedia()
 	std::string routeDefultRelease = "../Media/dot.bmp";
 
 	//Routes debug
-	std::string routeArrowsDebug = "../../../Media/dotARROW.bmp";
-	std::string routeWASDDebug = "../../../Media/dotWASD.bmp";
-	std::string routeDefultDebug = "../../../Media/dot.bmp";
+	std::string routeArrowsDebug = "../../Media/dotARROW.bmp";
+	std::string routeWASDDebug = "../../Media/dotWASD.bmp";
+	std::string routeDefultDebug = "../../Media/dot.bmp";
 	
 	//Load dot texture
 	if (!gDotTexture1.loadFromFile(routeArrowsRelease)) printf("Failed to load dot texture for the ARROWS!\n");
