@@ -1,0 +1,6 @@
+﻿  01_hello_SDL.cpp
+  02_getting_an_image_on_the_screen.cpp
+  03_event_driven_programming.cpp
+  06_extension_libraries_and_loading_other_image_formats.cpp
+C:\Users\danie\Desktop\USJ_CLASES\Cursos\3_Curso\Engines\Internal\Source\06_extension_libraries_and_loading_other_image_formats.cpp(5,10): fatal  error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  Generando código...
