@@ -143,10 +143,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Internal\Source\EngineManager.cpp" />
+    <ClCompile Include="..\..\Internal\Source\GraphicManager.cpp" />
     <ClCompile Include="..\..\Internal\Source\InputManager.cpp" />
+    <ClCompile Include="..\..\Internal\Source\LTexture.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Internal\Include\EngineManager.h" />
+    <ClInclude Include="..\..\Internal\Include\GraphicManager.h" />
     <ClInclude Include="..\..\Internal\Include\InputManager.h" />
+    <ClInclude Include="..\..\Internal\Include\LTexture.h" />
     <ClInclude Include="..\..\Internal\Include\Singleton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
