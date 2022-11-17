@@ -90,37 +90,6 @@ LTexture gDotTexture1;
 LTexture gDotTexture2;
 
 
-void Dot::handleEvent( SDL_Event& e )
-{
-    ////If a key was pressed
-    //if( e.type == SDL_KEYDOWN && e.key.repeat == 0 )
-    //{
-    //    //Adjust the velocity
-    //    switch( e.key.keysym.sym )
-    //    {
-    //        case SDLK_UP: mVelY -= DOT_VEL; break;
-    //        case SDLK_DOWN: mVelY += DOT_VEL; break;
-    //        case SDLK_LEFT: mVelX -= DOT_VEL; break;
-    //        case SDLK_RIGHT: mVelX += DOT_VEL; break;
-    //    }
-    //}
-    ////If a key was released
-    //else if( e.type == SDL_KEYUP && e.key.repeat == 0 )
-    //{
-    //    //Adjust the velocity
-    //    switch( e.key.keysym.sym )
-    //    {
-    //        case SDLK_UP: mVelY += DOT_VEL; break;
-    //        case SDLK_DOWN: mVelY -= DOT_VEL; break;
-    //        case SDLK_LEFT: mVelX += DOT_VEL; break;
-    //        case SDLK_RIGHT: mVelX -= DOT_VEL; break;
-    //    }
-    //}
-
-
-	
-}
-
 void Dot::move(int moveMode)
 {
 	//Reset velocity
@@ -252,10 +221,7 @@ void close()
 	gDotTexture.free();
 
 	//Destroy window	
-	SDL_DestroyRenderer( gRenderer );
-	SDL_DestroyWindow( gWindow );
-	gWindow = NULL;
-	gRenderer = NULL;
+	
 
 	//Quit SDL subsystems
 	IMG_Quit();
@@ -317,7 +283,7 @@ int main( int argc, char* args[] )
 				dot3.move(2);
 
 				//Clear screen
-				SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
+				SDL_SetRenderDrawColor( mRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
 				SDL_RenderClear( gRenderer );
 
 				//Render objects

@@ -2,6 +2,9 @@
 
 #include "Singleton.h"
 #include "SDL.h"
+#include <SDL_image.h>
+#include <stdio.h>
+#include <string>
 
 /**
 * Engine Manager class
@@ -24,15 +27,10 @@ public:
 
 	// Initialize SDL
 	bool Init();
-
-	// Load media
-	bool LoadMedia(); //Check
-
+	
 	// Free media and shut down SDL
 	void Close();
 	
 	/*****************************************************************************/
 
 };
-
-}

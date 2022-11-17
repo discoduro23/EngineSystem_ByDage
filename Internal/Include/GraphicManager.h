@@ -19,20 +19,20 @@ class GraphicManager :public Singleton<GraphicManager> {
 	/*****************************************************************************/
 private:
 	// Window
-	SDL_Window* mWindow;
+	SDL_Window* mWindow = nullptr;
 
 	// Renderer
-	SDL_Renderer* mRenderer;
+	SDL_Renderer* mRenderer = nullptr;
 
 	//Screen dimension constants
-	const int SCREEN_WIDTH = 640;
-	const int SCREEN_HEIGHT = 480;
+	int mWidth = 640;
+	int mHeight = 480;
 
 	//array of LTexture
 	LTexture* mTexture;
 
 	// Private constructor to avoid more than one instance
-	GraphicManager() {};
+	GraphicManager();
 
 	/*****************************************************************************/
 
@@ -50,10 +50,11 @@ public:
 	void Update();
 
 	// Load a texture
-	SDL_Texture* LoadTexture(std::string path);
+	SDL_Texture* LoadTexture(std::string, LTexture*);
 	
 	// Render a texture
-	void RenderTexture(LTexture* texture, int x, int y, int w, int h);
+
+	void Render(SDL_Texture* texture, int x, int y, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip);
 	
 
 	// Get the renderer

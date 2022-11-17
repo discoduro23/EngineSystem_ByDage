@@ -22,7 +22,7 @@ bool GraphicManager::Init()
 		}
 
 		//Create window
-		mWindow = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+		mWindow = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, mWidth, mHeight, SDL_WINDOW_SHOWN);
 		if (mWindow == NULL)
 		{
 			printf("Window could not be created! SDL Error: %s\n", SDL_GetError());
@@ -60,9 +60,7 @@ void GraphicManager::Destroy()
 	SDL_DestroyWindow(mWindow);
 	mWindow = NULL;
 
-	// Quit SDL subsystems
-	IMG_Quit();
-	SDL_Quit();
+	
 }
 
 void GraphicManager::Clear()
@@ -77,18 +75,62 @@ void GraphicManager::Update()
 	SDL_RenderPresent(mRenderer);
 }
 
-LTexture* GraphicManager::LoadTexture(std::string path)
+SDL_Texture* GraphicManager::LoadTexture(std::string path, LTexture* oldTexture = nullptr)
 {
-	// The final texture
-	LTexture* newTexture = nullptr;
-	
-	newTexture.LoadFromFile(path);
+	if (oldTexture != nullptr)
+	{
+		//Get rid of preexisting texture
+		oldTexture->free();
+	}
+
+	//The final texture
+	SDL_Texture* newTexture = NULL;
+
+	//Load image at specified path
+	SDL_Surface* loadedSurface = IMG_Load(path.c_str());
+	if (loadedSurface == NULL)
+	{
+		printf("Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError());
+	}
+	else
+	{
+		//Color key image
+		SDL_SetColorKey(loadedSurface, SDL_TRUE, SDL_MapRGB(loadedSurface->format, 0, 0xFF, 0xFF));
+
+		//Create texture from surface pixels
+		newTexture = SDL_CreateTextureFromSurface(mRenderer, loadedSurface);
+		if (newTexture == NULL)
+		{
+			printf("Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError());
+		}
+		else
+		{
+			//Get image dimensions
+			mWidth = loadedSurface->w;
+			mHeight = loadedSurface->h;
+		}
+
+		//Get rid of old loaded surface
+		SDL_FreeSurface(loadedSurface);
+	}
 	
 	return newTexture;
 }
 
-void GraphicManager::RenderTexture(LTexture* texture, int x, int y, int w, int h)
+void  GraphicManager::Render(SDL_Texture* texture, int x, int y, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip)
 {
+	//Set rendering space and render to screen
+	SDL_Rect renderQuad = { x, y, mWidth, mHeight };
+
+	//Set clip rendering dimensions
+	if (clip != NULL)
+	{
+		renderQuad.w = clip->w;
+		renderQuad.h = clip->h;
+	}
+
+	//Render to screen
+	SDL_RenderCopyEx(mRenderer, texture, clip, &renderQuad, angle, center, flip);
 }
 
 SDL_Renderer* GraphicManager::GetRenderer()

@@ -1,1 +1,13 @@
-﻿  Engines-SDL.vcxproj -> C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Engines-SDL\x64\Debug\Engines-SDL.lib
+﻿  EngineManager.cpp
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Include\EngineManager.h(38,1): error C2059: error de sintaxis: '}'
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Include\EngineManager.h(38,1): error C2143: error de sintaxis: falta ';' delante de '}'
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\EngineManager.cpp(4,1): error C2143: error de sintaxis: falta ';' delante de '{'
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\EngineManager.cpp(4,1): error C2447: '{': falta el encabezado de función (¿lista formal de estilo anterior?)
+  GraphicManager.cpp
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\GraphicManager.cpp(125,32): error C2065: 'mWidth': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\GraphicManager.cpp(125,40): error C2065: 'mHeight': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\GraphicManager.cpp(135,19): error C2065: 'mRenderer': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\GraphicManager.cpp(135,30): error C2065: 'mTexture': identificador no declarado
+  LTexture.cpp
+  Generando código...
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\LTexture.cpp : fatal  error C1090: No se pudo ejecutar la llamada API de PDB. Código de error "3": C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Engines-SDL\x64\Debug\Engines-SDL.pdb
