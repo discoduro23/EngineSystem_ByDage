@@ -27,6 +27,12 @@
     <ClCompile Include="..\..\Internal\Source\EngineManager.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Internal\Source\ObjectManager.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Internal\Source\Object.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Internal\Include\InputManager.h">
@@ -42,6 +48,12 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Internal\Include\EngineManager.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Internal\Include\ObjectManager.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Internal\Include\Object.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
