@@ -27,9 +27,7 @@ public:
 
 	void Update();
 
-	int CreateObject();
-
-	void AddObject(Object* object);
+	Object& CreateObject(std::string name, int x = 0, int y = 0, int w = 0, int h = 0);
 
 	void RemoveObject(Object* object);
 

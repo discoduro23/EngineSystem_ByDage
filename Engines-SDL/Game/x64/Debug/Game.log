@@ -1,34 +1,34 @@
 ﻿  main.cpp
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(88,21): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(88,10): error C2146: error de sintaxis: falta ';' delante del identificador 'gDotTexture'
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(89,22): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(89,1): error C2086: 'int LTexture': nueva definición
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(88): message : vea la declaración de 'LTexture'
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(89,10): error C2146: error de sintaxis: falta ';' delante del identificador 'gDotTexture1'
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(90,22): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(90,1): error C2086: 'int LTexture': nueva definición
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(88): message : vea la declaración de 'LTexture'
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(90,10): error C2146: error de sintaxis: falta ';' delante del identificador 'gDotTexture2'
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(142,48): error C2065: 'SCREEN_WIDTH': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(152,49): error C2065: 'SCREEN_HEIGHT': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(164,3): error C2065: 'gDotTexture1': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(167,3): error C2065: 'gDotTexture2': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(170,3): error C2065: 'gDotTexture': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(199,7): error C2065: 'gDotTexture1': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(199,33): error C2065: 'routeArrowsRelease': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(200,12): error C2065: 'gDotTexture2': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(200,38): error C2065: 'routeWASDRelease': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(201,12): error C2065: 'gDotTexture': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(201,37): error C2065: 'routeDefultRelease': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(207,8): error C2065: 'gDotTexture1': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(207,34): error C2065: 'routeArrowsDebug': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(208,13): error C2065: 'gDotTexture2': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(208,39): error C2065: 'routeWASDDebug': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(209,13): error C2065: 'gDotTexture': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(209,38): error C2065: 'routeDefultDebug': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(219,2): error C2065: 'gDotTexture1': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(220,2): error C2065: 'gDotTexture2': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(221,2): error C2065: 'gDotTexture': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(286,29): error C2065: 'mRenderer': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(287,22): error C2065: 'gRenderer': identificador no declarado
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(295,24): error C2065: 'gRenderer': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(88,21): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(88,10): error C2146: error de sintaxis: falta ';' delante del identificador 'gDotTexture'
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(89,22): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(89,1): error C2086: 'int LTexture': nueva definición
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(88): message : vea la declaración de 'LTexture'
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(89,10): error C2146: error de sintaxis: falta ';' delante del identificador 'gDotTexture1'
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(90,22): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(90,1): error C2086: 'int LTexture': nueva definición
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(88): message : vea la declaración de 'LTexture'
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(90,10): error C2146: error de sintaxis: falta ';' delante del identificador 'gDotTexture2'
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(142,48): error C2065: 'SCREEN_WIDTH': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(152,49): error C2065: 'SCREEN_HEIGHT': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(164,3): error C2065: 'gDotTexture1': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(167,3): error C2065: 'gDotTexture2': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(170,3): error C2065: 'gDotTexture': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(199,7): error C2065: 'gDotTexture1': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(199,33): error C2065: 'routeArrowsRelease': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(200,12): error C2065: 'gDotTexture2': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(200,38): error C2065: 'routeWASDRelease': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(201,12): error C2065: 'gDotTexture': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(201,37): error C2065: 'routeDefultRelease': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(207,8): error C2065: 'gDotTexture1': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(207,34): error C2065: 'routeArrowsDebug': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(208,13): error C2065: 'gDotTexture2': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(208,39): error C2065: 'routeWASDDebug': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(209,13): error C2065: 'gDotTexture': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(209,38): error C2065: 'routeDefultDebug': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(219,2): error C2065: 'gDotTexture1': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(220,2): error C2065: 'gDotTexture2': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(221,2): error C2065: 'gDotTexture': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(286,29): error C2065: 'mRenderer': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(287,22): error C2065: 'gRenderer': identificador no declarado
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\main.cpp(295,24): error C2065: 'gRenderer': identificador no declarado

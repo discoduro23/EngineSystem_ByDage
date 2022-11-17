@@ -15,9 +15,6 @@ private:
 	//name of the object
 	std::string mName;
 	
-	//ID of the object
-	int mID;
-	
 	//The X and Y offsets of the Object
 	int mPosX, mPosY;
 
@@ -30,10 +27,9 @@ private:
 
 	
 public:
-	Object(std::string name, int id, int x = 0, int y = 0, int w = 0, int h = 0) {
+	Object(std::string name, int x = 0, int y = 0, int w = 0, int h = 0) {
 		{
 			mName = name;
-			mID = id;
 			mPosX = x;
 			mPosY = y;
 			mWidth = w;

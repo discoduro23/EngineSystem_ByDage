@@ -1,9 +1,12 @@
-﻿  EngineManager.cpp
-  GraphicManager.cpp
-  InputManager.cpp
-  LTexture.cpp
+﻿  GraphicManager.cpp
   ObjectManager.cpp
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\ObjectManager.cpp(3,21): error C2039: "Init": no es un miembro de "ObjectManager"
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Include\ObjectManager.h(6): message : vea la declaración de 'ObjectManager'
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\ObjectManager.cpp(20,63): error C2572: "ObjectManager::CreateObject": nueva definición de argumento predeterminado: parámetro 1
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Include\ObjectManager.h(30): message : vea la declaración de 'ObjectManager::CreateObject'
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\ObjectManager.cpp(20,74): error C2572: "ObjectManager::CreateObject": nueva definición de argumento predeterminado: parámetro 2
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Include\ObjectManager.h(30): message : vea la declaración de 'ObjectManager::CreateObject'
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\ObjectManager.cpp(20,85): error C2572: "ObjectManager::CreateObject": nueva definición de argumento predeterminado: parámetro 3
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Include\ObjectManager.h(30): message : vea la declaración de 'ObjectManager::CreateObject'
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\ObjectManager.cpp(20,96): error C2572: "ObjectManager::CreateObject": nueva definición de argumento predeterminado: parámetro 4
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Include\ObjectManager.h(30): message : vea la declaración de 'ObjectManager::CreateObject'
   Generando código...
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\GraphicManager.cpp(55): error C4716: 'GraphicManager::Init': debe devolver un valor
+C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Source\GraphicManager.cpp(55): error C4716: 'GraphicManager::Init': debe devolver un valor

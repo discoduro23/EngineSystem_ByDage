@@ -16,10 +16,16 @@ void ObjectManager::Update()
 	}
 }
 
-void ObjectManager::AddObject(Object* object)
+
+Object& ObjectManager::CreateObject(std::string name, int x = 0, int y = 0, int w = 0, int h = 0)
 {
+
+	Object* object = new Object(name, x, y, w, h);
+
 	mObjects.push_back(object);
+	return *object;
 }
+
 
 void ObjectManager::RemoveObject(Object* object)
 {
