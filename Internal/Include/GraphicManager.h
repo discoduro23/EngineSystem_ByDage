@@ -7,8 +7,10 @@
 #include <string>
 
 #include "Singleton.h"
+#include "ObjectManager.h"
 #include "LTexture.h"
 #include <iostream>
+#include <vector>
 
 /**
 Input Manager class
@@ -29,7 +31,7 @@ private:
 	int mHeight = 480;
 
 	//array of LTexture
-	LTexture* mTexture;
+	std::vector<LTexture*> mTextures;
 
 	// Private constructor to avoid more than one instance
 	GraphicManager();
@@ -50,11 +52,13 @@ public:
 	void Update();
 
 	// Load a texture
-	SDL_Texture* LoadTexture(std::string, LTexture*);
+	SDL_Texture* LoadTexture(std::string);
 	
 	// Render a texture
 
 	void Render(SDL_Texture* texture, int x, int y, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip);
+
+	void RenderAll();
 	
 
 	// Get the renderer

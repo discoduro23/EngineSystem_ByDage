@@ -23,19 +23,26 @@ private:
 
 	//The dimensions of the Object
 	int mWidth, mHeight;
+	
+	//The texture of the Object
+	SDL_Texture* mTexture;
 
 
 	
 public:
-	Object(std::string name, int x = 0, int y = 0, int w = 0, int h = 0) {
-		{
-			mName = name;
-			mPosX = x;
-			mPosY = y;
-			mWidth = w;
-			mHeight = h;
-		}
+	Object(std::string name, int x = 0, int y = 0, int w = 0, int h = 0, SDL_Texture* texture = NULL)
+	{
+		mName = name;
+		mPosX = x;
+		mPosY = y;
+		mWidth = w;
+		mHeight = h;
+		mTexture = texture;
 	};
+	SDL_Texture* GetTexture() { return mTexture; };
+	int GetX() { return mPosX; };
+	int GetY() { return mPosY; };
+
 	~Object();
 	
 	virtual void Update();

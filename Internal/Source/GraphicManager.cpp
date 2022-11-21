@@ -52,15 +52,20 @@ bool GraphicManager::Init()
 			}
 		}
 	}
+	return success;
 }
 
 void GraphicManager::Destroy()
 {
+	//Free loaded images
+	for (int i = 0; i < mTextures.size(); i++)
+	{
+		mTextures[i]->free();
+	}
+
 	// Destroy the window
 	SDL_DestroyWindow(mWindow);
 	mWindow = NULL;
-
-	
 }
 
 void GraphicManager::Clear()
@@ -75,13 +80,8 @@ void GraphicManager::Update()
 	SDL_RenderPresent(mRenderer);
 }
 
-SDL_Texture* GraphicManager::LoadTexture(std::string path, LTexture* oldTexture = nullptr)
+SDL_Texture* GraphicManager::LoadTexture(std::string path)
 {
-	if (oldTexture != nullptr)
-	{
-		//Get rid of preexisting texture
-		oldTexture->free();
-	}
 
 	//The final texture
 	SDL_Texture* newTexture = NULL;
@@ -131,6 +131,16 @@ void  GraphicManager::Render(SDL_Texture* texture, int x, int y, SDL_Rect* clip,
 
 	//Render to screen
 	SDL_RenderCopyEx(mRenderer, texture, clip, &renderQuad, angle, center, flip);
+}
+
+void GraphicManager::RenderAll()
+{
+	int size = ObjectManager::GetInstance().GetObjectCount();
+	Object* ob = nullptr;
+	for (int i = 0; i < size;i++) {
+		ob = ObjectManager::GetInstance().GetObject(i);
+		Render(ob->GetTexture(), ob->GetX(), ob->GetY(), NULL, 0.0, NULL, SDL_FLIP_NONE);
+	}
 }
 
 SDL_Renderer* GraphicManager::GetRenderer()

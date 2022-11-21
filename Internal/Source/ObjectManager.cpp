@@ -17,14 +17,14 @@ void ObjectManager::Update()
 }
 
 
-Object& ObjectManager::CreateObject(std::string name, int x = 0, int y = 0, int w = 0, int h = 0)
+Object& ObjectManager::CreateObject(std::string name, int x = 0, int y = 0, int w = 0, int h = 0, SDL_Texture* texture = nullptr)
 {
-
-	Object* object = new Object(name, x, y, w, h);
-
+	Object* object = new Object(name, x, y, w, h, texture);
 	mObjects.push_back(object);
 	return *object;
 }
+
+
 
 
 void ObjectManager::RemoveObject(Object* object)

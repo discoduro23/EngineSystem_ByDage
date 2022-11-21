@@ -6,6 +6,14 @@
 #include <stdio.h>
 #include <string>
 
+//Include all managers
+#include "InputManager.h"
+#include "TimeManager.h"
+#include "ObjectManager.h"
+#include "GraphicManager.h"
+
+using namespace std;
+
 /**
 * Engine Manager class
 */
@@ -25,10 +33,22 @@ private:
 
 public:
 
-	// Initialize SDL
+	// Initialize Engine
 	bool Init();
+
+	//PreUpdate Engine
+	void PreUpdate();
 	
-	// Free media and shut down SDL
+	//Update Engine
+	void Update();
+	
+	//PostUpdate Engine
+	void PostUpdate();
+	
+	// Destroy Engine
+	void Destroy();
+
+	// Shut down SDL
 	void Close();
 	
 	/*****************************************************************************/

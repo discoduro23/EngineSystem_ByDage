@@ -27,7 +27,13 @@ public:
 
 	void Update();
 
-	Object& CreateObject(std::string name, int x = 0, int y = 0, int w = 0, int h = 0);
+	Object& CreateObject(std::string name, int x, int y, int w, int h, SDL_Texture* texture);
+
+	void AddObject(Object* object) { mObjects.push_back(object);}
+
+	Object* GetObject(int index) { return mObjects[index]; };
+	
+	int GetObjectCount() { return mObjects.size(); }
 
 	void RemoveObject(Object* object);
 
