@@ -1,5 +1,84 @@
-﻿  EngineManager.cpp
+﻿  main.cpp
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Include\ObjectManager.h(36,23): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(28,11): error C2039: "move": no es un miembro de "Dot"
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(17,7): message : vea la declaración de 'Dot'
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(31,2): error C2065: 'mVelX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(32,2): error C2065: 'mVelY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(39,60): error C2065: 'mVelY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(39,69): error C2065: 'DOT_VEL': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(40,62): error C2065: 'mVelY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(40,71): error C2065: 'DOT_VEL': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(41,62): error C2065: 'mVelX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(41,71): error C2065: 'DOT_VEL': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(42,63): error C2065: 'mVelX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(42,72): error C2065: 'DOT_VEL': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(45,59): error C2065: 'mVelY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(45,68): error C2065: 'DOT_VEL': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(46,59): error C2065: 'mVelY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(46,68): error C2065: 'DOT_VEL': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(47,59): error C2065: 'mVelX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(47,68): error C2065: 'DOT_VEL': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(48,59): error C2065: 'mVelX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(48,68): error C2065: 'DOT_VEL': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(56,4): error C2065: 'mVelY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(56,13): error C2065: 'DOT_VEL': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(59,4): error C2065: 'mVelY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(59,13): error C2065: 'DOT_VEL': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(62,4): error C2065: 'mVelX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(62,13): error C2065: 'DOT_VEL': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(65,4): error C2065: 'mVelX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(65,13): error C2065: 'DOT_VEL': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(74,5): error C2065: 'mPosX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(74,14): error C2065: 'mVelX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(77,11): error C2065: 'mPosX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(77,28): error C2065: 'mPosX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(77,36): error C2065: 'DOT_WIDTH': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(77,48): error C2065: 'SCREEN_WIDTH': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(80,9): error C2065: 'mPosX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(80,18): error C2065: 'mVelX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(84,5): error C2065: 'mPosY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(84,14): error C2065: 'mVelY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(87,11): error C2065: 'mPosY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(87,28): error C2065: 'mPosY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(87,36): error C2065: 'DOT_HEIGHT': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(87,49): error C2065: 'SCREEN_HEIGHT': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(90,9): error C2065: 'mPosY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(90,18): error C2065: 'mVelY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(94,11): error C2039: "render": no es un miembro de "Dot"
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(17,7): message : vea la declaración de 'Dot'
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(99,16): error C2039: "render": no es un miembro de "LTexture"
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Include\LTexture.h(11,7): message : vea la declaración de 'LTexture'
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(99,23): error C2065: 'mPosX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(99,30): error C2065: 'mPosY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(102,16): error C2039: "render": no es un miembro de "LTexture"
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Include\LTexture.h(11,7): message : vea la declaración de 'LTexture'
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(102,23): error C2065: 'mPosX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(102,30): error C2065: 'mPosY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(105,15): error C2039: "render": no es un miembro de "LTexture"
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Include\LTexture.h(11,7): message : vea la declaración de 'LTexture'
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(105,22): error C2065: 'mPosX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(105,29): error C2065: 'mPosY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(113,6): error C2511: 'Dot::Dot(int,int)': la función miembro sobrecargada no se ha encontrado en 'Dot'
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(17,7): message : vea la declaración de 'Dot'
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(116,2): error C2065: 'mPosX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(117,2): error C2065: 'mPosY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(120,2): error C2065: 'mVelX': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(121,2): error C2065: 'mVelY': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(134,33): error C2065: 'routeArrowsRelease': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(135,38): error C2065: 'routeWASDRelease': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(136,37): error C2065: 'routeDefultRelease': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(142,34): error C2065: 'routeArrowsDebug': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(143,39): error C2065: 'routeWASDDebug': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(144,38): error C2065: 'routeDefultDebug': identificador no declarado
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(157,33): error C2556: 'Dot Singleton<InputManager>::CreateSingleton(void)': la función sobrecargada solo se diferencia de 'void Singleton<InputManager>::CreateSingleton(void)' por el tipo de valor devuelto
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Include\Singleton.h(44,22): message : vea la declaración de 'Singleton<InputManager>::CreateSingleton'
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalGame\Source\main.cpp(157,16): error C2371: 'Singleton<InputManager>::CreateSingleton': nueva definición; tipos básicos distintos
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Include\Singleton.h(44,22): message : vea la declaración de 'Singleton<InputManager>::CreateSingleton'
   GraphicManager.cpp
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Include\ObjectManager.h(36,23): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
+  LTimer.cpp
+  Object.cpp
+  ObjectManager.cpp
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Include\ObjectManager.h(36,23): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
   TimeManager.cpp
   Generando código...
-  Engines-SDL.vcxproj -> C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Engines-SDL\x64\Debug\Engines-SDL.lib
