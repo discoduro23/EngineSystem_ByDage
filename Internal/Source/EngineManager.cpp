@@ -5,7 +5,7 @@ bool EngineManager::Init()
 	//Create Engine
 	GraphicManager::CreateSingleton();
 	InputManager::CreateSingleton();
-	TimeManager::CreateSingleton();
+	//TimeManager::CreateSingleton();
 	ObjectManager::CreateSingleton();
 	
 	//Initialize Engine
@@ -24,7 +24,7 @@ bool EngineManager::Init()
 
 void EngineManager::PreUpdate()
 {
-	TimeManager::GetInstance().Update();
+	//TimeManager::GetInstance().Update();
 	InputManager::GetInstance().Update();
 }
 

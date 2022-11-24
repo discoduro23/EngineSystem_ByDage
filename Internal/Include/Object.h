@@ -10,7 +10,7 @@
 
 class Object
 {
-private:
+protected:
 
 	//name of the object
 	std::string mName;

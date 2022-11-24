@@ -12,152 +12,16 @@ and may not be redistributed without written permission.*/
 
 
 
-
-//The dot that will move around on the screen
-class Dot
-{
-    
-};
-
-//Scene textures
-LTexture gDotTexture;
-LTexture gDotTexture1;
-LTexture gDotTexture2;
-
-
-void Dot::move(int moveMode)
-{
-	//Reset velocity
-	mVelX = 0;
-	mVelY = 0;
-
-	//Get key press (https://wiki.libsdl.org/SDL_Scancode)
-	
-	switch (moveMode)
-	{
-	case 0:
-		if (InputManager::GetInstance().GetKey(SDL_SCANCODE_UP)) mVelY -= DOT_VEL;
-		if (InputManager::GetInstance().GetKey(SDL_SCANCODE_DOWN)) mVelY += DOT_VEL;
-		if (InputManager::GetInstance().GetKey(SDL_SCANCODE_LEFT)) mVelX -= DOT_VEL;
-		if (InputManager::GetInstance().GetKey(SDL_SCANCODE_RIGHT)) mVelX += DOT_VEL;
-		break;
-	case 1:
-		if (InputManager::GetInstance().GetKey(SDL_SCANCODE_W)) mVelY -= DOT_VEL;
-		if (InputManager::GetInstance().GetKey(SDL_SCANCODE_S)) mVelY += DOT_VEL;
-		if (InputManager::GetInstance().GetKey(SDL_SCANCODE_A)) mVelX -= DOT_VEL;
-		if (InputManager::GetInstance().GetKey(SDL_SCANCODE_D)) mVelX += DOT_VEL;
-		break;
-	case 2:
-		//Give random number between 0 and 3 (For random "AI")
-		int random = rand() % 4;
-		switch (random)
-		{
-		case 0:
-			mVelY -= DOT_VEL;
-			break;
-		case 1:
-			mVelY += DOT_VEL;
-			break;
-		case 2:
-			mVelX -= DOT_VEL;
-			break;
-		case 3:
-			mVelX += DOT_VEL;
-			break;
-		default:
-			break;
-		}
-	}
-	
-	
-    //Move the dot left or right
-    mPosX += mVelX;
-
-    //If the dot went too far to the left or right
-    if( ( mPosX < 0 ) || ( mPosX + DOT_WIDTH > SCREEN_WIDTH ) )
-    {
-        //Move back
-        mPosX -= mVelX;
-    }
-
-    //Move the dot up or down
-    mPosY += mVelY;
-
-    //If the dot went too far up or down
-    if( ( mPosY < 0 ) || ( mPosY + DOT_HEIGHT > SCREEN_HEIGHT ) )
-    {
-        //Move back
-        mPosY -= mVelY;
-    }
-}
-
-void Dot::render(int colorSelection)
-{
-    //Show the dot
-	switch (colorSelection) {
-	case 0:
-		gDotTexture1.render(mPosX, mPosY);
-		break;
-	case 1:
-		gDotTexture2.render(mPosX, mPosY);
-		break;
-	case 2:
-		gDotTexture.render(mPosX, mPosY);
-		break;
-	default:
-		break;
-	}
-	
-}
-
-Dot::Dot(int x, int y)
-{
-	//Initialize the offsets
-	mPosX = x;
-	mPosY = y;
-
-	//Initialize the velocity
-	mVelX = 0;
-	mVelY = 0;
-}
-
-
-
-bool loadMedia()
-{
-	//Loading success flag
-	bool success = false;
-	
-	
-	
-	//Load dot texture
-	if (!gDotTexture1.loadFromFile(routeArrowsRelease)) printf("Failed to load dot texture for the ARROWS!\n");
-	else if (!gDotTexture2.loadFromFile(routeWASDRelease)) printf("Failed to load dot texture for the WASD!\n");
-	else if (!gDotTexture.loadFromFile(routeDefultRelease)) printf("Failed to load dot texture for the Default!\n");
-	else success = true;
-	
-
-	//Second check for debug exe
-	if (!success) {
-		if (!gDotTexture1.loadFromFile(routeArrowsDebug)) printf("Failed to load dot texture for the ARROWS!\n");
-		else if (!gDotTexture2.loadFromFile(routeWASDDebug)) printf("Failed to load dot texture for the WASD!\n");
-		else if (!gDotTexture.loadFromFile(routeDefultDebug)) printf("Failed to load dot texture for the Default!\n");
-		else success = true;
-	}
-
-	return success;
-}
-
-
 int main( int argc, char* args[] )
 {
-	Dot 
-
-	//Create Input Manager Singleton
-	InputManager::CreateSingleton();
-
-	//Update the input system
-	InputManager::GetInstance().Update();
+	EngineManager::CreateSingleton();
+	EngineManager::GetInstance().Init();
+	
+	while (!false) {
+		EngineManager::GetInstance().PreUpdate();
+		EngineManager::GetInstance().Update();
+		EngineManager::GetInstance().PostUpdate();
+	}
 	
 	
 	/*//Start up SDL and create window

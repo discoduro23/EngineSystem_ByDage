@@ -34,7 +34,7 @@ private:
 	std::vector<LTexture*> mTextures;
 
 	// Private constructor to avoid more than one instance
-	GraphicManager();
+	GraphicManager() {};
 
 	/*****************************************************************************/
 
@@ -53,6 +53,12 @@ public:
 
 	// Load a texture
 	SDL_Texture* LoadTexture(std::string);
+
+	//Get screen width
+	int GetWidth() { return mWidth; };
+	
+	//Get screen height
+	int GetHeight() { return mHeight; };
 	
 	// Render a texture
 
