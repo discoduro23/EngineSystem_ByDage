@@ -119,6 +119,11 @@ SDL_Texture* GraphicManager::LoadTexture(std::string path)
 
 void  GraphicManager::Render(SDL_Texture* texture, int x, int y, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip)
 {
+	if (texture == NULL)
+	{
+		printf("Texture is NULL");
+		return;
+	}
 	//Set rendering space and render to screen
 	SDL_Rect renderQuad = { x, y, mWidth, mHeight };
 
