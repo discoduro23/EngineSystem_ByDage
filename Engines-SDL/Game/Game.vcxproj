@@ -20,9 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\InternalGame\Source\Dot.cpp" />
+    <ClCompile Include="..\..\InternalGame\Source\GameManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\InternalGame\Include\Dot.h" />
+    <ClInclude Include="..\..\InternalGame\Include\GameManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
