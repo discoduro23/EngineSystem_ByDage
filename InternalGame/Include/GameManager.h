@@ -1,28 +1,27 @@
 #pragma once
 #include "Object.h"
+#include <vector>
+#include <EngineManager.h>
 
 class GameManager :public Object {
+private:
+	static GameManager* m_instance;
+	std::vector<Object*> m_objects;
+	
 public:
 	GameManager(std::string name, int x = 0, int y = 0, int w = 0, int h = 0, SDL_Texture* texture = NULL) : Object(name, x, y, w, h, texture) {
-		//Initialize the velocity
-		mVelX = 0;
-		mVelY = 0;
+		// Initialize the game manager
+		
 
 	}
-
-	//The dimensions of the dot
-	static const int DOT_WIDTH = 20;
-	static const int DOT_HEIGHT = 20;
-
-	//Maximum axis velocity of the dot
-	static const int DOT_VEL = 10;
-
-	//Initializes the variables
-	GameManager(int x = 0, int y = 0);
-
-	//Moves the dot
-	void move(int moveMode = 0);
-
+	
+	void init();
+	
 	void Update();
-};
-}
+			
+	void AddObject(Object* object);
+	
+	void RemoveObject(Object* object);
+	
+	void Destroy();
+	};

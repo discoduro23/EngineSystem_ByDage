@@ -14,14 +14,17 @@ and may not be redistributed without written permission.*/
 
 int main( int argc, char* args[] )
 {
-	EngineManager::CreateSingleton();
-	EngineManager::GetInstance().Init();
+//movido a gamemanager
+
 	
+	/*EngineManager::CreateSingleton();
+	EngineManager::GetInstance().Init();
+
 	while (!false) {
 		EngineManager::GetInstance().PreUpdate();
 		EngineManager::GetInstance().Update();
 		EngineManager::GetInstance().PostUpdate();
-	}
+	}*/
 	
 	
 	/*//Start up SDL and create window
