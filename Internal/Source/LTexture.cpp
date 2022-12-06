@@ -15,16 +15,8 @@ LTexture::~LTexture()
 	free();
 }
 
-bool LTexture::loadFromFile(SDL_Texture* textureToLoad, int Width, int Height)
+bool LTexture::loadFromFile(SDL_Texture* textureToLoad)
 {
-	//Return success
-	mWidth = Width;
-	mHeight = Height;
-
-	//Get image dimensions
-	mWidth = loadedSurface->w;
-	mHeight = loadedSurface->h;
-
 	mTexture = textureToLoad;
 	return mTexture != NULL;
 }

@@ -79,13 +79,6 @@ void GraphicManager::Update()
 	Clear();
 	RenderAll();
 	UpdateScreen();
-	
-	// while (true) {
-	// 	GraphicManager::GetInstance().Clear();
-	// 	GraphicManager::GetInstance().Render(GraphicManager::GetInstance().LoadTexture("../../Media/dot.bmp"), 10, 10, NULL, 0, NULL, SDL_FLIP_NONE);
-	// 	GraphicManager::GetInstance().UpdateScreen();
-	// }
-
 }
 
 SDL_Texture* GraphicManager::LoadTexture(std::string path)
@@ -119,7 +112,7 @@ SDL_Texture* GraphicManager::LoadTexture(std::string path)
 	return newTexture;
 }
 
-void  GraphicManager::Render(SDL_Texture* texture, int x, int y, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip)
+void  GraphicManager::Render(SDL_Texture* texture, int x, int y, int w, int h, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip)
 {
 	if (texture == NULL)
 	{
@@ -127,7 +120,7 @@ void  GraphicManager::Render(SDL_Texture* texture, int x, int y, SDL_Rect* clip,
 		return;
 	}
 	//Set rendering space and render to screen
-	SDL_Rect renderQuad = { x, y, mWidth, mHeight };
+	SDL_Rect renderQuad = { x, y, w, h };
 
 	//Set clip rendering dimensions
 	if (clip != NULL)
@@ -143,13 +136,20 @@ void  GraphicManager::Render(SDL_Texture* texture, int x, int y, SDL_Rect* clip,
 void GraphicManager::RenderAll()
 {
 	int size = ObjectManager::GetInstance().GetObjectCount();
-	std::cout << "Size " << size << std::endl;
-	//Object* ob = nullptr;
+	Object* ob = nullptr;
 	for (int i = 0; i < size;i++) {
-		//ob = ObjectManager::GetInstance().GetObject(i);
-		std::cout << "Render " << ObjectManager::GetInstance().GetObject(i)->GetName().c_str() << std::endl;
-		if (ObjectManager::GetInstance().GetObject(i)->GetTexture() != NULL) {
-			Render(ObjectManager::GetInstance().GetObject(i)->GetTexture(), ObjectManager::GetInstance().GetObject(i)->GetX(), ObjectManager::GetInstance().GetObject(i)->GetY(), NULL, 0.0, NULL, SDL_FLIP_NONE);
+		ob = ObjectManager::GetInstance().GetObject(i);
+		if (ob->GetTexture() != NULL) {
+			Render(
+				ob->GetTexture(), 
+				ob->GetX(), 
+				ob->GetY(),
+				ob->GetWidth(),
+				ob->GetHeight(),
+				NULL,
+				0.0,
+				NULL,
+				SDL_FLIP_NONE);
 		}
 	}
 }

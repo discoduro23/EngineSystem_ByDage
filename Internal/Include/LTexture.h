@@ -18,7 +18,7 @@ public:
 	~LTexture();
 
 	//Loads image at specified path
-	bool loadFromFile(SDL_Texture*, int Width, int Height);
+	bool loadFromFile(SDL_Texture*);
 
 #if defined(SDL_TTF_MAJOR_VERSION)
 	//Creates image from font string

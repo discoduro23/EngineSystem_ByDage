@@ -62,7 +62,7 @@ public:
 	
 	// Render a texture
 
-	void Render(SDL_Texture* texture, int x, int y, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip);
+	void Render(SDL_Texture* texture, int x, int y, int w, int h, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip);
 
 	void RenderAll();
 	

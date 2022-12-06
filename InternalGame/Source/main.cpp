@@ -18,16 +18,29 @@ and may not be redistributed without written permission.*/
 
 int main( int argc, char* args[] )
 {
+	//Start the machine
 	EngineManager::CreateSingleton();
 	EngineManager::GetInstance().Init();
 	
 	//Create Game Manager
-	GameManager gM = GameManager("GameManager");
-	ObjectManager::GetInstance().AddObject(&gM);
+	GameManager gaM = GameManager("GameManager");
+	ObjectManager::GetInstance().AddObject(&gaM);
 
-	Dot dot1("dot", 20, 20, 20, 20, GraphicManager::GetInstance().LoadTexture("../../Media/dot.bmp"));
+	//Objects to enter
+	GraphicManager* grM = GraphicManager::GetInstancePtr();
+	
+	Dot dot1("dot1", 20, 20, 20, 20, 
+		grM->LoadTexture("../../Media/dotARROW.bmp"), 0);
+	Dot dot2("dot2", 40, 40, 20, 20, 
+		grM->LoadTexture("../../Media/dotWASD.bmp"), 1);
+	Dot dot3("dot3", 60, 60, 20, 20, 
+		grM->LoadTexture("../../Media/dot.bmp"), 2);
+	
 	ObjectManager::GetInstance().AddObject(&dot1);
+	ObjectManager::GetInstance().AddObject(&dot2);
+	ObjectManager::GetInstance().AddObject(&dot3);
 
+	//The while
 	bool quit = false;
 	SDL_Event e;
 	
