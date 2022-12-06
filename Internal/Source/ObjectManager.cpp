@@ -13,6 +13,10 @@ void ObjectManager::Update()
 	for (int i = 0; i < mObjects.size(); i++)
 	{
 		mObjects[i]->Update();
+		if(mObjects[i]->isInitialized())
+		{
+			mObjects[i]->setInit();
+		}
 	}
 }
 

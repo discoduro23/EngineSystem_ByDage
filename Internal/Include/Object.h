@@ -12,14 +12,13 @@ class Object
 {
 protected:
 
+	bool isInit = true;
+
 	//name of the object
 	std::string mName;
 	
 	//The X and Y offsets of the Object
 	int mPosX, mPosY;
-
-	//The velocity of the Object
-	int mVelX, mVelY;
 
 	//The dimensions of the Object
 	int mWidth, mHeight;
@@ -42,9 +41,12 @@ public:
 	SDL_Texture* GetTexture() { return mTexture; };
 	int GetX() { return mPosX; };
 	int GetY() { return mPosY; };
-
+	std::string GetName() { return mName; };
 	~Object();
 	
+	bool isInitialized() { return isInit; };
+	void setInit() { isInit = true; };
+
 	virtual void Update();
 	
 };

@@ -66,6 +66,7 @@ public:
 
 	void RenderAll();
 	
+	void UpdateScreen();
 
 	// Get the renderer
 	SDL_Renderer* GetRenderer();

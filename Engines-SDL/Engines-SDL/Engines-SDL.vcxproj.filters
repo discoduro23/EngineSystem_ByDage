@@ -39,9 +39,6 @@
     <ClCompile Include="..\..\Internal\Source\LTimer.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\InternalGame\Source\main.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Internal\Include\InputManager.h">

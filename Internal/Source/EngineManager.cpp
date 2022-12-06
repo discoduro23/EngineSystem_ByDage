@@ -13,11 +13,12 @@ bool EngineManager::Init()
 	{
 		printf("Failed to initialize Graphics!\n");
 		return false;
-	}
+	}	
 	else
 	{
 		return true;
 	}
+	
 	
 	return false;
 }

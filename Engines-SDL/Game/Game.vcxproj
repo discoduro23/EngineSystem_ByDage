@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\InternalGame\Source\Dot.cpp" />
     <ClCompile Include="..\..\InternalGame\Source\GameManager.cpp" />
+    <ClCompile Include="..\..\InternalGame\Source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\InternalGame\Include\Dot.h" />

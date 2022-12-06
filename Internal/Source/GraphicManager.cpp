@@ -76,8 +76,16 @@ void GraphicManager::Clear()
 
 void GraphicManager::Update()
 {
-	// Update the screen
-	SDL_RenderPresent(mRenderer);
+	Clear();
+	RenderAll();
+	UpdateScreen();
+	
+	// while (true) {
+	// 	GraphicManager::GetInstance().Clear();
+	// 	GraphicManager::GetInstance().Render(GraphicManager::GetInstance().LoadTexture("../../Media/dot.bmp"), 10, 10, NULL, 0, NULL, SDL_FLIP_NONE);
+	// 	GraphicManager::GetInstance().UpdateScreen();
+	// }
+
 }
 
 SDL_Texture* GraphicManager::LoadTexture(std::string path)
@@ -141,15 +149,24 @@ void  GraphicManager::Render(SDL_Texture* texture, int x, int y, SDL_Rect* clip,
 void GraphicManager::RenderAll()
 {
 	int size = ObjectManager::GetInstance().GetObjectCount();
-	Object* ob = nullptr;
+	std::cout << "Size " << size << std::endl;
+	//Object* ob = nullptr;
 	for (int i = 0; i < size;i++) {
-		ob = ObjectManager::GetInstance().GetObject(i);
-		Render(ob->GetTexture(), ob->GetX(), ob->GetY(), NULL, 0.0, NULL, SDL_FLIP_NONE);
+		//ob = ObjectManager::GetInstance().GetObject(i);
+		std::cout << "Render " << ObjectManager::GetInstance().GetObject(i)->GetName() << std::endl;
+		if (ObjectManager::GetInstance().GetObject(i)->GetTexture() != NULL) {
+			Render(ObjectManager::GetInstance().GetObject(i)->GetTexture(), ObjectManager::GetInstance().GetObject(i)->GetX(), ObjectManager::GetInstance().GetObject(i)->GetY(), NULL, 0.0, NULL, SDL_FLIP_NONE);
+		}
 	}
 }
 
 SDL_Renderer* GraphicManager::GetRenderer()
 {
 	return mRenderer;
+}
+
+void GraphicManager::UpdateScreen()
+{
+	SDL_RenderPresent(mRenderer);
 }
 

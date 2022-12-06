@@ -7,7 +7,7 @@ void InputManager::Update(void)
 
 bool InputManager::GetKey(int scanCode)
 {
-  return mCurrentKeyStates[scanCode] != 0;
+	return mCurrentKeyStates[scanCode] != 0;
 }
 
 

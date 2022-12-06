@@ -143,7 +143,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\InternalGame\Source\main.cpp" />
     <ClCompile Include="..\..\Internal\Source\EngineManager.cpp" />
     <ClCompile Include="..\..\Internal\Source\GraphicManager.cpp" />
     <ClCompile Include="..\..\Internal\Source\InputManager.cpp" />

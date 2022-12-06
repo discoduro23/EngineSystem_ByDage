@@ -8,25 +8,41 @@ and may not be redistributed without written permission.*/
 #include <string>
 
 #include "EngineManager.h"
+#include "ObjectManager.h"
+#include "InputManager.h"
+#include "GameManager.h"
+
 #include <iostream>
 
 
 
 int main( int argc, char* args[] )
 {
-//movido a gamemanager
+	EngineManager::CreateSingleton();
 
-	
-	/*EngineManager::CreateSingleton();
 	EngineManager::GetInstance().Init();
+	
+	//Create Game Manager
+	GameManager gM = GameManager("GameManager");
 
-	while (!false) {
+	ObjectManager::GetInstance().AddObject(&gM);
+
+	//check if SDL_SCANCODE_ESCAPE is pressed
+	do
+	{
 		EngineManager::GetInstance().PreUpdate();
-		EngineManager::GetInstance().Update();
+	 	EngineManager::GetInstance().Update();
 		EngineManager::GetInstance().PostUpdate();
-	}*/
+	} while (!InputManager::GetInstance().GetKey(SDL_SCANCODE_ESCAPE));
+
+	EngineManager::GetInstance().Destroy();
+	EngineManager::GetInstance().Close();
+	EngineManager::GetInstance().DestroySingleton();
+
+
+	return 0;
 	
-	
+//movido a gamemanager
 	/*//Start up SDL and create window
 	if( !init() )
 	{
