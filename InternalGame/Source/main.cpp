@@ -19,21 +19,37 @@ and may not be redistributed without written permission.*/
 int main( int argc, char* args[] )
 {
 	EngineManager::CreateSingleton();
-
 	EngineManager::GetInstance().Init();
 	
 	//Create Game Manager
 	GameManager gM = GameManager("GameManager");
-
 	ObjectManager::GetInstance().AddObject(&gM);
 
-	//check if SDL_SCANCODE_ESCAPE is pressed
-	do
+	Dot dot1("dot", 20, 20, 20, 20, GraphicManager::GetInstance().LoadTexture("../../Media/dot.bmp"));
+	ObjectManager::GetInstance().AddObject(&dot1);
+
+	bool quit = false;
+	SDL_Event e;
+	
+	//While application is running
+	while (!quit)
 	{
+		//Handle events on queue
+		while (SDL_PollEvent(&e) != 0)
+		{
+			//User requests quit
+			if (e.type == SDL_QUIT)
+			{
+				quit = true;
+			}
+
+		}
+
 		EngineManager::GetInstance().PreUpdate();
 	 	EngineManager::GetInstance().Update();
 		EngineManager::GetInstance().PostUpdate();
-	} while (!InputManager::GetInstance().GetKey(SDL_SCANCODE_ESCAPE));
+		
+	}
 
 	EngineManager::GetInstance().Destroy();
 	EngineManager::GetInstance().Close();

@@ -10,7 +10,8 @@ void ObjectManager::Destroy()
 void ObjectManager::Update()
 {
 	// Update the Objects
-	for (int i = 0; i < mObjects.size(); i++)
+	int size = mObjects.size();
+	for (int i = 0; i < size; i++)
 	{
 		mObjects[i]->Update();
 		if(mObjects[i]->isInitialized())

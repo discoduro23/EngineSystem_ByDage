@@ -1,9 +1,1 @@
-﻿  EngineManager.cpp
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Include\ObjectManager.h(36,23): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
-  GraphicManager.cpp
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Include\ObjectManager.h(36,23): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
-  Object.cpp
-  ObjectManager.cpp
-C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Include\ObjectManager.h(36,23): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
-  Generando código...
-  Engines-SDL.vcxproj -> C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Engines-SDL\x64\Debug\Engines-SDL.lib
+﻿  Engines-SDL.vcxproj -> C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Engines-SDL\x64\Debug\Engines-SDL.lib

@@ -111,12 +111,6 @@ SDL_Texture* GraphicManager::LoadTexture(std::string path)
 		{
 			printf("Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError());
 		}
-		else
-		{
-			//Get image dimensions
-			mWidth = loadedSurface->w;
-			mHeight = loadedSurface->h;
-		}
 
 		//Get rid of old loaded surface
 		SDL_FreeSurface(loadedSurface);
@@ -153,7 +147,7 @@ void GraphicManager::RenderAll()
 	//Object* ob = nullptr;
 	for (int i = 0; i < size;i++) {
 		//ob = ObjectManager::GetInstance().GetObject(i);
-		std::cout << "Render " << ObjectManager::GetInstance().GetObject(i)->GetName() << std::endl;
+		std::cout << "Render " << ObjectManager::GetInstance().GetObject(i)->GetName().c_str() << std::endl;
 		if (ObjectManager::GetInstance().GetObject(i)->GetTexture() != NULL) {
 			Render(ObjectManager::GetInstance().GetObject(i)->GetTexture(), ObjectManager::GetInstance().GetObject(i)->GetX(), ObjectManager::GetInstance().GetObject(i)->GetY(), NULL, 0.0, NULL, SDL_FLIP_NONE);
 		}

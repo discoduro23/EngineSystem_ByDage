@@ -45,7 +45,7 @@ public:
 	~Object();
 	
 	bool isInitialized() { return isInit; };
-	void setInit() { isInit = true; };
+	void setInit() { isInit = false; };
 
 	virtual void Update();
 	

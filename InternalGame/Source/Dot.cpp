@@ -43,10 +43,13 @@ void Dot::move(int moveMode)
 			break;
 		}
 	}
-
+	
 
 	//Move the dot left or right
 	mPosX += mVelX;
+	//Move the dot up or down
+	mPosY += mVelY;
+	
 
 	//If the dot went too far to the left or right
 	if ((mPosX < 0) || (mPosX + DOT_WIDTH > GraphicManager::GetInstance().GetWidth()))
@@ -54,19 +57,20 @@ void Dot::move(int moveMode)
 		//Move back
 		mPosX -= mVelX;
 	}
-
-	//Move the dot up or down
-	mPosY += mVelY;
-
+	
 	//If the dot went too far up or down
 	if ((mPosY < 0) || (mPosY + DOT_HEIGHT > GraphicManager::GetInstance().GetHeight()))
 	{
 		//Move back
 		mPosY -= mVelY;
 	}
+
+	std::cout << "X: " << mPosX << " Y: " << mPosY << std::endl;
+	std::cout << "VelX: " << mVelX << " VelY: " << mVelY << std::endl;
 }
 
 void Dot::Update()
 {
-	move(0);
+	std::cout << "move ?" << std::endl;
+	move(2);
 }
