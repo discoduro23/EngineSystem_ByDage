@@ -27,8 +27,8 @@ private:
 	SDL_Renderer* mRenderer = nullptr;
 
 	//Screen dimension constants
-	int mWidth = 640;
-	int mHeight = 480;
+		int mWidth = 1920; //default 640
+		int mHeight = 1080; //default 480
 
 	//array of LTexture
 	std::vector<LTexture*> mTextures;
@@ -53,6 +53,9 @@ public:
 
 	// Load a texture
 	SDL_Texture* LoadTexture(std::string);
+	
+	// Get the renderer
+	SDL_Renderer* GetRenderer();
 
 	//Get screen width
 	int GetWidth() { return mWidth; };
@@ -68,8 +71,7 @@ public:
 	
 	void UpdateScreen();
 
-	// Get the renderer
-	SDL_Renderer* GetRenderer();
+	
 
 	/*****************************************************************************/
 
