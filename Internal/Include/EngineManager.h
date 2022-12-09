@@ -11,6 +11,7 @@
 #include "TimeManager.h"
 #include "ObjectManager.h"
 #include "GraphicManager.h"
+#include "SoundManager.h"
 
 using namespace std;
 

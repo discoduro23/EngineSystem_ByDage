@@ -3,17 +3,28 @@
 bool EngineManager::Init()
 {
 	//Create Engine
-	GraphicManager::CreateSingleton();
+	TimeManager::CreateSingleton();
 	InputManager::CreateSingleton();
-	//TimeManager::CreateSingleton();
+	SoundManager::CreateSingleton();
 	ObjectManager::CreateSingleton();
-	
+	GraphicManager::CreateSingleton();
+
 	//Initialize Engine
 	if (!GraphicManager::GetInstance().Init())
 	{
 		printf("Failed to initialize Graphics!\n");
 		return false;
-	}	
+	}
+	else if (!TimeManager::GetInstance().Init())
+	{
+		printf("Failed to initialize Time!\n");
+		return false;
+	}
+	else if (!SoundManager::GetInstance().Init())
+	{
+		printf("Failed to initialize Sound!\n");
+		return false;
+	} 
 	else
 	{
 		return true;
@@ -25,7 +36,7 @@ bool EngineManager::Init()
 
 void EngineManager::PreUpdate()
 {
-	//TimeManager::GetInstance().Update();
+	TimeManager::GetInstance().Update();
 	InputManager::GetInstance().Update();
 }
 
@@ -44,12 +55,13 @@ void EngineManager::Destroy()
 	//Destroy Engine
 	GraphicManager::GetInstance().Destroy();
 	GraphicManager::GetInstance().DestroySingleton();
-	
+	ObjectManager::GetInstance().Destroy();
+	ObjectManager::GetInstance().DestroySingleton();
+	SoundManager::GetInstance().Destroy();
 	InputManager::GetInstance().DestroySingleton();
 	TimeManager::GetInstance().DestroySingleton();
 	
-	ObjectManager::GetInstance().Destroy();
-	ObjectManager::GetInstance().DestroySingleton();
+	
 }
 
 

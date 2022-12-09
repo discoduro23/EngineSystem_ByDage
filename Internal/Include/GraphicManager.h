@@ -27,8 +27,8 @@ private:
 	SDL_Renderer* mRenderer = nullptr;
 
 	//Screen dimension constants
-		int mWidth = 1920; //default 640
-		int mHeight = 1080; //default 480
+		int mWidth = 1280; //default 640
+		int mHeight = 720; //default 480
 
 	//array of LTexture
 	std::vector<LTexture*> mTextures;

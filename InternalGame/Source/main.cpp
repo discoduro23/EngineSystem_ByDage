@@ -30,15 +30,16 @@ int main( int argc, char* args[] )
 	GraphicManager* grM = GraphicManager::GetInstancePtr();
 	
 	Dot dot1("dot1", 20, 20, 20, 20, 
-		grM->LoadTexture("../../Media/dotARROW.bmp"), 0);
+		grM->LoadTexture("../../Media/images/dotARROW.bmp"), 0);
 	Dot dot2("dot2", 40, 40, 20, 20, 
-		grM->LoadTexture("../../Media/dotWASD.bmp"), 1);
+		grM->LoadTexture("../../Media/images/dotWASD.bmp"), 1);
 	Dot dot3("dot3", 60, 60, 20, 20, 
-		grM->LoadTexture("../../Media/dot.bmp"), 2);
+		grM->LoadTexture("../../Media/images/dot.bmp"), 2);
 	
 	ObjectManager::GetInstance().AddObject(&dot1);
 	ObjectManager::GetInstance().AddObject(&dot2);
 	ObjectManager::GetInstance().AddObject(&dot3);
+
 
 	//The while
 	bool quit = false;

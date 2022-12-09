@@ -1,8 +1,3 @@
-﻿  Dot.cpp
-C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Include\ObjectManager.h(36,23): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
-  GameManager.cpp
-C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Include\ObjectManager.h(36,23): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
-  main.cpp
-C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Internal\Include\ObjectManager.h(36,23): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
-  Generando código...
-  Game.vcxproj -> C:\Users\danie\Documents\GitHub\EngineSystem_ByDage\Engines-SDL\x64\Debug\Game.exe
+﻿  GameManager.cpp
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Include\ObjectManager.h(36,23): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Game.vcxproj -> C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Engines-SDL\x64\Debug\Game.exe
