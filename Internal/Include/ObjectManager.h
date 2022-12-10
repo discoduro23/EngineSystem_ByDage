@@ -17,7 +17,7 @@ class ObjectManager :public Singleton<ObjectManager> {
 	friend class Singleton<ObjectManager>;
 	/*****************************************************************************/
 private:
-	std::vector<Object*> mObjects;
+	std::vector<Object*> mObjects = std::vector<Object*>();
 	ObjectManager() {};
 	/*****************************************************************************/
 
@@ -34,6 +34,8 @@ public:
 	Object* GetObject(int index) { return mObjects[index]; };
 	
 	size_t GetObjectCount() { return mObjects.size(); }
+
+	int GetObjectIndex(Object* object);
 
 	void RemoveObject(Object* object);
 

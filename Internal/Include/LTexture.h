@@ -5,7 +5,7 @@
 #include <SDL_image.h>
 #include <stdio.h>
 #include <string>
-
+#include <SDL_ttf.h>
 #include <iostream>
 
 class LTexture

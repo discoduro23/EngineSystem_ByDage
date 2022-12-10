@@ -10,9 +10,9 @@ void GameManager::Update()
 		
 		Dot* dot1 = new Dot("dot1", 20, 20, 20, 20,
 			grM->LoadTexture("../../Media/images/dotARROW.bmp"), 0);
-		Dot* dot2 = new Dot("dot2", 40, 40, 20, 20,
+		Dot* dot2 = new Dot("dot2", 50, 40, 20, 20,
 			grM->LoadTexture("../../Media/images/dotWASD.bmp"), 1);
-		Dot* dot3 = new Dot("dot3", 60, 60, 20, 20,
+		Dot* dot3 = new Dot("dot3", 100, 60, 20, 20,
 			grM->LoadTexture("../../Media/images/dot.bmp"), 2);
 
 		ObjectManager::GetInstance().AddObject(dot1);

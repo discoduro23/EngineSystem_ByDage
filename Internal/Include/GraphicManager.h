@@ -5,12 +5,15 @@
 #include <SDL_image.h>
 #include <stdio.h>
 #include <string>
-
+#include <SDL_ttf.h>
 #include "Singleton.h"
 #include "ObjectManager.h"
 #include "LTexture.h"
 #include <iostream>
 #include <vector>
+#include <map>
+#include "Text.h"
+
 
 /**
 Input Manager class
@@ -30,14 +33,20 @@ private:
 		int mWidth = 2080; //default 640
 		int mHeight = 420; //default 480
 
-	//array of LTexture
-	std::vector<LTexture*> mTextures;
+
+
+	//array of TTF_Font
+	std::map<std::string, TTF_Font*> mFonts;
 
 	// Private constructor to avoid more than one instance
 	GraphicManager() {};
 
 	//BG image
 	SDL_Texture* mBGTexture = nullptr;
+	
+	SDL_Texture* mTextureText = nullptr;
+
+	std::vector<Text*> mTexts = std::vector<Text*>();
 
 	/*****************************************************************************/
 
@@ -82,11 +91,28 @@ public:
 
 	void Render(SDL_Texture* texture, int x, int y, int w, int h, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip);
 
+	// Render Text
+	void RenderText(Text* text);
+
 	void RenderAll();
 	
 	void UpdateScreen();
 
+	bool loadFont(std::string path, std::string name, int size = 28);
 	
+	Text& CreateText(std::string textName, std::string text, std::string font, int x, int y, SDL_Color color = { 0,0,0,255 }) {
+		Text* t = new Text(textName, text, color, x, y, font);
+		mTexts.push_back(t);
+		return *t;
+	}
+
+	void AddText(Text* text) { mTexts.push_back(text); }
+
+	void ClearTexts() { mTexts.clear(); }
+	
+	void RemoveText(std::string textName);
+	
+	void ChangeWText(std::string textName, std::string text);
 
 	/*****************************************************************************/
 

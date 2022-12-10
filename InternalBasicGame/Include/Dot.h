@@ -2,6 +2,7 @@
 #include "Object.h"
 #include "InputManager.h"
 #include "GraphicManager.h"
+#include "PhysicsManager.h"
 
 class Dot : public Object {
 private:

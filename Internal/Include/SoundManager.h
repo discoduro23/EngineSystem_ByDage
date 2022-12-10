@@ -8,7 +8,7 @@
 #include <map>
 
 /**
-Input Manager class
+Sound Manager class
 */
 
 class SoundManager :public Singleton<SoundManager> {

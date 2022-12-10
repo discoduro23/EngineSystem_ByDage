@@ -12,7 +12,7 @@ class Object
 protected:
 
 	bool isInit = true;
-
+	bool isCollisionable = false;
 	//name of the object
 	std::string mName;
 	
@@ -28,7 +28,7 @@ protected:
 
 	
 public:
-	Object(std::string name, int x = 0, int y = 0, int w = 0, int h = 0, SDL_Texture* texture = NULL)
+	Object(std::string name, int x = 0, int y = 0, int w = 0, int h = 0, SDL_Texture* texture = NULL, bool isCol = false)
 	{
 		mName = name;
 		mPosX = x;
@@ -36,6 +36,7 @@ public:
 		mWidth = w;
 		mHeight = h;
 		mTexture = texture;
+		isCollisionable = isCol;
 	};
 	SDL_Texture* GetTexture() { return mTexture; };
 	int GetX() { return mPosX; };
@@ -43,11 +44,13 @@ public:
 	int GetWidth() { return mWidth; };
 	int GetHeight() { return mHeight; };
 	std::string GetName() { return mName; };
-	~Object();
+	SDL_Rect GetRect() { return { mPosX, mPosY, mWidth, mHeight }; };
+	bool isCollision() { return isCollisionable; };
 	
 	bool isInitialized() { return isInit; };
 	void setInit() { isInit = false; };
 
 	virtual void Update();
-	
+		~Object();
+
 };

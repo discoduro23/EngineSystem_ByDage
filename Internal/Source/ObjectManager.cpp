@@ -33,6 +33,18 @@ Object& ObjectManager::CreateObject(std::string name, int x = 0, int y = 0, int 
 }
 
 
+int ObjectManager::GetObjectIndex(Object* object)
+{
+	for (int i = 0; i < mObjects.size(); i++)
+	{
+		if (mObjects[i] == object)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
 void ObjectManager::RemoveObject(Object* object)
 {
 	for (int i = 0; i < mObjects.size(); i++)
