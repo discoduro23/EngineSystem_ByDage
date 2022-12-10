@@ -2,8 +2,12 @@
 #include "GraphicManager.h"
 
 
-bool GraphicManager::Init()
+bool GraphicManager::Init(int w, int h)
 {
+	//Set size
+	mWidth = w;
+	mHeight = h;
+
 	//Initialization flag
 	bool success = true;
 

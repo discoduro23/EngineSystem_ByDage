@@ -18,11 +18,14 @@ int main(int argc, char* args[])
 {
 	//Start the machine
 	EngineManager::CreateSingleton();
-	EngineManager::GetInstance().Init();
+	EngineManager* eM = EngineManager::GetInstancePtr();
+	
+	eM->SetWindowSize(1280, 720);
+	eM->Init();
 
 	//Create Game Manager
-	GameManager gaM = GameManager("GameManager");
-	ObjectManager::GetInstance().AddObject(&gaM);
+	GameManager* gaM = new GameManager("GameManager");
+	ObjectManager::GetInstance().AddObject(gaM);
 
 	//The while
 	bool quit = false;
@@ -42,15 +45,15 @@ int main(int argc, char* args[])
 
 		}
 
-		EngineManager::GetInstance().PreUpdate();
-		EngineManager::GetInstance().Update();
-		EngineManager::GetInstance().PostUpdate();
+		eM->PreUpdate();
+		eM->Update();
+		eM->PostUpdate();
 
 	}
 
-	EngineManager::GetInstance().Destroy();
-	EngineManager::GetInstance().Close();
-	EngineManager::GetInstance().DestroySingleton();
+	eM->Destroy();
+	eM->Close();
+	eM->DestroySingleton();
 
 	return 0;
 }

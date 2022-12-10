@@ -27,8 +27,8 @@ private:
 	SDL_Renderer* mRenderer = nullptr;
 
 	//Screen dimension constants
-		int mWidth = 512; //default 640
-		int mHeight = 480; //default 480
+		int mWidth = 2080; //default 640
+		int mHeight = 420; //default 480
 
 	//array of LTexture
 	std::vector<LTexture*> mTextures;
@@ -43,10 +43,19 @@ private:
 
 public:
 	// Initialize the graphic manager
-	bool Init();
+	bool Init(int, int);
 
 	//Set texture to the Background
 	void SetBGTexture(SDL_Texture* texture) { mBGTexture = texture; }
+
+	//Set height
+	void SetHeight(int height) { mHeight = height; }
+	
+	//Set width
+	void SetWidth(int width) { mWidth = width; }
+
+	////set height and width
+	void SetSize(int width, int height) { mWidth = width; mHeight = height; }
 	
 	// Destroy the graphic manager
 	void Destroy();

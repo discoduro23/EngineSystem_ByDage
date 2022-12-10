@@ -27,6 +27,9 @@ class EngineManager :public Singleton<EngineManager>
 
 private:
 
+	int width = 640;
+	int height = 480;
+
 	// Private constructor to avoid more than one instance
 	EngineManager() {};
 
@@ -45,6 +48,9 @@ public:
 	
 	//PostUpdate Engine
 	void PostUpdate();
+	
+	//Set Window Size
+	void SetWindowSize(int width, int height) { this->width = width; this->height = height; }
 	
 	// Destroy Engine
 	void Destroy();

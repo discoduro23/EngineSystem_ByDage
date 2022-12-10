@@ -8,32 +8,18 @@ void GameManager::Update()
 	//All inside isInit will be executed only once and at start
 	if (isInit) {
 		
-
-		//Set the background
-		grM->SetBGTexture(grM->LoadTexture("../../Media/images/background.png"));
-
-		
-		Dot* dot1("dot1", 20, 20, 20, 20,
+		Dot* dot1 = new Dot("dot1", 20, 20, 20, 20,
 			grM->LoadTexture("../../Media/images/dotARROW.bmp"), 0);
-		Dot dot2("dot2", 40, 40, 20, 20,
+		Dot* dot2 = new Dot("dot2", 40, 40, 20, 20,
 			grM->LoadTexture("../../Media/images/dotWASD.bmp"), 1);
-		Dot dot3("dot3", 60, 60, 20, 20,
+		Dot* dot3 = new Dot("dot3", 60, 60, 20, 20,
 			grM->LoadTexture("../../Media/images/dot.bmp"), 2);
 
-		ObjectManager::GetInstance().AddObject(&dot1);
-		ObjectManager::GetInstance().AddObject(&dot2);
-		ObjectManager::GetInstance().AddObject(&dot3);
-		
-		
-		//Sounds
-		SoundManager::GetInstance().LoadSound("../../Media/sounds/beat.wav", "beat");
-		timerId = TimeManager::GetInstance().StartTimer(5.0f);
+		ObjectManager::GetInstance().AddObject(dot1);
+		ObjectManager::GetInstance().AddObject(dot2);
+		ObjectManager::GetInstance().AddObject(dot3);
 	}
 	
-	if (!TimeManager::GetInstance().IsTimerActive(timerId)) {
-		SoundManager::GetInstance().PlaySound(-1, "beat");
-		timerId = TimeManager::GetInstance().StartTimer(5.0f);
-	}
 }
 
 void GameManager::Destroy()

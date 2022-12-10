@@ -10,7 +10,7 @@ bool EngineManager::Init()
 	GraphicManager::CreateSingleton();
 
 	//Initialize Engine
-	if (!GraphicManager::GetInstance().Init())
+	if (!GraphicManager::GetInstance().Init(width,height))
 	{
 		printf("Failed to initialize Graphics!\n");
 		return false;

@@ -5,7 +5,7 @@
 void ObjectManager::Destroy()
 {
 	for (size_t i = 0; i < mObjects.size(); i++) {
-		delete mObjects[i];
+		RemoveObject(mObjects[i]);
 	}
 	mObjects.clear();
 }
