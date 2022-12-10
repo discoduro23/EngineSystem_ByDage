@@ -19,14 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\InternalGame\Source\Dot.cpp" />
     <ClCompile Include="..\..\InternalGame\Source\GameManager.cpp" />
     <ClCompile Include="..\..\InternalGame\Source\Goblin.cpp" />
     <ClCompile Include="..\..\InternalGame\Source\Knight.cpp" />
     <ClCompile Include="..\..\InternalGame\Source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\InternalGame\Include\Dot.h" />
     <ClInclude Include="..\..\InternalGame\Include\GameManager.h" />
     <ClInclude Include="..\..\InternalGame\Include\Goblin.h" />
     <ClInclude Include="..\..\InternalGame\Include\Knight.h" />

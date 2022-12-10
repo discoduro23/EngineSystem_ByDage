@@ -7,7 +7,6 @@
 #include <string>
 
 #include "Singleton.h"
-#include "LTimer.h"
 #include <iostream>
 
 #define MAX_TIMERS 10

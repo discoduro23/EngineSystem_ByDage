@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\InternalGame\Source\Dot.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\InternalGame\Source\GameManager.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -32,9 +29,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\InternalGame\Include\Dot.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\InternalGame\Include\GameManager.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>

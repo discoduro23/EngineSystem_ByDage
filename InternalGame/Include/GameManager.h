@@ -1,11 +1,15 @@
+//GAME
+
 #pragma once
 #include "Object.h"
 #include <vector>
-#include "Dot.h"
 #include "Knight.h"
+#include "Goblin.h"
 #include <string>
 #include "SoundManager.h"
 #include "TimeManager.h"
+#include "InputManager.h"
+#include "GraphicManager.h"
 
 class GameManager :public Object {
 private:

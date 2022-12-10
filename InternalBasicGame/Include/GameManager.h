@@ -1,0 +1,23 @@
+//BASIC GAME
+
+#pragma once
+#include "Object.h"
+#include <vector>
+#include <string>
+#include "Dot.h"
+
+#include "SoundManager.h"
+#include "TimeManager.h"
+#include "InputManager.h"
+#include "GraphicManager.h"
+
+class GameManager :public Object {
+private:
+	int timerId = 0;
+public:
+	GameManager(std::string name, int x = 0, int y = 0, int w = 0, int h = 0, SDL_Texture* texture = NULL) : Object(name, x, y, w, h, texture) {};
+		
+	void Update();
+	
+	void Destroy();
+	};
