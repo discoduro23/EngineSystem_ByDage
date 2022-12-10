@@ -18,7 +18,9 @@ private:
 	const Uint8* mCurrentKeyStates;
 
   // Private constructor to avoid more than one instance
-  InputManager() {};
+  InputManager() {
+	  mCurrentKeyStates = SDL_GetKeyboardState(NULL);
+  };
 
   /*****************************************************************************/
 

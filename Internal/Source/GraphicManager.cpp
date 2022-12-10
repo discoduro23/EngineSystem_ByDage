@@ -136,7 +136,7 @@ void  GraphicManager::Render(SDL_Texture* texture, int x, int y, int w, int h, S
 
 void GraphicManager::RenderAll()
 {
-	int size = ObjectManager::GetInstance().GetObjectCount();
+	size_t size = ObjectManager::GetInstance().GetObjectCount();
 	Object* ob = nullptr;
 	for (int i = 0; i < size;i++) {
 		ob = ObjectManager::GetInstance().GetObject(i);

@@ -24,31 +24,7 @@ int main( int argc, char* args[] )
 	
 	//Create Game Manager
 	GameManager gaM = GameManager("GameManager");
-	ObjectManager::GetInstance().AddObject(&gaM);
-
-	//Objects to enter
-	GraphicManager* grM = GraphicManager::GetInstancePtr();
-	/*
-	Dot dot1("dot1", 20, 20, 20, 20, 
-		grM->LoadTexture("../../Media/images/dotARROW.bmp"), 0);
-	Dot dot2("dot2", 40, 40, 20, 20, 
-		grM->LoadTexture("../../Media/images/dotWASD.bmp"), 1);
-	Dot dot3("dot3", 60, 60, 20, 20, 
-		grM->LoadTexture("../../Media/images/dot.bmp"), 2);
-	
-	ObjectManager::GetInstance().AddObject(&dot1);
-	ObjectManager::GetInstance().AddObject(&dot2);
-	ObjectManager::GetInstance().AddObject(&dot3);*/
-	
-	grM->SetBGTexture(grM->LoadTexture("../../Media/images/background.png"));
-	
-	
-	Knight knight("knight", 20, 20, 20, 20,
-		grM->LoadTexture("../../Media/images/Knight.png"), 0);
-	ObjectManager::GetInstance().AddObject(&knight);
-
-	
-	
+	ObjectManager::GetInstance().AddObject(&gaM);	
 
 	//The while
 	bool quit = false;

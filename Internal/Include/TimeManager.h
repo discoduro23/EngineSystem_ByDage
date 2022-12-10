@@ -40,7 +40,21 @@ private:
 	float mChronos[MAX_CHRONOS];
 
 	// Private constructor to avoid more than one instance
-	TimeManager() {};
+	TimeManager() {
+		mDeltaTime = 0;
+
+		// Initialize timers
+		for (int i = 0; i < MAX_TIMERS; i++) {
+			mTimerActive[i] = false;
+			mTimers[i] = 0.0f;
+		}
+
+		// Initialize chronos
+		for (int i = 0; i < MAX_CHRONOS; i++) {
+			mChronoActive[i] = false;
+			mChronos[i] = 0.0f;
+		}
+	};
 
 	/*****************************************************************************/
 	

@@ -33,7 +33,7 @@ public:
 
 	Object* GetObject(int index) { return mObjects[index]; };
 	
-	int GetObjectCount() { return mObjects.size(); }
+	size_t GetObjectCount() { return mObjects.size(); }
 
 	void RemoveObject(Object* object);
 

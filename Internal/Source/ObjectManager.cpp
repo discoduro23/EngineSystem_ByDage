@@ -4,7 +4,10 @@
 
 void ObjectManager::Destroy()
 {
-
+	for (size_t i = 0; i < mObjects.size(); i++) {
+		delete mObjects[i];
+	}
+	mObjects.clear();
 }
 
 void ObjectManager::Update()
@@ -28,8 +31,6 @@ Object& ObjectManager::CreateObject(std::string name, int x = 0, int y = 0, int 
 	mObjects.push_back(object);
 	return *object;
 }
-
-
 
 
 void ObjectManager::RemoveObject(Object* object)
