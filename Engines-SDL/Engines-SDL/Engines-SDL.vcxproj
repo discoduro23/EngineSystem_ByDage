@@ -147,7 +147,6 @@
     <ClCompile Include="..\..\Internal\Source\GraphicManager.cpp" />
     <ClCompile Include="..\..\Internal\Source\InputManager.cpp" />
     <ClCompile Include="..\..\Internal\Source\LTexture.cpp" />
-    <ClCompile Include="..\..\Internal\Source\LTimer.cpp" />
     <ClCompile Include="..\..\Internal\Source\Object.cpp" />
     <ClCompile Include="..\..\Internal\Source\ObjectManager.cpp" />
     <ClCompile Include="..\..\Internal\Source\SoundManager.cpp" />
@@ -158,7 +157,6 @@
     <ClInclude Include="..\..\Internal\Include\GraphicManager.h" />
     <ClInclude Include="..\..\Internal\Include\InputManager.h" />
     <ClInclude Include="..\..\Internal\Include\LTexture.h" />
-    <ClInclude Include="..\..\Internal\Include\LTimer.h" />
     <ClInclude Include="..\..\Internal\Include\Object.h" />
     <ClInclude Include="..\..\Internal\Include\ObjectManager.h" />
     <ClInclude Include="..\..\Internal\Include\Singleton.h" />
