@@ -77,6 +77,7 @@ void GraphicManager::Clear()
 void GraphicManager::Update()
 {
 	Clear();
+	if(mBGTexture!=NULL) Render(mBGTexture, 0, 0, mWidth, mHeight, NULL, 0.0, NULL, SDL_FLIP_NONE);
 	RenderAll();
 	UpdateScreen();
 }

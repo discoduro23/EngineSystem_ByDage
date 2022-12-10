@@ -2,6 +2,7 @@
 #include "Object.h"
 #include <vector>
 #include "Dot.h"
+#include "Knight.h"
 #include <string>
 #include "SoundManager.h"
 #include "TimeManager.h"

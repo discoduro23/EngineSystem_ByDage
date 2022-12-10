@@ -28,7 +28,7 @@ int main( int argc, char* args[] )
 
 	//Objects to enter
 	GraphicManager* grM = GraphicManager::GetInstancePtr();
-	
+	/*
 	Dot dot1("dot1", 20, 20, 20, 20, 
 		grM->LoadTexture("../../Media/images/dotARROW.bmp"), 0);
 	Dot dot2("dot2", 40, 40, 20, 20, 
@@ -38,8 +38,17 @@ int main( int argc, char* args[] )
 	
 	ObjectManager::GetInstance().AddObject(&dot1);
 	ObjectManager::GetInstance().AddObject(&dot2);
-	ObjectManager::GetInstance().AddObject(&dot3);
+	ObjectManager::GetInstance().AddObject(&dot3);*/
+	
+	grM->SetBGTexture(grM->LoadTexture("../../Media/images/background.png"));
+	
+	
+	Knight knight("knight", 20, 20, 20, 20,
+		grM->LoadTexture("../../Media/images/Knight.png"), 0);
+	ObjectManager::GetInstance().AddObject(&knight);
 
+	
+	
 
 	//The while
 	bool quit = false;
