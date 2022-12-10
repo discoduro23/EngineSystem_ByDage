@@ -1,3 +1,9 @@
-﻿  GraphicManager.cpp
+﻿  EngineManager.cpp
+  GraphicManager.cpp
 C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\GraphicManager.cpp(154,30): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Object.cpp
+  ObjectManager.cpp
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Internal\Source\ObjectManager.cpp(16,28): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+  PhysicsManager.cpp
+  Generando código...
   Engines-SDL.vcxproj -> C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Engines-SDL\x64\Debug\Engines-SDL.lib

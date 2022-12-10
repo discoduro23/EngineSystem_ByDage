@@ -41,6 +41,8 @@ public:
 	SDL_Texture* GetTexture() { return mTexture; };
 	int GetX() { return mPosX; };
 	int GetY() { return mPosY; };
+	void SetX(int x) { mPosX = x; };
+	void SetY(int y) { mPosY = y; };
 	int GetWidth() { return mWidth; };
 	int GetHeight() { return mHeight; };
 	std::string GetName() { return mName; };
