@@ -151,6 +151,11 @@ void  GraphicManager::Render(SDL_Texture* texture, int x, int y, int w, int h, S
 
 void GraphicManager::RenderAll()
 {
+	int Textsize = mTexts.size();
+	for (int i = 0; i < Textsize; i++) {
+		RenderText(mTexts[i]);
+	}
+
 	size_t size = ObjectManager::GetInstance().GetObjectCount();
 	Object* ob = nullptr;
 	for (int i = 0; i < size;i++) {
@@ -169,10 +174,7 @@ void GraphicManager::RenderAll()
 		}
 	}
 	
-	int Textsize = mTexts.size();
-	for (int i = 0; i < Textsize; i++) {
-		RenderText(mTexts[i]);
-	}
+	
 }
 
 SDL_Renderer* GraphicManager::GetRenderer()
