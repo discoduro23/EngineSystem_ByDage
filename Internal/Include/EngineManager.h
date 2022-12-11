@@ -54,6 +54,10 @@ public:
 	// Initialize Engine
 	bool Init();
 
+	/*********************************/
+
+	//Insert in main only one version, the PreUpdate, Update, PostUpdate for one thread execution or the MuxUpdate for multithread execution
+	 
 	//PreUpdate Engine
 	void PreUpdate();
 	
@@ -63,8 +67,12 @@ public:
 	//PostUpdate Engine
 	void PostUpdate();
 
+	//Multithread Update all in one
 	void MuxUpdate();
 	
+	/*********************************/
+
+
 	//Set Window Size
 	void SetWindowSize(int width, int height) { this->width = width; this->height = height; }
 	
