@@ -22,7 +22,8 @@ void Dot::move(int moveMode)
 		if (InputManager::GetInstance().GetKey(SDL_SCANCODE_D)) mVelX += velMax;
 		break;
 		
-	case 2:
+
+	default:
 		//Give random number between 0 and 3 (For random "AI")
 		int random = rand() % 4;
 		switch (random)
@@ -50,14 +51,14 @@ void Dot::move(int moveMode)
 		mPosY += mVelY * TimeManager::GetInstance().GetDeltaTime();
 		
 			//If the dot went too far to the left or right
-		if (((mPosX < 0) || (mPosX + mWidth > GraphicManager::GetInstance().GetWidth()) ))
+		if (((mPosX < 0) || (mPosX + mWidth >= GraphicManager::GetInstance().GetWidth()) ))
 		{
 			//Move back
 			mPosX -= mVelX * TimeManager::GetInstance().GetDeltaTime();
 		}
 
 		//If the dot went too far up or down
-		if (((mPosY < 0) || (mPosY + mHeight > GraphicManager::GetInstance().GetHeight()) ))
+		if (((mPosY < 0) || (mPosY + mHeight >= GraphicManager::GetInstance().GetHeight()) ))
 		{
 			//Move back
 			mPosY -= mVelY * TimeManager::GetInstance().GetDeltaTime();

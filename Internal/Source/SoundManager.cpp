@@ -47,11 +47,11 @@ void SoundManager::PlayMusic(std::string name, int loops)
 void SoundManager::LoadSound(std::string path, std::string name)
 {
 	//The sound that will be loaded
-	Mix_Chunk* sound = NULL;
+	Mix_Chunk* sound = nullptr;
 
 	//Load sound
 	sound = Mix_LoadWAV(path.c_str());
-	if (sound == NULL)
+	if (sound == nullptr)
 	{
 		printf("Failed to load sound effect! SDL_mixer Error: %s\n", Mix_GetError());
 	}
@@ -61,11 +61,11 @@ void SoundManager::LoadSound(std::string path, std::string name)
 void SoundManager::LoadMusic(std::string path, std::string name)
 {
 	//The music that will be loaded
-	Mix_Music* music = NULL;
+	Mix_Music* music = nullptr;
 	
 	//Load music
 	music = Mix_LoadMUS(path.c_str());
-	if (music == NULL)
+	if (music == nullptr)
 	{
 		printf("Failed to load beat music! SDL_mixer Error: %s\n", Mix_GetError());
 	}

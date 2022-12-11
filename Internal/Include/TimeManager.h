@@ -76,14 +76,14 @@ public:
 
 	//FPS
 	
-	int GetFPStimer() { return mFPSTimer; }
+	float GetFPStimer() const { return mFPSTimer; }
 	void ResetFPStimer() { mFPSTimer = 0.0f; }
-	int GetFPS() { return mFPS; }
+	int GetFPS() const { return mFPS; }
 	void SumFPS() { mFPStemp++; }
 	void CalculateFPS() { mFPS = mFPStemp; mFPStemp = 0; }
 
 	//Destructor
-	~TimeManager() {};
+	~TimeManager() = default;
 
 	/*****************************************************************************/
 

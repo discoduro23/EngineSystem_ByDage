@@ -27,7 +27,7 @@ bool GraphicManager::Init(int w, int h)
 
 		//Create window
 		mWindow = SDL_CreateWindow("Engine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, mWidth, mHeight, SDL_WINDOW_SHOWN);
-		if (mWindow == NULL)
+		if (mWindow == nullptr)
 		{
 			printf("Window could not be created! SDL Error: %s\n", SDL_GetError());
 			success = false;
@@ -36,7 +36,7 @@ bool GraphicManager::Init(int w, int h)
 		{
 			//Create vsynced renderer for window
 			mRenderer = SDL_CreateRenderer(mWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-			if (mRenderer == NULL)
+			if (mRenderer == nullptr)
 			{
 				printf("Renderer could not be created! SDL Error: %s\n", SDL_GetError());
 				success = false;
@@ -78,7 +78,7 @@ void GraphicManager::Destroy()
 {
 	// Destroy the window
 	SDL_DestroyWindow(mWindow);
-	mWindow = NULL;
+	mWindow = nullptr;
 }
 
 void GraphicManager::Clear()
@@ -93,9 +93,9 @@ void GraphicManager::Update()
 	SDL_SemWait(gDataLock);
 	
 	Clear();
-	if(mBGTexture!=NULL) Render(mBGTexture, 0, 0, mWidth, mHeight, NULL, 0.0, NULL, SDL_FLIP_NONE);
+	if(mBGTexture!=nullptr) Render(mBGTexture, 0, 0, mWidth, mHeight, nullptr, 0.0, nullptr, SDL_FLIP_NONE);
 	RenderAll();
-	if (gDataLock == NULL)
+	if (gDataLock == nullptr)
 	{
 		printf("SDL_CreateSemaphore Error: %s\n", SDL_GetError());
 	}
@@ -107,11 +107,11 @@ SDL_Texture* GraphicManager::LoadTexture(std::string path)
 {
 
 	//The final texture
-	SDL_Texture* newTexture = NULL;
+	SDL_Texture* newTexture = nullptr;
 
 	//Load image at specified path
 	SDL_Surface* loadedSurface = IMG_Load(path.c_str());
-	if (loadedSurface == NULL)
+	if (loadedSurface == nullptr)
 	{
 		printf("Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError());
 	}
@@ -122,7 +122,7 @@ SDL_Texture* GraphicManager::LoadTexture(std::string path)
 
 		//Create texture from surface pixels
 		newTexture = SDL_CreateTextureFromSurface(mRenderer, loadedSurface);
-		if (newTexture == NULL)
+		if (newTexture == nullptr)
 		{
 			printf("Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError());
 		}
@@ -168,7 +168,7 @@ void  GraphicManager::Render(SDL_Texture* texture, int x, int y, int w, int h, S
 	SDL_Rect renderQuad = { x, y, w, h };
 
 	//Set clip rendering dimensions
-	if (clip != NULL)
+	if (clip != nullptr)
 	{
 		renderQuad.w = clip->w;
 		renderQuad.h = clip->h;
@@ -180,7 +180,7 @@ void  GraphicManager::Render(SDL_Texture* texture, int x, int y, int w, int h, S
 
 void GraphicManager::RenderAll()
 {
-	int Textsize = mTexts.size();
+	size_t Textsize = mTexts.size();
 	for (int i = 0; i < Textsize; i++) {
 		RenderText(mTexts[i]);
 	}
@@ -189,16 +189,16 @@ void GraphicManager::RenderAll()
 	Object* ob = nullptr;
 	for (int i = 0; i < size;i++) {
 		ob = ObjectManager::GetInstance().GetAObject(i);
-		if (ob->GetTexture() != NULL) {
+		if (ob->GetTexture() != nullptr) {
 			Render(
 				ob->GetTexture(), 
 				ob->GetX(), 
 				ob->GetY(),
 				ob->GetWidth(),
 				ob->GetHeight(),
-				NULL,
+				nullptr,
 				0.0,
-				NULL,
+				nullptr,
 				SDL_FLIP_NONE);
 		}
 	}
@@ -224,7 +224,7 @@ bool GraphicManager::loadFont(std::string path, std::string name, int size)
 
 	//Open the font
 	Font = TTF_OpenFont(path.c_str(), size);
-	if (Font == NULL)
+	if (Font == nullptr)
 	{
 		printf("Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError());
 		success = false;
@@ -242,7 +242,7 @@ void GraphicManager::RenderText(Text* textC)
 	int w=0, h=0;
 	//Render text surface
 	SDL_Surface* textSurface = TTF_RenderText_Solid(mFonts[textC->GetFont()], textC->GetText().c_str(), textC->GetColor());
-	if (textSurface == NULL)
+	if (textSurface == nullptr)
 	{
 		printf("Unable to render text surface! SDL_ttf Error: %s\n", TTF_GetError());
 	}
@@ -250,7 +250,7 @@ void GraphicManager::RenderText(Text* textC)
 	{
 		//Create texture from surface pixels
 		mTextureText = SDL_CreateTextureFromSurface(mRenderer, textSurface);
-		if (mTextureText == NULL)
+		if (mTextureText == nullptr)
 		{
 			printf("Unable to create texture from rendered text! SDL Error: %s\n", SDL_GetError());
 		}
@@ -264,7 +264,7 @@ void GraphicManager::RenderText(Text* textC)
 		//Get rid of old surface
 		SDL_FreeSurface(textSurface);
 	}
-	Render(mTextureText, textC->GetX(), textC->GetY(), w, h, NULL, 0.0, NULL, SDL_FLIP_NONE);
+	Render(mTextureText, textC->GetX(), textC->GetY(), w, h, nullptr, 0.0, nullptr, SDL_FLIP_NONE);
 
 	SDL_SemPost(gDataLock);
 }

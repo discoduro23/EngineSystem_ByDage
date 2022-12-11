@@ -18,14 +18,14 @@ void Knight::move()
 
 
 	//If the Knight went too far to the left or right
-	if ((mPosX < 0) || (mPosX + mWidth > GraphicManager::GetInstance().GetWidth()))
+	if ((mPosX < 0) || (mPosX + mWidth >= GraphicManager::GetInstance().GetWidth()))
 	{
 		//Move back
 		mPosX -= mVelX * TimeManager::GetInstance().GetDeltaTime();
 	}
 
 	//If the Knight went too far up or down
-	if ((mPosY < 0) || (mPosY + mHeight > GraphicManager::GetInstance().GetHeight()))
+	if ((mPosY < 0) || (mPosY + mHeight >= GraphicManager::GetInstance().GetHeight()))
 	{
 		//Move back
 		mPosY -= mVelY * TimeManager::GetInstance().GetDeltaTime();

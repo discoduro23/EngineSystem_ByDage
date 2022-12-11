@@ -33,7 +33,7 @@ public:
 
 	Object* GetAObject(int index) { return mObjects[index]; };
 	
-	size_t GetObjectCount() { return mObjects.size(); }
+	size_t GetObjectCount() const { return mObjects.size(); }
 
 	int GetObjectIndex(Object* object);
 

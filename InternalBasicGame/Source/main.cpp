@@ -53,7 +53,7 @@ int main(int argc, char* args[])
 
 	eM->Destroy();
 	eM->Close();
-	eM->DestroySingleton();
+	EngineManager::DestroySingleton();
 
 	return 0;
 }

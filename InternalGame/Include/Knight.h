@@ -16,12 +16,10 @@ private:
 	int ChronoID = 0;
 
 public:
-	Knight(std::string name, int x = 0, int y = 0, int w = 0, int h = 0, int moveMode = 0) : Object(name, x, y, w, h) {
-		this->moveMode = moveMode;
-	};
+	Knight(std::string name, int x = 0, int y = 0, int w = 0, int h = 0, int moveMode = 0) : Object(name, x, y, w, h), moveMode(moveMode) {	};
 
 	//Moves the dot
 	void move();
 
-	void Update();
+	void Update() override;
 };

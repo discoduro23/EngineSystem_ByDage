@@ -13,7 +13,7 @@ void ObjectManager::Destroy()
 void ObjectManager::Update()
 {
 	// Update the Objects
-	int size = mObjects.size();
+	size_t size = mObjects.size();
 	for (int i = 0; i < size; i++)
 	{
 		mObjects[i]->Update();

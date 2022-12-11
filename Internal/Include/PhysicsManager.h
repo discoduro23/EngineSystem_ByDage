@@ -34,6 +34,6 @@ public:
 	//Get distance between two points
 	float GetDistance(float x1, float y1, float x2, float y2);
 	
-    float getGravity() { return gravity; }
+    float getGravity() const { return gravity; }
 
 };

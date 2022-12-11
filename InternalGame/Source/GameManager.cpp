@@ -15,9 +15,9 @@ void GameManager::Update()
 		grM->SetBGTexture(grM->LoadTexture("../../Media/images/background.png"));
 
 		//Set fonts
-		grM->GetInstance().loadFont("../../Media/fonts/PIXEL.TTF", "pixel_40", 40);
-		grM->GetInstance().loadFont("../../Media/fonts/PIXEL.TTF", "pixel_60", 60);
-		grM->GetInstance().loadFont("../../Media/fonts/PIXEL.TTF", "pixel_20", 20);
+		grM->loadFont("../../Media/fonts/PIXEL.TTF", "pixel_40", 40);
+		grM->loadFont("../../Media/fonts/PIXEL.TTF", "pixel_60", 60);
+		grM->loadFont("../../Media/fonts/PIXEL.TTF", "pixel_20", 20);
 
 
 		//Make the knight

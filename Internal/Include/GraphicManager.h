@@ -48,7 +48,7 @@ private:
 	std::vector<Text*> mTexts = std::vector<Text*>();
 
 	//Data access semaphore
-	SDL_sem* gDataLock = NULL;
+	SDL_sem* gDataLock = nullptr;
 
 	//The "data buffer"
 	int gData = -1;
@@ -89,10 +89,10 @@ public:
 	SDL_Renderer* GetRenderer();
 
 	//Get screen width
-	int GetWidth() { return mWidth; };
+	int GetWidth() const { return mWidth; };
 	
 	//Get screen height
-	int GetHeight() { return mHeight; };
+	int GetHeight() const { return mHeight; };
 	
 	// Render a texture
 
@@ -107,7 +107,7 @@ public:
 
 	bool loadFont(std::string path, std::string name, int size = 28);
 	
-	Text& CreateText(std::string textName, std::string text, std::string font, int x, int y, SDL_Color color = { 0,0,0,255 }) {
+	Text& CreateText(std::string const& textName, std::string const& text, std::string const& font, int x, int y, SDL_Color color = { 0,0,0,255 }) {
 		Text* t = new Text(textName, text, color, x, y, font);
 		mTexts.push_back(t);
 		return *t;
