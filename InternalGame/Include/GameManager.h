@@ -9,6 +9,7 @@
 #include "SoundManager.h"
 #include "TimeManager.h"
 #include "InputManager.h"
+#include "SaveManager.h"
 #include "GraphicManager.h"
 #include "PhysicsManager.h"
 
@@ -38,4 +39,7 @@ public:
 	void Update() override;
 	
 	void Destroy();
-	};
+	
+	//saveGameState
+	void SaveGameState();
+};

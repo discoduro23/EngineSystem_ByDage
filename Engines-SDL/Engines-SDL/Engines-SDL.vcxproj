@@ -149,6 +149,7 @@
     <ClCompile Include="..\..\Internal\Source\Object.cpp" />
     <ClCompile Include="..\..\Internal\Source\ObjectManager.cpp" />
     <ClCompile Include="..\..\Internal\Source\PhysicsManager.cpp" />
+    <ClCompile Include="..\..\Internal\Source\SaveManager.cpp" />
     <ClCompile Include="..\..\Internal\Source\SoundManager.cpp" />
     <ClCompile Include="..\..\Internal\Source\Text.cpp" />
     <ClCompile Include="..\..\Internal\Source\TimeManager.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="..\..\Internal\Include\Object.h" />
     <ClInclude Include="..\..\Internal\Include\ObjectManager.h" />
     <ClInclude Include="..\..\Internal\Include\PhysicsManager.h" />
+    <ClInclude Include="..\..\Internal\Include\SaveManager.h" />
     <ClInclude Include="..\..\Internal\Include\Singleton.h" />
     <ClInclude Include="..\..\Internal\Include\SoundManager.h" />
     <ClInclude Include="..\..\Internal\Include\Text.h" />
