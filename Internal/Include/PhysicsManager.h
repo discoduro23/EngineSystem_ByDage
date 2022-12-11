@@ -27,10 +27,8 @@ public:
 	//verify a collision betweeN two rectangles
 	bool CheckCollision(SDL_Rect a, SDL_Rect b);
 
-	/* WIP
-	//verify a collision between all the rectangles in a vector
+    //verify a collision between all the rectangles in a vector
 	bool CheckCollisionAll(SDL_Rect a);
-	*/
 
 	//Get distance between two points
 	float GetDistance(float x1, float y1, float x2, float y2);

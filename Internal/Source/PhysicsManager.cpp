@@ -46,7 +46,6 @@ bool PhysicsManager::CheckCollision(SDL_Rect a, SDL_Rect b)
 	
 }
 
-/* WIP
 bool PhysicsManager::CheckCollisionAll(SDL_Rect a)
 {
     //This will be used to check if the player is colliding with the objects that have the bool true in isCollider
@@ -66,7 +65,7 @@ bool PhysicsManager::CheckCollisionAll(SDL_Rect a)
         }
     }
 	return isColliding;
-}*/
+}
 
 float PhysicsManager::GetDistance(float x1, float y1, float x2, float y2)
 {
