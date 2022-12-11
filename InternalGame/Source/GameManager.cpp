@@ -13,21 +13,41 @@ void GameManager::Update()
 		tM = TimeManager::GetInstancePtr();
 		oM = ObjectManager::GetInstancePtr();
 		sM = SoundManager::GetInstancePtr();
+		
+#if (_DEBUG)
+		std::string backgroundPath = "../../Media/images/background.png";
+		std::string pixelFontPath = "../../Media/fonts/PIXEL.TTF";
+		std::string knightFolderPath = "../../Media/images/Knight/";
+		std::string goblinFolderPath = "../../Media/images/Goblin/";
+		std::string goblinDrumPath = "../../Media/sounds/GoblinDrum.wav";
+		std::string knightSlashPath = "../../Media/sounds/KnightSlash.wav";
+		std::string bgMusicPath = "../../Media/sounds/feedthemachine.mp3";
+		
+#endif
+#if (!_DEBUG)
+		std::string backgroundPath = "./Media/images/background.png";
+		std::string pixelFontPath = "./Media/fonts/PIXEL.TTF";
+		std::string knightFolderPath = "./Media/images/Knight/";
+		std::string goblinFolderPath = "./Media/images/Goblin/";
+		std::string goblinDrumPath = "./Media/sounds/GoblinDrum.wav";
+		std::string knightSlashPath = "./Media/sounds/KnightSlash.wav";
+		std::string bgMusicPath = "./Media/sounds/feedthemachine.mp3";
+#endif
 
 
 		//Set the background
-		grM->SetBGTexture(grM->LoadTexture("../../Media/images/background.png"));
+		grM->SetBGTexture(grM->LoadTexture(backgroundPath));
 
 		//Set fonts
-		grM->loadFont("../../Media/fonts/PIXEL.TTF", "pixel_40", 40);
-		grM->loadFont("../../Media/fonts/PIXEL.TTF", "pixel_60", 60);
-		grM->loadFont("../../Media/fonts/PIXEL.TTF", "pixel_20", 20);
-		grM->loadFont("../../Media/fonts/PIXEL.TTF", "pixel_15", 15);
+		grM->loadFont(pixelFontPath, "pixel_40", 40);
+		grM->loadFont(pixelFontPath, "pixel_60", 60);
+		grM->loadFont(pixelFontPath, "pixel_20", 20);
+		grM->loadFont(pixelFontPath, "pixel_15", 15);
 
 
 		//Make the knight
 		knight = new Knight("knight", grM->GetWidth() / 2 - 130, grM->GetHeight() / 2, 20, 20, 0);
-		grM->LoadTexturesFromPath("../../Media/images/Knight/", knight);
+		grM->LoadTexturesFromPath(knightFolderPath, knight);
 		knight->SetTexture("Paso1");
 
 		//"Add object" section
@@ -36,17 +56,17 @@ void GameManager::Update()
 		//Make the goblin
 		goblin = new Goblin("goblin", grM->GetWidth() / 2 + 100, grM->GetHeight() / 2, 20, 20, 1);
 
-		grM->LoadTexturesFromPath("../../Media/images/Goblin/", goblin);
+		grM->LoadTexturesFromPath(goblinFolderPath, goblin);
 		goblin->SetTexture("Paso1");
 
 		oM->AddObject(goblin);
 
 		//Sounds
-		sM->LoadSound("../../Media/sounds/GoblinDrum.wav", "GoblinDrum");
-		sM->LoadSound("../../Media/sounds/KnightSlash.wav", "KnightSlash");
+		sM->LoadSound(goblinDrumPath, "GoblinDrum");
+		sM->LoadSound(knightSlashPath, "KnightSlash");
 
 		//Music By Dream Protocol in pixabay
-		sM->LoadMusic("../../Media/sounds/feedthemachine.mp3", "bgMusic");
+		sM->LoadMusic(bgMusicPath, "bgMusic");
 		sM->PlayMusic("bgMusic", -1);
 		sM->SetMusicVolume("bgMusic", 50);
 
