@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <string>
 #include <iostream>
+#include <map>
 
 class Object
 {
@@ -25,20 +26,24 @@ protected:
 	//The texture of the Object
 	SDL_Texture* mTexture;
 
+	// array of music
+	std::map<std::string, SDL_Texture*> mTextureArray;
+
 
 	
 public:
-	Object(std::string name, float x = 0, float y = 0, int w = 0, int h = 0, SDL_Texture* texture = NULL, bool isCol = false)
+	Object(std::string name, float x = 0, float y = 0, int w = 0, int h = 0, bool isCol = false)
 	{
 		mName = name;
 		mPosX = x;
 		mPosY = y;
 		mWidth = w;
 		mHeight = h;
-		mTexture = texture;
 		isCollisionable = isCol;
 	};
+	void AddTextureToArray(std::string name, SDL_Texture* texture) { mTextureArray[name] = texture; }
 	SDL_Texture* GetTexture() { return mTexture; };
+	void SetTexture(std::string name) { mTexture = mTextureArray[name]; }
 	float GetX() { return mPosX; };
 	float GetY() { return mPosY; };
 	void SetX(float x) { mPosX = x; };

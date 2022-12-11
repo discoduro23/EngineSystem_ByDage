@@ -1,7 +1,6 @@
 #include "EngineManager.h"
 
-int GraphicThread(void* data);
-int PhysicThread(void* data);
+int PostUpdateThread(void* data);
 
 bool EngineManager::Init()
 {
@@ -57,6 +56,7 @@ void EngineManager::PostUpdate()
 void EngineManager::Destroy()
 {
 	//Destroy Engine
+	SDL_WaitThread(GraphicalThread, NULL);
 	GraphicManager::GetInstance().Destroy();
 	GraphicManager::GetInstance().DestroySingleton();
 	ObjectManager::GetInstance().Destroy();
@@ -78,14 +78,13 @@ void EngineManager::Close() {
 
 //threads
 void EngineManager::MuxUpdate() {
-	TimeManager::GetInstance().Update();
-	InputManager::GetInstance().Update();
-	ObjectManager::GetInstance().Update();
+	PreUpdate();
+	Update();
 	cout << "Update Thread" << endl;
 	if (thread_signal != 1)
 	{
 		thread_signal = 1;
-		SDL_Thread* GraphicalThread = CreateThread(GraphicThread, "Graphic", (void*)gData);
+		SDL_Thread* GraphicalThread = CreateThread(PostUpdateThread, "Graphic", (void*)gData);
 	}
 }
 
@@ -94,17 +93,9 @@ SDL_Thread* EngineManager::CreateThread(SDL_ThreadFunction func, const char* nam
 	return SDL_CreateThread(func, name, data);
 }
 
-int GraphicThread( void* data) {
-	GraphicManager::GetInstance().Update();
+int PostUpdateThread( void* data) {
+	EngineManager::GetInstance().PostUpdate();
 	cout << "Graphic Thread" << endl;
 	thread_signal = 0;
-	return 0;
-}
-
-int PhysicThread(void* data) {
-	TimeManager::GetInstance().Update();
-	InputManager::GetInstance().Update();
-	ObjectManager::GetInstance().Update();
-	cout << "Update Thread" << endl;
 	return 0;
 }

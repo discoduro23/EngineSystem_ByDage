@@ -44,10 +44,10 @@ int main(int argc, char* args[])
 			}
 
 		}
-		//eM->MuxUpdate();			//Separate update
-		eM->PreUpdate();
+		eM->MuxUpdate();			//Separate update
+		/*eM->PreUpdate();
 		eM->Update();
-		eM->PostUpdate();
+		eM->PostUpdate();*/
 
 	}
 

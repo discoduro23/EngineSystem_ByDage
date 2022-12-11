@@ -13,8 +13,10 @@ private:
 
 	int moveMode = 0;
 
+	int ChronoID = 0;
+
 public:
-	Goblin(std::string name, int x = 0, int y = 0, int w = 0, int h = 0, SDL_Texture* texture = NULL, int moveMode = 0) : Object(name, x, y, w, h, texture) {
+	Goblin(std::string name, int x = 0, int y = 0, int w = 0, int h = 0, int moveMode = 0) : Object(name, x, y, w, h) {
 		this->moveMode = moveMode;
 	};
 

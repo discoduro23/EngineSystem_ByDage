@@ -3,13 +3,14 @@
 #include "InputManager.h"
 #include "GraphicManager.h"
 #include "PhysicsManager.h"
+#include "TimeManager.h"
 
 class Dot : public Object {
 private:
 	//The velocity of the dot
 	int mVelX = 10, mVelY = 10;
 
-	int velMax = 10;
+	int velMax = 300;
 
 	int moveMode = 0;
 	

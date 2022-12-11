@@ -44,25 +44,23 @@ void Dot::move(int moveMode)
 		}
 	}
 	
-	bool collision = PhysicsManager::GetInstance().CheckCollisionAll({ (int)mPosX, (int)mPosY, mWidth, mHeight });
-	std::cout << "Collision in " << mName << " is " << collision << std::endl;
 		//Move the dot left or right
-		mPosX += mVelX;
+		mPosX += mVelX * TimeManager::GetInstance().GetDeltaTime();
 		//Move the dot up or down
-		mPosY += mVelY;
+		mPosY += mVelY * TimeManager::GetInstance().GetDeltaTime();
 		
 			//If the dot went too far to the left or right
-		if (((mPosX < 0) || (mPosX + mWidth > GraphicManager::GetInstance().GetWidth()) )&& !collision)
+		if (((mPosX < 0) || (mPosX + mWidth > GraphicManager::GetInstance().GetWidth()) ))
 		{
 			//Move back
-			mPosX -= mVelX;
+			mPosX -= mVelX * TimeManager::GetInstance().GetDeltaTime();
 		}
 
 		//If the dot went too far up or down
-		if (((mPosY < 0) || (mPosY + mHeight > GraphicManager::GetInstance().GetHeight()) )&& !collision)
+		if (((mPosY < 0) || (mPosY + mHeight > GraphicManager::GetInstance().GetHeight()) ))
 		{
 			//Move back
-			mPosY -= mVelY;
+			mPosY -= mVelY * TimeManager::GetInstance().GetDeltaTime();
 		}
 		
 }

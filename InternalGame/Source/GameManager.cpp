@@ -20,14 +20,18 @@ void GameManager::Update()
 
 
 		//Make the knight
-		knight = new Knight("knight", 200, 200, 20, 20,
-			grM->LoadTexture("../../Media/images/Knight.png"), 0);
+		knight = new Knight("knight", 200, 200, 20, 20, 0);
+		knight->AddTextureToArray("paso1", grM->LoadTexture("../../Media/images/KnightPaso1.png"));
+		knight->SetTexture("paso1");
+		knight->AddTextureToArray("paso2", grM->LoadTexture("../../Media/images/KnightPaso2.png"));
 
 		//"Add object" section
 		ObjectManager::GetInstance().AddObject(knight);
 
-		goblin = new Goblin("goblin", 40, 40, 20, 20,
-			grM->LoadTexture("../../Media/images/Goblin.png"), 1);
+		goblin = new Goblin("goblin", 40, 40, 20, 20, 1);
+		goblin->AddTextureToArray("paso1", grM->LoadTexture("../../Media/images/GoblinPaso1.png"));
+		goblin->SetTexture("paso1");
+		goblin->AddTextureToArray("paso2", grM->LoadTexture("../../Media/images/GoblinPaso2.png"));
 
 		ObjectManager::GetInstance().AddObject(goblin);
 

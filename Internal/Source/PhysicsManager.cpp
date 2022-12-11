@@ -46,26 +46,27 @@ bool PhysicsManager::CheckCollision(SDL_Rect a, SDL_Rect b)
 	
 }
 
-bool PhysicsManager::CheckCollisionAll(SDL_Rect a)
-{
-    //This will be used to check if the player is colliding with the objects that have the bool true in isCollider
-	bool isColliding = false;
-    ObjectManager* oM = ObjectManager::GetInstancePtr();
-
-    for(int i = 0; i < oM->GetObjectCount(); i++)
-    {
-        if(oM->GetObject(i)->isCollision())
-        {
-            if(CheckCollision(a, oM->GetObject(i)->GetRect()))
-            {
-                isColliding = true;
-				return isColliding;
-            }
-            else isColliding = false;
-        }
-    }
-	return isColliding;
-}
+////////////////////Work in progress//////////////////////
+//bool PhysicsManager::CheckCollisionAll(SDL_Rect a)
+//{
+//    //This will be used to check if the player is colliding with the objects that have the bool true in isCollider
+//	bool isColliding = false;
+//    ObjectManager* oM = ObjectManager::GetInstancePtr();
+//
+//    for(int i = 0; i < oM->GetObjectCount(); i++)
+//    {
+//        if(oM->GetObject(i)->isCollision())
+//        {
+//            if(CheckCollision(a, oM->GetObject(i)->GetRect()))
+//            {
+//                isColliding = true;
+//				return isColliding;
+//            }
+//            else isColliding = false;
+//        }
+//    }
+//	return isColliding;
+//}
 
 float PhysicsManager::GetDistance(float x1, float y1, float x2, float y2)
 {
