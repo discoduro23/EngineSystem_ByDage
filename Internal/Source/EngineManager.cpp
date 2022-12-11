@@ -83,10 +83,20 @@ void EngineManager::MuxUpdate() {
 	Update();
 	//cout << "Update Thread\n";
 	
+	TimeManager* tM = TimeManager::GetInstancePtr();	
+	if (tM->GetFPStimer() > 1.0f){
+		tM->ResetFPStimer();
+		tM->CalculateFPS();
+		std::cout << "FPS: " << tM->GetFPS() << endl;
+	}
+
 	if (thread_signal != 1)
 	{
 		thread_signal = 1;
 		SDL_Thread* GraphicalThread = CreateThread(PostUpdateThread, "Graphic", (void*)gData);
+		if (tM->GetFPStimer() <= 1.0f){
+			tM->SumFPS();
+		}
 	}
 }
 
@@ -99,17 +109,7 @@ int PostUpdateThread( void* data) {
 	EngineManager::GetInstance().PostUpdate();
 	//cout << "Graphic Thread\n";
 
-	TimeManager* tM = TimeManager::GetInstancePtr();
-	if (tM->GetFPStimer() <= 1.0f)
-	{
-		tM->SumFPS();
-	}
-	else
-	{
-		tM->ResetFPStimer();
-		tM->CalculateFPS();
-		std::cout << "FPS: " << tM->GetFPS() << endl;
-	}
+	
 	
 	thread_signal = 0;
 	return 0;
