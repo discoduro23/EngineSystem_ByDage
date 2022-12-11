@@ -44,7 +44,7 @@ void Dot::move(int moveMode)
 		}
 	}
 	
-	bool collision = PhysicsManager::GetInstance().CheckCollisionAll({ mPosX, mPosY, mWidth, mHeight });
+	bool collision = PhysicsManager::GetInstance().CheckCollisionAll({ (int)mPosX, (int)mPosY, mWidth, mHeight });
 	std::cout << "Collision in " << mName << " is " << collision << std::endl;
 		//Move the dot left or right
 		mPosX += mVelX;

@@ -1,2 +1,10 @@
 ﻿  Dot.cpp
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalBasicGame\Include\Dot.h(17,133): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalBasicGame\Include\Dot.h(17,130): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  main.cpp
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalBasicGame\Include\Dot.h(17,133): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalBasicGame\Include\Dot.h(17,130): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalBasicGame\Include\GameManager.h(16,123): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\InternalBasicGame\Include\GameManager.h(16,120): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Generando código...
   BasicGame.vcxproj -> C:\Users\Propietario\Documents\GitHub\EngineSystem_ByDage\Engines-SDL\x64\Debug\BasicGame.exe

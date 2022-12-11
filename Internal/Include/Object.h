@@ -17,7 +17,7 @@ protected:
 	std::string mName;
 	
 	//The X and Y offsets of the Object
-	int mPosX, mPosY;
+	float mPosX, mPosY;
 
 	//The dimensions of the Object
 	int mWidth, mHeight;
@@ -28,7 +28,7 @@ protected:
 
 	
 public:
-	Object(std::string name, int x = 0, int y = 0, int w = 0, int h = 0, SDL_Texture* texture = NULL, bool isCol = false)
+	Object(std::string name, float x = 0, float y = 0, int w = 0, int h = 0, SDL_Texture* texture = NULL, bool isCol = false)
 	{
 		mName = name;
 		mPosX = x;
@@ -39,14 +39,14 @@ public:
 		isCollisionable = isCol;
 	};
 	SDL_Texture* GetTexture() { return mTexture; };
-	int GetX() { return mPosX; };
-	int GetY() { return mPosY; };
-	void SetX(int x) { mPosX = x; };
-	void SetY(int y) { mPosY = y; };
+	float GetX() { return mPosX; };
+	float GetY() { return mPosY; };
+	void SetX(float x) { mPosX = x; };
+	void SetY(float y) { mPosY = y; };
 	int GetWidth() { return mWidth; };
 	int GetHeight() { return mHeight; };
 	std::string GetName() { return mName; };
-	SDL_Rect GetRect() { return { mPosX, mPosY, mWidth, mHeight }; };
+	SDL_Rect GetRect() { return { (int)mPosX, (int)mPosY, mWidth, mHeight }; };
 	bool isCollision() { return isCollisionable; };
 	
 	bool isInitialized() { return isInit; };

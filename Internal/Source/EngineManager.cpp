@@ -78,12 +78,14 @@ void EngineManager::Close() {
 
 //threads
 void EngineManager::MuxUpdate() {
-	SDL_Thread* GraphicalThread = NULL;
-	SDL_Thread* PhysicalThread = CreateThread(PhysicThread, "Physic", (void*)gData);
-	if (GraphicalThread == NULL)
+	TimeManager::GetInstance().Update();
+	InputManager::GetInstance().Update();
+	ObjectManager::GetInstance().Update();
+	cout << "Update Thread" << endl;
+	if (thread_signal != 1)
 	{
-		SDL_WaitThread(PhysicalThread, NULL);
-		GraphicalThread = CreateThread(GraphicThread, "Graphic", (void*)gData);
+		thread_signal = 1;
+		SDL_Thread* GraphicalThread = CreateThread(GraphicThread, "Graphic", (void*)gData);
 	}
 }
 
@@ -95,6 +97,7 @@ SDL_Thread* EngineManager::CreateThread(SDL_ThreadFunction func, const char* nam
 int GraphicThread( void* data) {
 	GraphicManager::GetInstance().Update();
 	cout << "Graphic Thread" << endl;
+	thread_signal = 0;
 	return 0;
 }
 

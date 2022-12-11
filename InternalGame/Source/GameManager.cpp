@@ -20,7 +20,7 @@ void GameManager::Update()
 
 
 		//Make the knight
-		knight = new Knight("knight", 20, 20, 20, 20,
+		knight = new Knight("knight", 200, 200, 20, 20,
 			grM->LoadTexture("../../Media/images/Knight.png"), 0);
 
 		//"Add object" section

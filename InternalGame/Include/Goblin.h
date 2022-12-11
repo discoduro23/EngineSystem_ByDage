@@ -2,13 +2,14 @@
 #include "Object.h"
 #include "InputManager.h"
 #include "GraphicManager.h"
+#include "TimeManager.h"
 
 class Goblin : public Object {
 private:
 	//The velocity of the dot
 	int mVelX = 10, mVelY = 10;
 
-	int velMax = 10;
+	int velMax = 250;
 
 	int moveMode = 0;
 
@@ -18,7 +19,7 @@ public:
 	};
 
 	//Moves the dot
-	void move(int moveMode = 0);
+	void move();
 
 	void Update();
 };

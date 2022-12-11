@@ -16,6 +16,8 @@
 
 using namespace std;
 
+static int thread_signal = 0;
+
 /**
 * Engine Manager class
 */
@@ -39,6 +41,11 @@ private:
 
 	//The "data buffer"
 	int gData = -1;
+	int hData = -2;
+
+	
+	SDL_Thread* GraphicalThread = NULL;
+
 
 	/*****************************************************************************/
 
