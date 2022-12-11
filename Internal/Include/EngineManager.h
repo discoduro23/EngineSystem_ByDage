@@ -74,7 +74,7 @@ public:
 
 
 	//Set Window Size
-	void SetWindowSize(int width, int height) { this->width = width; this->height = height; }
+	void SetWindowSize(int lWidth, int lHeight) { width = lWidth; height = lHeight; }
 	
 	// Destroy Engine
 	void Destroy();

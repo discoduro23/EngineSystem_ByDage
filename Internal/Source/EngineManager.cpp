@@ -56,14 +56,16 @@ void EngineManager::PostUpdate()
 void EngineManager::Destroy()
 {
 	//Destroy Engine
-	SDL_WaitThread(GraphicalThread, NULL);
+	SDL_WaitThread(GraphicalThread, nullptr);
 	GraphicManager::GetInstance().Destroy();
-	GraphicManager::GetInstance().DestroySingleton();
+	GraphicManager::DestroySingleton();
+	
 	ObjectManager::GetInstance().Destroy();
-	ObjectManager::GetInstance().DestroySingleton();
+	ObjectManager::DestroySingleton();
+	
 	SoundManager::GetInstance().Destroy();
-	InputManager::GetInstance().DestroySingleton();
-	TimeManager::GetInstance().DestroySingleton();
+	InputManager::DestroySingleton();
+	TimeManager::DestroySingleton();
 	
 	
 }
@@ -87,7 +89,6 @@ void EngineManager::MuxUpdate() {
 	if (tM->GetFPStimer() > 1.0f){
 		tM->ResetFPStimer();
 		tM->CalculateFPS();
-		std::cout << "FPS: " << tM->GetFPS() << endl;
 	}
 
 	if (thread_signal != 1)

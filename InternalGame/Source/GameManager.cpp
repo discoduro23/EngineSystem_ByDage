@@ -5,11 +5,15 @@
 
 void GameManager::Update()
 {
-	GraphicManager* grM = GraphicManager::GetInstancePtr();
+	
 	
 	//All inside isInit will be executed only once and at start
 	if (isInit) {
-
+		grM = GraphicManager::GetInstancePtr();
+		tM = TimeManager::GetInstancePtr();
+		oM = ObjectManager::GetInstancePtr();
+		sM = SoundManager::GetInstancePtr();
+			
 
 		//Set the background
 		grM->SetBGTexture(grM->LoadTexture("../../Media/images/background.png"));
@@ -26,7 +30,7 @@ void GameManager::Update()
 		knight->SetTexture("Paso1");
 
 		//"Add object" section
-		ObjectManager::GetInstance().AddObject(knight);
+		oM->AddObject(knight);
 			
 		//Make the goblin
 		goblin = new Goblin("goblin", grM->GetWidth() / 2 + 100, grM->GetHeight() / 2, 20, 20, 1);
@@ -34,16 +38,16 @@ void GameManager::Update()
 		grM->LoadTexturesFromPath("../../Media/images/Goblin/", goblin);
 		goblin->SetTexture("Paso1");
 
-		ObjectManager::GetInstance().AddObject(goblin);
+		oM->AddObject(goblin);
 		
 		//Sounds
-		SoundManager::GetInstance().LoadSound("../../Media/sounds/GoblinDrum.wav", "GoblinDrum");
-		SoundManager::GetInstance().LoadSound("../../Media/sounds/KnightSlash.wav", "KnightSlash");
+		sM->LoadSound("../../Media/sounds/GoblinDrum.wav", "GoblinDrum");
+		sM->LoadSound("../../Media/sounds/KnightSlash.wav", "KnightSlash");
 		
 		//Music By Dream Protocol in pixabay
-		SoundManager::GetInstance().LoadMusic("../../Media/sounds/feedthemachine.mp3", "bgMusic");
-		SoundManager::GetInstance().PlayMusic("bgMusic", -1);
-		SoundManager::GetInstance().SetMusicVolume("bgMusic", 50);
+		sM->LoadMusic("../../Media/sounds/feedthemachine.mp3", "bgMusic");
+		sM->PlayMusic("bgMusic", -1);
+		sM->SetMusicVolume("bgMusic", 50);
 		
 		//create text
 		Text* BaseText =new Text("BaseTxt", "Score:", { 255,255,255 }, 170, 150, "pixel_40");
@@ -58,26 +62,28 @@ void GameManager::Update()
 		Text* timerText = new Text("timer", "15", { 255,255,255 }, 350, 40, "pixel_20");
 		grM->AddText(timerText);
 
-		timerId = TimeManager::GetInstance().StartTimer(15.0f);
+		timerId = tM->StartTimer(15.0f);
 
 	}
 	
-	if (!TimeManager::GetInstance().IsTimerActive(timerId)) {
+	if (!tM->IsTimerActive(timerId)) {
 		score--;
-		SoundManager::GetInstance().PlayASound(-1, "GoblinDrum");
-		timerId = TimeManager::GetInstance().StartTimer(15.0f);
+		sM->PlayASound(-1, "GoblinDrum");
+		timerId = tM->StartTimer(15.0f);
 		grM->ChangeWText("Score", std::to_string(score));
 	}
 
 	if (PhysicsManager::GetInstance().CheckCollision(knight->GetRect(), goblin->GetRect())) {
 		score++;
-		SoundManager::GetInstance().PlayASound(-1, "KnightSlash");
+		sM->PlayASound(-1, "KnightSlash");
 		goblin->SetX(0 + rand() / (RAND_MAX / ((grM->GetWidth()-goblin->GetWidth()) - 0 + 1 ) + 1));
 		goblin->SetY(0 + rand() / (RAND_MAX / ((grM->GetHeight() - goblin->GetHeight()) - 0 + 1 ) + 1));
-		timerId = TimeManager::GetInstance().StartTimer(10.0f);
+		timerId = tM->StartTimer(10.0f);
 		grM->ChangeWText("Score", std::to_string(score));
 	}
-	grM->ChangeWText("timer", std::to_string(1 + (int)TimeManager::GetInstance().GetTimer(timerId)));
+	grM->ChangeWText("timer", std::to_string(1 + (int)tM->GetTimer(timerId)));
+
+	//std::cout << "FPS: " << tM->GetFPS() << endl;
 }
 
 void GameManager::Destroy()
