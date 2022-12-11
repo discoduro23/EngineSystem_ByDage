@@ -5,6 +5,7 @@
 #include <SDL_image.h>
 #include <stdio.h>
 #include <string>
+#include <SDL_thread.h>
 
 //Include all managers
 #include "InputManager.h"
@@ -33,6 +34,12 @@ private:
 	// Private constructor to avoid more than one instance
 	EngineManager() {};
 
+	//Data access semaphore
+	SDL_sem* gDataLock = NULL;
+
+	//The "data buffer"
+	int gData = -1;
+
 	/*****************************************************************************/
 
 public:
@@ -48,6 +55,8 @@ public:
 	
 	//PostUpdate Engine
 	void PostUpdate();
+
+	void MuxUpdate();
 	
 	//Set Window Size
 	void SetWindowSize(int width, int height) { this->width = width; this->height = height; }
@@ -57,7 +66,9 @@ public:
 
 	// Shut down SDL
 	void Close();
-	
+		
+	//create thread
+	SDL_Thread* CreateThread(SDL_ThreadFunction func, const char* name, void* data);
 	/*****************************************************************************/
 
 };

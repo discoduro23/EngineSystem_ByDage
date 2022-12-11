@@ -48,6 +48,12 @@ private:
 
 	std::vector<Text*> mTexts = std::vector<Text*>();
 
+	//Data access semaphore
+	SDL_sem* gDataLock = NULL;
+
+	//The "data buffer"
+	int gData = -1;
+
 	/*****************************************************************************/
 
 public:

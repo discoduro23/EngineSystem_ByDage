@@ -71,12 +71,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LibraryPath>..\..\External\SDL2_mixer\lib\x64;..\..\External\SDL2_Extension\lib\x64;..\..\External\SDL2\lib\x64;..\..\External\SDL2_ttf\lib\x64;$(LibraryPath)</LibraryPath>
-    <IncludePath>..\..\External\SDL2\include;..\..\Internal\Include;..\..\External\SDL2_Extension\include;..\..\External\SDL2_mixer\include;..\..\External\SDL2_ttf\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\External\SDL2_mixer\lib\x64;..\..\External\SDL2_Extension\lib\x64;..\..\External\SDL2\lib\x64;..\..\External\SDL2_ttf\lib\x64;..\..\External\SDL_Multithreads\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\External\SDL2\include;..\..\Internal\Include;..\..\External\SDL2_Extension\include;..\..\External\SDL2_mixer\include;..\..\External\SDL2_ttf\include;..\..\External\SDL_Multithreads\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LibraryPath>..\..\External\SDL2_mixer\lib\x64;..\..\External\SDL2_Extension\lib\x64;..\..\External\SDL2\lib\x64;..\..\External\SDL2_ttf\lib\x64;$(LibraryPath)</LibraryPath>
-    <IncludePath>..\..\External\SDL2\include;..\..\Internal\Include;..\..\External\SDL2_Extension\include;..\..\External\SDL2_mixer\include;..\..\External\SDL2_ttf\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\External\SDL2_mixer\lib\x64;..\..\External\SDL2_Extension\lib\x64;..\..\External\SDL2\lib\x64;..\..\External\SDL2_ttf\lib\x64;..\..\External\SDL_Multithreads\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\External\SDL2\include;..\..\Internal\Include;..\..\External\SDL2_Extension\include;..\..\External\SDL2_mixer\include;..\..\External\SDL2_ttf\include;..\..\External\SDL_Multithreads\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -112,7 +112,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\External\SDL2_mixer\include;..\..\External\SDL2_Extension\include;..\..\External\SDL2\include;..\..\Internal\Include;..\..\External\SDL2_ttf\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\External\SDL2_mixer\include;..\..\External\SDL2_Extension\include;..\..\External\SDL2\include;..\..\Internal\Include;..\..\External\SDL2_ttf\include;..\..\External\SDL_Multithreads\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
@@ -130,7 +130,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\External\SDL2_mixer\include;..\..\External\SDL2_Extension\include;..\..\External\SDL2\include;..\..\Internal\Include;..\..\External\SDL2_ttf\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\External\SDL2_mixer\include;..\..\External\SDL2_Extension\include;..\..\External\SDL2\include;..\..\Internal\Include;..\..\External\SDL2_ttf\include;..\..\External\SDL_Multithreads\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>

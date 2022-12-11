@@ -89,10 +89,14 @@ void GraphicManager::Clear()
 
 void GraphicManager::Update()
 {
+	gDataLock = SDL_CreateSemaphore(1);
+	SDL_SemWait(gDataLock);
+	
 	Clear();
 	if(mBGTexture!=NULL) Render(mBGTexture, 0, 0, mWidth, mHeight, NULL, 0.0, NULL, SDL_FLIP_NONE);
 	RenderAll();
 	UpdateScreen();
+	SDL_SemPost(gDataLock);
 }
 
 SDL_Texture* GraphicManager::LoadTexture(std::string path)
@@ -207,6 +211,9 @@ bool GraphicManager::loadFont(std::string path, std::string name, int size)
 
 void GraphicManager::RenderText(Text* textC)
 {
+	gDataLock = SDL_CreateSemaphore(1);
+	SDL_SemWait(gDataLock);
+	
 	int w=0, h=0;
 	//Render text surface
 	SDL_Surface* textSurface = TTF_RenderText_Solid(mFonts[textC->GetFont()], textC->GetText().c_str(), textC->GetColor());
@@ -233,6 +240,8 @@ void GraphicManager::RenderText(Text* textC)
 		SDL_FreeSurface(textSurface);
 	}
 	Render(mTextureText, textC->GetX(), textC->GetY(), w, h, NULL, 0.0, NULL, SDL_FLIP_NONE);
+
+	SDL_SemPost(gDataLock);
 }
 
 void GraphicManager::RemoveText(std::string textName) {
