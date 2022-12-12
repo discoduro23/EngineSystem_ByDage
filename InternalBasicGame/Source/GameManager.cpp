@@ -30,6 +30,7 @@ void GameManager::Update()
 		ObjectManager::GetInstance().AddObject(dot3);
 	}
 	
+	
 }
 
 

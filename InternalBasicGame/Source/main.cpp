@@ -30,7 +30,7 @@ int main(int argc, char* args[])
 	//The while
 	bool quit = false;
 	SDL_Event e;
-
+	eM->HideCursor();
 	//While application is running
 	while (!quit)
 	{
@@ -48,7 +48,7 @@ int main(int argc, char* args[])
 		/*eM->PreUpdate();
 		eM->Update();
 		eM->PostUpdate();*/
-
+		eM->SetCursorToStart();
 	}
 
 	eM->Destroy();

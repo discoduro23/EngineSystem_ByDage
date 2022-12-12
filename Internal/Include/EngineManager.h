@@ -76,6 +76,10 @@ public:
 
 	//Set Window Size
 	void SetWindowSize(int lWidth, int lHeight) { width = lWidth; height = lHeight; }
+
+	void SetCursorToStart();
+	
+	void HideCursor();
 	
 	// Destroy Engine
 	void Destroy();

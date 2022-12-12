@@ -69,4 +69,5 @@ void Dot::move(int moveMode)
 void Dot::Update()
 {
 	move(moveMode);
+	std::cout << "  " << GetName() + " Colliding: " << (int)(PhysicsManager::GetInstance().CheckCollisionAll(this->GetRect(), this->GetName()))<<std::endl;
 }

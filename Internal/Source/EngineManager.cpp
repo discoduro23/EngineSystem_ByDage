@@ -54,6 +54,19 @@ void EngineManager::PostUpdate()
 	GraphicManager::GetInstance().Update();
 }
 
+void EngineManager::SetCursorToStart()
+{
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { 0, 0 });
+}
+
+void EngineManager::HideCursor()
+{
+	CONSOLE_CURSOR_INFO cursorInfo;
+	GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorInfo);
+	cursorInfo.bVisible = false; // set the cursor visibility
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorInfo);
+}
+
 void EngineManager::Destroy()
 {
 	//Destroy Engine
