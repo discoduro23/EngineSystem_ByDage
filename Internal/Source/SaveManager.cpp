@@ -1,53 +1,45 @@
 #include "SaveManager.h"
 
-void SaveManager::SetSaveData(int index, int data)
-{
-	mSaveData[index] = data;
-}
-
-int SaveManager::GetSaveData(int index)
-{
-	//Open data file
-	std::string path = mStoragePath + "data.dat";
-	FILE* file = fopen(path.c_str(), "r");
-	if (file != NULL)
-	{
-		//Read data
-		for (int i = 0; i < mSaveData.size(); ++i)
-		{
-			fscanf(file, "%d", &mSaveData[i]);
-		}
-
-		//Close file handler
-		fclose(file);
-	}
-	return 0;
-}
-
-bool SaveManager::SaveSaveData()
-{
-	//Open data file
-	std::string path = mStoragePath + "data.dat";
-	FILE* file = fopen(path.c_str(), "w");
-	if (file != NULL)
-	{
-		//Save data
-		for (int i = 0; i < mSaveData.size(); ++i)
-		{
-			fprintf(file, "%d", mSaveData[i]);
-		}
-
-		//Close file handler
-		fclose(file);
-	}
-	else
-	{
-		printf("Error: Unable to save file! %s\n", SDL_GetError());
-		return false;
-	}
-	return true;
-}
-
 void SaveManager::Close()
 {
+
 }
+
+
+int SaveManager::readFile()
+{
+	FILE* file = fopen("../../Media/Data/save.MDyG", "r");
+	if (file == nullptr) {
+		std::cerr << "Error: el puntero file es nullptr" << std::endl;
+		return 0;
+	}
+
+	char* str = new char[100];
+	int linea = 0;
+	size_t pos = 0;
+	
+	while (fgets(str, 100, file) != NULL) {
+		
+		//char* to int
+		linea = atoi(str);
+
+	}
+	fclose(file);
+	return linea;	
+}
+
+void SaveManager::storeFile(int score){
+	
+	FILE* file = fopen("../../Media/Data/save.MDyG", "w");
+	if (file == nullptr) {
+		std::cerr << "Error: el puntero file es nullptr" << std::endl;
+		return;
+	}
+	
+	
+	fprintf(file, "%d", score);
+	
+	fclose(file);
+
+}
+

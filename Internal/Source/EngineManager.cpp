@@ -10,6 +10,7 @@ bool EngineManager::Init()
 	SoundManager::CreateSingleton();
 	ObjectManager::CreateSingleton();
 	GraphicManager::CreateSingleton();
+	SaveManager::CreateSingleton();
 
 	//Initialize Engine
 	if (!GraphicManager::GetInstance().Init(width,height))

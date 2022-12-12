@@ -1,8 +1,9 @@
 #pragma once
 #include <SDL.h>
 #include <stdio.h>
+#include <iostream>
 #include <string>
-#include <sstream>
+#include <fstream>
 #include "Singleton.h"
 #include <vector>
 
@@ -21,28 +22,16 @@ private:
 	// Private constructor to avoid more than one instance
 	SaveManager() {};
 
-	//data to store
-	int totalData = 0;
-	
-	//Data to store
-	std::vector<int> mSaveData = std::vector<int>();
+	SDL_sem* DataLock = nullptr;
 
-	//storagePath
-	std::string mStoragePath;
+	
 	/*****************************************************************************/
 
 public:
-	//set storage path
-	void SetStoragePath(std::string path) { mStoragePath = path; }
+
+	int readFile();
 	
-	// Set the Save data
-	void SetSaveData(int index, int data);
-
-	// Get the Save data
-	int GetSaveData(int index);
-
-	// Save the Save data
-	bool SaveSaveData();
+	void storeFile(int);
 
 	// Close the Save manager
 	void Close();

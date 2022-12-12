@@ -13,6 +13,7 @@
 #include "ObjectManager.h"
 #include "GraphicManager.h"
 #include "SoundManager.h"
+#include "SaveManager.h"
 
 using namespace std;
 

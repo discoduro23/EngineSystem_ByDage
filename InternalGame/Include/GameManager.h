@@ -12,6 +12,7 @@
 #include "SaveManager.h"
 #include "GraphicManager.h"
 #include "PhysicsManager.h"
+#include "SaveManager.h"
 
 class GameManager :public Object {
 private:
@@ -29,6 +30,7 @@ private:
 	TimeManager* tM = nullptr;
 	ObjectManager* oM = nullptr;
 	SoundManager* sM = nullptr;
+
 	
 public:
 	GameManager(std::string const& name, int x = 0, int y = 0, int w = 0, int h = 0, SDL_Texture* texture = nullptr) : Object(name, x, y, w, h, texture) {
@@ -42,4 +44,7 @@ public:
 	
 	//saveGameState
 	void SaveGameState();
+
+	//loadGameState
+	void LoadGameState();
 };

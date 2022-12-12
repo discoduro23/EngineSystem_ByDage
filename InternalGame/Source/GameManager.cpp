@@ -112,6 +112,14 @@ void GameManager::Update()
 		grM->ChangeWText("Score", std::to_string(score));
 	}
 
+	if (InputManager::GetInstance().GetKey(SDL_SCANCODE_G))
+	{
+		SaveGameState();
+	}
+	if (InputManager::GetInstance().GetKey(SDL_SCANCODE_L))
+	{
+		LoadGameState();
+	}
 }
 
 void GameManager::Destroy()
@@ -120,5 +128,11 @@ void GameManager::Destroy()
 
 void GameManager::SaveGameState()
 {
-	
+	SaveManager::GetInstance().storeFile(score);
+}
+
+void GameManager::LoadGameState()
+{
+	score = SaveManager::GetInstance().readFile();
+	grM->ChangeWText("Score", std::to_string(score));
 }
