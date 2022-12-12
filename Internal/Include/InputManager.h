@@ -2,6 +2,7 @@
 
 #include "Singleton.h"
 #include "SDL.h"
+#include <vector>
 
 /**
 Input Manager class
@@ -29,7 +30,6 @@ public:
   void Update( void );
 
   bool GetKey( int scanCode );
-
   /*****************************************************************************/
 
 };
