@@ -13,7 +13,7 @@
 
 
 int main( int argc, char* args[] )
-{
+{	
 	//Start the machine
 	EngineManager::CreateSingleton();
 	EngineManager* eM = EngineManager::GetInstancePtr();
@@ -44,7 +44,7 @@ int main( int argc, char* args[] )
 		}
 		eM->GetInstance().MuxUpdate();
 		//eM->GetInstance().PreUpdate();
-	 //	eM->GetInstance().Update();
+		//eM->GetInstance().Update();
 		//eM->GetInstance().PostUpdate();
 		
 	}

@@ -64,6 +64,8 @@ void EngineManager::Destroy()
 	ObjectManager::GetInstance().Destroy();
 	ObjectManager::DestroySingleton();
 	
+	SaveManager::DestroySingleton();
+
 	SoundManager::GetInstance().Destroy();
 	InputManager::DestroySingleton();
 	TimeManager::DestroySingleton();

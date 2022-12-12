@@ -22,16 +22,16 @@ private:
 	// Private constructor to avoid more than one instance
 	SaveManager() {};
 
-	SDL_sem* DataLock = nullptr;
-
+	//vector of strings
+	std::vector<std::string> _data;
 	
 	/*****************************************************************************/
 
 public:
 
-	int readFile();
+	std::vector<std::string> readFile(std::string gameName);
 	
-	void storeFile(int);
+	void storeFile(std::vector<std::string> data, std::string gameName);
 
 	// Close the Save manager
 	void Close();

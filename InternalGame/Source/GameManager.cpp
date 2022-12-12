@@ -128,11 +128,25 @@ void GameManager::Destroy()
 
 void GameManager::SaveGameState()
 {
-	SaveManager::GetInstance().storeFile(score);
+	std::vector<std::string> saveData;
+	saveData.push_back(std::to_string(score));
+	saveData.push_back(std::to_string(knight->GetX()));
+	saveData.push_back(std::to_string(knight->GetY()));
+	saveData.push_back(std::to_string(goblin->GetX()));
+	saveData.push_back(std::to_string(goblin->GetY()));
+	
+	SaveManager::GetInstance().storeFile(saveData, "Game");
 }
 
 void GameManager::LoadGameState()
 {
-	score = SaveManager::GetInstance().readFile();
+	std::vector<std::string> saveData = SaveManager::GetInstance().readFile("Game");
+	score = std::stoi(saveData[0]);
+	knight->SetX(std::stoi(saveData[1]));
+	knight->SetY(std::stoi(saveData[2]));
+	goblin->SetX(std::stoi(saveData[3]));
+	goblin->SetY(std::stoi(saveData[4]));
+	tM->StopTimer(timerId);
+	timerId = tM->StartTimer(15.0f);
 	grM->ChangeWText("Score", std::to_string(score));
 }
