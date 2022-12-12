@@ -15,6 +15,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BasicGame", "BasicGame\Basi
 		{F27E6555-25F2-4A5E-BE6B-E8D164928A76} = {F27E6555-25F2-4A5E-BE6B-E8D164928A76}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Launcher", "Launcher\Launcher.vcxproj", "{E789892E-5873-4E7F-8650-6BFA342E41E8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F27E6555-25F2-4A5E-BE6B-E8D164928A76} = {F27E6555-25F2-4A5E-BE6B-E8D164928A76}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -47,6 +52,14 @@ Global
 		{24406F5C-15E1-4A58-BF11-08E46F83ABB4}.Release|x64.Build.0 = Release|x64
 		{24406F5C-15E1-4A58-BF11-08E46F83ABB4}.Release|x86.ActiveCfg = Release|Win32
 		{24406F5C-15E1-4A58-BF11-08E46F83ABB4}.Release|x86.Build.0 = Release|Win32
+		{E789892E-5873-4E7F-8650-6BFA342E41E8}.Debug|x64.ActiveCfg = Debug|x64
+		{E789892E-5873-4E7F-8650-6BFA342E41E8}.Debug|x64.Build.0 = Debug|x64
+		{E789892E-5873-4E7F-8650-6BFA342E41E8}.Debug|x86.ActiveCfg = Debug|Win32
+		{E789892E-5873-4E7F-8650-6BFA342E41E8}.Debug|x86.Build.0 = Debug|Win32
+		{E789892E-5873-4E7F-8650-6BFA342E41E8}.Release|x64.ActiveCfg = Release|x64
+		{E789892E-5873-4E7F-8650-6BFA342E41E8}.Release|x64.Build.0 = Release|x64
+		{E789892E-5873-4E7F-8650-6BFA342E41E8}.Release|x86.ActiveCfg = Release|Win32
+		{E789892E-5873-4E7F-8650-6BFA342E41E8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
