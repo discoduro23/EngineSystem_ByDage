@@ -15,8 +15,6 @@
 #include "SoundManager.h"
 #include "SaveManager.h"
 
-using namespace std;
-
 static int thread_signal = 0;
 
 /**
@@ -38,14 +36,14 @@ private:
 	EngineManager() {};
 
 	//Data access semaphore
-	SDL_sem* gDataLock = NULL;
+	SDL_sem* gDataLock = nullptr;
 
 	//The "data buffer"
 	int gData = -1;
 	int hData = -2;
 
 	
-	SDL_Thread* GraphicalThread = NULL;
+	SDL_Thread* GraphicalThread = nullptr;
 
 
 	/*****************************************************************************/

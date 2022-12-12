@@ -39,7 +39,7 @@ void Goblin::Update()
 	move();
 	if (isInit) ChronoID = TimeManager::GetInstance().StartChrono();
 
-	if ((int)(TimeManager::GetInstance().GetChrono(ChronoID) * 10) % 3 == 0) SetTexture("Paso1");
-	else SetTexture("Paso2");
+	if ((int)(TimeManager::GetInstance().GetChrono(ChronoID) * 10) % 3 == 0) SetTexture("Step1");
+	else SetTexture("Step2");
 
 }

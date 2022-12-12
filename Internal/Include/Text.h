@@ -33,5 +33,5 @@ public:
 	void SetY(int y) { this->y = y; }
 	void SetFont(std::string const& font) { this->font = font; }
 	
-	~Text();
+	~Text() {};
 };

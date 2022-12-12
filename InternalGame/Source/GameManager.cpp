@@ -48,17 +48,15 @@ void GameManager::Update()
 		//Make the knight
 		knight = new Knight("knight", grM->GetWidth() / 2 - 130, grM->GetHeight() / 2, 20, 20, 0);
 		grM->LoadTexturesFromPath(knightFolderPath, knight);
-		knight->SetTexture("Paso1");
+		knight->SetTexture("Step1");
 
 		//"Add object" section
 		oM->AddObject(knight);
 
 		//Make the goblin
 		goblin = new Goblin("goblin", grM->GetWidth() / 2 + 100, grM->GetHeight() / 2, 20, 20, 1);
-
 		grM->LoadTexturesFromPath(goblinFolderPath, goblin);
-		goblin->SetTexture("Paso1");
-
+		goblin->SetTexture("Step1");
 		oM->AddObject(goblin);
 
 		//Sounds
@@ -89,13 +87,16 @@ void GameManager::Update()
 		Text* FpsValue = new Text("FPSValue", "0", { 255,255,255 }, 75, grM->GetHeight() - 50, "pixel_15");
 		grM->AddText(FpsValue);
 
+		//Set the timer
 		timerId = tM->StartTimer(15.0f);
 
 	}
 
+	//Change texts
 	grM->ChangeWText("timer", std::to_string(1 + (int)tM->GetTimer(timerId)));
 	grM->ChangeWText("FPSValue", std::to_string((int)tM->GetFPS()));
 
+	//Check if the timer is over
 	if (!tM->IsTimerActive(timerId)) {
 		score--;
 		sM->PlayASound(-1, "GoblinDrum");
@@ -103,16 +104,19 @@ void GameManager::Update()
 		grM->ChangeWText("Score", std::to_string(score));
 	}
 
+	//Check collisions between
 	if (PhysicsManager::GetInstance().CheckCollision(knight->GetRect(), goblin->GetRect())) {
 		score++;
 		sM->PlayASound(-1, "KnightSlash");
 		goblin->SetX(0 + rand() / (RAND_MAX / ((grM->GetWidth() - goblin->GetWidth()) - 0 + 1) + 1));
 		goblin->SetY(0 + rand() / (RAND_MAX / ((grM->GetHeight() - goblin->GetHeight()) - 0 + 1) + 1));
+		tM->StopTimer(timerId);
 		timerId = tM->StartTimer(10.0f);
 		grM->ChangeWText("Score", std::to_string(score));
 	}
 
-	if (InputManager::GetInstance().GetKey(SDL_SCANCODE_G))
+	//Save and load (K to Save, L to load)
+	if (InputManager::GetInstance().GetKey(SDL_SCANCODE_K))
 	{
 		SaveGameState();
 	}
@@ -140,13 +144,16 @@ void GameManager::SaveGameState()
 
 void GameManager::LoadGameState()
 {
-	std::vector<std::string> saveData = SaveManager::GetInstance().readFile("Game");
-	score = std::stoi(saveData[0]);
-	knight->SetX(std::stoi(saveData[1]));
-	knight->SetY(std::stoi(saveData[2]));
-	goblin->SetX(std::stoi(saveData[3]));
-	goblin->SetY(std::stoi(saveData[4]));
 	tM->StopTimer(timerId);
 	timerId = tM->StartTimer(15.0f);
+	
+	std::vector<std::string> saveData = SaveManager::GetInstance().readFile("Game");
+	score = std::stoi(saveData[0]);
+	knight->SetX(std::stof(saveData[1]));
+	knight->SetY(std::stof(saveData[2]));
+	goblin->SetX(std::stof(saveData[3]));
+	goblin->SetY(std::stof(saveData[4]));
+	
 	grM->ChangeWText("Score", std::to_string(score));
+
 }

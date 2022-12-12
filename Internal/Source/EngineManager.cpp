@@ -77,7 +77,9 @@ void EngineManager::Destroy()
 	ObjectManager::GetInstance().Destroy();
 	ObjectManager::DestroySingleton();
 	
+	SaveManager::GetInstance().Close();
 	SaveManager::DestroySingleton();
+	
 
 	SoundManager::GetInstance().Destroy();
 	InputManager::DestroySingleton();
@@ -99,7 +101,6 @@ void EngineManager::MuxUpdate() {
 	
 	PreUpdate();
 	Update();
-	//cout << "Update Thread\n";
 	
 	TimeManager* tM = TimeManager::GetInstancePtr();	
 	if (tM->GetFPStimer() > 1.0f){
@@ -124,7 +125,6 @@ SDL_Thread* EngineManager::CreateThread(SDL_ThreadFunction func, const char* nam
 
 int PostUpdateThread( void* data) {
 	EngineManager::GetInstance().PostUpdate();
-	//cout << "Graphic Thread\n";
 
 	
 	

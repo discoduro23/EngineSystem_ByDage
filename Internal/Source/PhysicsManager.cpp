@@ -54,13 +54,11 @@ bool PhysicsManager::CheckCollisionAll(SDL_Rect a, std::string name)
 
     for(int i = 0; i < oM->GetObjectCount(); i++)
     {
-		if (oM->GetAObject(i)->isCollision() && oM->GetAObject(i)->GetName() != name)
-		{
-			if (CheckCollision(a, oM->GetAObject(i)->GetRect()))
+		if (oM->GetAObject(i)->isCollision() && oM->GetAObject(i)->GetName() != name 
+			&& CheckCollision(a, oM->GetAObject(i)->GetRect()))
 			{
 				isColliding = true;
 			}
-		}
     }
 	return isColliding;
 }

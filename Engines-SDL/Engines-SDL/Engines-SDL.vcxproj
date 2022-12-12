@@ -151,7 +151,6 @@
     <ClCompile Include="..\..\Internal\Source\PhysicsManager.cpp" />
     <ClCompile Include="..\..\Internal\Source\SaveManager.cpp" />
     <ClCompile Include="..\..\Internal\Source\SoundManager.cpp" />
-    <ClCompile Include="..\..\Internal\Source\Text.cpp" />
     <ClCompile Include="..\..\Internal\Source\TimeManager.cpp" />
   </ItemGroup>
   <ItemGroup>

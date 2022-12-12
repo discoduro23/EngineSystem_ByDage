@@ -1,11 +1,5 @@
 #include "SaveManager.h"
 
-void SaveManager::Close()
-{
-
-}
-
-
 std::vector<std::string> SaveManager::readFile(std::string gameName)
 {
 #if _DEBUG
@@ -36,6 +30,10 @@ std::vector<std::string> SaveManager::readFile(std::string gameName)
 
 	}
 	fclose(file);
+	
+	//Free memory
+	delete[] str;
+	
 	return linea;	
 }
 
@@ -60,6 +58,9 @@ void SaveManager::storeFile(std::vector<std::string> data, std::string gameName)
 		fputs(data[i].append("\n").c_str(), file);
 	}	
 	fclose(file);
-
+	
+	//Free memory
+	data.clear();
+	
 }
 

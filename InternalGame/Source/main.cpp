@@ -43,9 +43,6 @@ int main( int argc, char* args[] )
 
 		}
 		eM->GetInstance().MuxUpdate();
-		//eM->GetInstance().PreUpdate();
-		//eM->GetInstance().Update();
-		//eM->GetInstance().PostUpdate();
 		
 	}
 

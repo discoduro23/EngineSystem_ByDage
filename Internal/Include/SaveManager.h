@@ -34,5 +34,7 @@ public:
 	void storeFile(std::vector<std::string> data, std::string gameName);
 
 	// Close the Save manager
-	void Close();
+	void Close() {
+		_data.clear();
+	};
 };
