@@ -71,4 +71,5 @@ public:
 		}
 	};
 
+	bool coordIsInside(int, int) const;
 };

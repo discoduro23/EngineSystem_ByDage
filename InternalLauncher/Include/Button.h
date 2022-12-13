@@ -29,9 +29,9 @@ public:
 	Button(std::string name, float x = 0, float y = 0, int w = 0, int h = 0)
 		: Object(name, x, y, w, h) {};
 
-	void setTextureName(std::string selected, std::string deselected) {
-		this->selected = selected;
-		this->deselected = deselected;
+	void setTextureName(std::string select, std::string deselect) {
+		this->selected = select;
+		this->deselected = deselect;
 	}
 	
 	void Update() { handleevent(); };

@@ -3,6 +3,7 @@
 #include "Singleton.h"
 #include "SDL.h"
 #include <vector>
+#include <iostream>
 
 /**
 Input Manager class
@@ -13,6 +14,7 @@ class InputManager :public Singleton<InputManager>
   friend class Singleton<InputManager>;
   /*****************************************************************************/
 
+  
 private:
   
   // Keyboard state
@@ -23,6 +25,7 @@ private:
 	  mCurrentKeyStates = SDL_GetKeyboardState(NULL);
   };
 
+  std::vector<float> mousePosition();
   /*****************************************************************************/
 
 public:
@@ -30,6 +33,13 @@ public:
   void Update( void );
 
   bool GetKey( int scanCode );
+
+  int GetMouseX(void);
+  int GetMouseY(void);
+  
+  bool MouseLeftClick(void);
+  bool MouseRightClick(void);
+  
   /*****************************************************************************/
 
 };
