@@ -38,19 +38,30 @@ void Button::handleevent()
 			//Mouse is outside button
 			if (!inside)
 			{
-				SetTexture("GameHide");
+				SetTexture(deselected);
+				isInZone = false;
 			}
 			//Mouse is inside button
 			else
 			{
 				//Set mouse over sprite
-				SetTexture("GameHideSelect");
-
+				SetTexture(selected);
+				isInZone = true;
 			}
 			
 		}
-		if (e.type == SDL_MOUSEBUTTONUP) {
-			system("..\\..\\RELEASEGames\\HideAndWhere\\HideAndWhere.exe -P"); // As an example. Change [notepad] to any executable file //
+		if (e.type == SDL_MOUSEBUTTONUP && isInZone){
+			SoundManager::GetInstance().StopMusic("bgMusic");
+			SDL_MinimizeWindow(GraphicManager::GetInstance().GetWindow());
+			std::cout << "Game Hide and Where loaded" << std::endl;
+#if (_DEBUG)
+			std::string command = "..\\..\\RELEASEGames\\" + GetName() + '\\' + GetName() + ".exe -P";
+			system((command).c_str());
+#endif
+#if (!_DEBUG)
+			system((".\\" + GetName() + '\\' + GetName() + ".exe -P").c_str()); //no funciona, no se porque
+#endif
+			SDL_RestoreWindow(GraphicManager::GetInstance().GetWindow());
 		}
 
 	}

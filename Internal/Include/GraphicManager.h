@@ -93,6 +93,9 @@ public:
 	
 	//Get screen height
 	int GetHeight() const { return mHeight; };
+
+	//Get window
+	SDL_Window* GetWindow() const { return mWindow; };
 	
 	// Render a texture
 

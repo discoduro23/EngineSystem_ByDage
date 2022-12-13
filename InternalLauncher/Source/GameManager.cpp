@@ -40,12 +40,13 @@ void GameManager::Update()
 		sM->PlayMusic("bgMusic", -1);
 		sM->SetMusicVolume("bgMusic", 50);
 
-		button = new Button("button", grM->GetWidth() / 4 - 130, grM->GetHeight() / 2 - 70, 200, 200);
-		grM->LoadTexturesFromPath(buttonPath, button);
-		button->SetTexture("GameHide");
+		HideAndWhere = new Button("HideAndWhere", grM->GetWidth() / 4 - 130, grM->GetHeight() / 2 - 70, 200, 200);
+		grM->LoadTexturesFromPath(buttonPath, HideAndWhere);
+		HideAndWhere->SetTexture("GameHide");
+		HideAndWhere->setTextureName("GameHideSelect", "GameHide");
 
 		//"Add object" section
-		oM->AddObject(button);
+		oM->AddObject(HideAndWhere);
 		
 		//create text
 		Text* BaseText = new Text("BaseTxt", "Launcher", { 255,255,255 }, grM->GetWidth()/2-120, grM->GetHeight()/6, "pixel_40");

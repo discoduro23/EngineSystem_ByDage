@@ -18,7 +18,7 @@ private:
 	int timerId = 0;
 
 	//objects
-	Button* button = nullptr;
+	Button* HideAndWhere = nullptr;
 
 	//score
 	int score = 0;
