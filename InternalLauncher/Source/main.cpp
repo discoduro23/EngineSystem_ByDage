@@ -10,10 +10,11 @@
 
 #include <iostream>
 
-
+#include <Windows.h>
 
 int main(int argc, char* args[])
 {
+	
 	//Start the machine
 	EngineManager::CreateSingleton();
 	EngineManager* eM = EngineManager::GetInstancePtr();
