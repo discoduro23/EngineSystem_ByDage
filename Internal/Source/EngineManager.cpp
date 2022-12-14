@@ -37,6 +37,20 @@ bool EngineManager::Init()
 	return false;
 }
 
+void EngineManager::SetWindowTitleFromPath(const char* fullPath)
+{
+	// Split the path into its components. COULD WE SPLIT TO GET THE OTHER ELEMENTS IN OTHER FUNCTIONS?
+	char drive[_MAX_DRIVE],  dir[_MAX_DIR], fname[_MAX_FNAME], ext[_MAX_EXT];
+	_splitpath(fullPath, drive, dir, fname, ext);
+	
+	SetWindowTitle(fname);
+}
+
+void EngineManager::SetWindowTitle(const std::string& title)
+{
+	SDL_SetWindowTitle(GraphicManager::GetInstance().GetWindow(), title.c_str());
+}
+
 void EngineManager::PreUpdate()
 {
 	

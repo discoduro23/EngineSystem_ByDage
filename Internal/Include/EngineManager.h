@@ -74,6 +74,12 @@ public:
 
 	//Set Window Size
 	void SetWindowSize(int lWidth, int lHeight) { width = lWidth; height = lHeight; }
+	
+	//Set Window title from path
+	void SetWindowTitleFromPath(const char* fullPath);
+
+	//Set Window title
+	void SetWindowTitle(const std::string& title);
 
 	void SetCursorToStart();
 	

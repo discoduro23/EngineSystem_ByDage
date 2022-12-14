@@ -10,8 +10,6 @@
 
 #include <iostream>
 
-#include <Windows.h>
-
 int main(int argc, char* args[])
 {
 	
@@ -19,8 +17,14 @@ int main(int argc, char* args[])
 	EngineManager::CreateSingleton();
 	EngineManager* eM = EngineManager::GetInstancePtr();
 
+	//Set the windowss size
 	eM->SetWindowSize(728, 455);
+	
+	//Init
 	eM->Init();
+
+	//Change the window name
+	eM->SetWindowTitleFromPath(args[0]);
 
 	//Create Game Manager
 	GameManager* gaM = new GameManager("GameManager");

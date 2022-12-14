@@ -68,9 +68,9 @@ public:
 	//Set width
 	void SetWidth(int width) { mWidth = width; }
 
-	////set height and width
+	//Set height and width
 	void SetSize(int width, int height) { mWidth = width; mHeight = height; }
-	
+		
 	// Destroy the graphic manager
 	void Destroy();
 
