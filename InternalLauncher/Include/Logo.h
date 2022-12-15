@@ -8,8 +8,8 @@ class Logo : public Object{
 	private:
 		TimeManager* tM = nullptr;
 		int timerId = 0;
-		float frameTime = 0.5f;
-		int currentFrame = 0;
+		float frameTime = 0.05f;
+		int currentFrame = 1;
 
 	public:
 		Logo(std::string const& name, float x, float y, int w, int h)

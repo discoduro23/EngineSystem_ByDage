@@ -3,20 +3,19 @@
 void Logo::Update()
 {	
 	if (isInit) {
-		SetTexture("(" + std::to_string(currentFrame) + ")");
+		SetTexture("L(" + std::to_string(currentFrame) + ")");
 		tM = TimeManager::GetInstancePtr();
 		timerId = tM->StartTimer(frameTime);
 	}
 	
-	std::cout << "Logo Update" << timerId << mTextureArray.size() << std::endl;
 
-	if (tM->IsTimerActive(timerId)) {
+	if (!tM->IsTimerActive(timerId)) {
 		
-		SetTexture("(" + std::to_string(currentFrame) + ")");
+		SetTexture("L(" + std::to_string(currentFrame) + ")");
 
 		currentFrame++;
-		if (currentFrame > mTextureArray.size()) currentFrame = 0;
-
+		if (currentFrame > mTextureArray.size()) currentFrame = 1;
+		
 		timerId = tM->StartTimer(frameTime);
 	}
 }
