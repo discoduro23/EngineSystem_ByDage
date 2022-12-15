@@ -10,7 +10,9 @@
 #include <Windows.h>
 #include <filesystem>
 #include <vector>
+#include "Particle.h"
 
+#define TOTAL_PARTICLES 20
 
 class Object
 {
@@ -34,11 +36,24 @@ protected:
 	// array of textures
 	std::map<std::string, SDL_Texture*> mTextureArray;
 
+	//Particles
+	Particle* particles[TOTAL_PARTICLES];
+
+	//Particle textures
+	SDL_Texture* mParticleTexture;
+
 
 	
 public:
-	Object(std::string const& name, float x = 0, float y = 0, int w = 0, int h = 0, bool isCol = false, SDL_Texture* texture = nullptr) 
-		: mName(name), mPosX(x), mPosY(y), mWidth(w), mHeight(h), isCollisionable(isCol), mTexture(texture) {};
+	Object(std::string const& name, float x = 0, float y = 0, int w = 0, int h = 0, bool isCol = false, SDL_Texture* texture = nullptr, SDL_Texture* particleTexture = nullptr)
+	: mName(name), mPosX(x), mPosY(y), mWidth(w), mHeight(h), isCollisionable(isCol), mTexture(texture), mParticleTexture(particleTexture){
+		
+		//Initialize particles
+		for (int i = 0; i < TOTAL_PARTICLES; i++)
+		{
+			particles[i] = new Particle(mPosX, mPosY, particleTexture);
+		}
+	};
 	
 	
 	
@@ -69,6 +84,12 @@ public:
 		{
 			SDL_DestroyTexture(it->second);
 		}
+		
+		//Delete particles
+			for (int i = 0; i < TOTAL_PARTICLES; ++i)
+			{
+				delete particles[i];
+			}
 	};
 
 	bool coordIsInside(int, int) const;

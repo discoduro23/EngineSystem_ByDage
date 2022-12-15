@@ -148,6 +148,7 @@
     <ClCompile Include="..\..\Internal\Source\InputManager.cpp" />
     <ClCompile Include="..\..\Internal\Source\Object.cpp" />
     <ClCompile Include="..\..\Internal\Source\ObjectManager.cpp" />
+    <ClCompile Include="..\..\Internal\Source\Particle.cpp" />
     <ClCompile Include="..\..\Internal\Source\PhysicsManager.cpp" />
     <ClCompile Include="..\..\Internal\Source\SaveManager.cpp" />
     <ClCompile Include="..\..\Internal\Source\SoundManager.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="..\..\Internal\Include\InputManager.h" />
     <ClInclude Include="..\..\Internal\Include\Object.h" />
     <ClInclude Include="..\..\Internal\Include\ObjectManager.h" />
+    <ClInclude Include="..\..\Internal\Include\Particle.h" />
     <ClInclude Include="..\..\Internal\Include\PhysicsManager.h" />
     <ClInclude Include="..\..\Internal\Include\SaveManager.h" />
     <ClInclude Include="..\..\Internal\Include\Singleton.h" />
