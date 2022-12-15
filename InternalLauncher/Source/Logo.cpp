@@ -7,9 +7,21 @@ void Logo::Update()
 		tM = TimeManager::GetInstancePtr();
 		timerId = tM->StartTimer(frameTime);
 	}
-	
 
-	if (!tM->IsTimerActive(timerId)) {
+	//Easter Egg!
+	if (InputManager::GetInstance().MouseLeftClick()) {
+
+		int frameXSeparation = GraphicManager::GetInstance().GetWidth() / (23 - 9); //Frame selection is 9-23
+		int frameSelection = (InputManager::GetInstance().GetMouseX() - frameXSeparation) / frameXSeparation;
+
+		if (frameSelection > 0 && frameSelection < (23 - 9)) {
+			//Invert the frame selection
+			currentFrame = 23 - frameSelection;
+			SetTexture("L(" + std::to_string(currentFrame) + ")");
+		}
+
+	}
+	else if (!tM->IsTimerActive(timerId)) {
 		
 		SetTexture("L(" + std::to_string(currentFrame) + ")");
 
@@ -18,4 +30,6 @@ void Logo::Update()
 		
 		timerId = tM->StartTimer(frameTime);
 	}
+
+	
 }
