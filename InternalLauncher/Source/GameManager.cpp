@@ -19,6 +19,7 @@ void GameManager::Update()
 		std::string buttonPath = "../../Media/images/Buttons";
 		std::string pixelFontPath = "../../Media/fonts/PIXEL.TTF";
 		std::string bgMusicPath = "../../Media/sounds/feedthemachine.mp3";
+		std::string logoPath = "../../Media/images/3dLogo";
 		
 #endif
 #if (!_DEBUG)
@@ -26,6 +27,7 @@ void GameManager::Update()
 		std::string buttonPath = "./Media/images/Buttons";
 		std::string pixelFontPath = "./Media/fonts/PIXEL.TTF";
 		std::string bgMusicPath = "./Media/sounds/feedthemachine.mp3";
+		std::string logoPath = "./Media/images/3dLogo";
 #endif
 
 
@@ -51,6 +53,12 @@ void GameManager::Update()
 		//create text
 		Text* BaseText = new Text("BaseTxt", "Launcher", { 255,255,255 }, grM->GetWidth()/2-120, grM->GetHeight()/6, "pixel_40");
 		grM->AddText(BaseText);
+
+		//create logo
+		Logo* logo = new Logo("Logo", grM->GetWidth() / 2 - 100, grM->GetHeight() / 2 - 100, 200, 200);
+		grM->LoadTexturesFromPath(logoPath, logo);
+		oM->AddObject(logo);
+		
 
 	}
 	

@@ -26,6 +26,7 @@ private:
 	Uint32 previousTime = 0;
 
 	Uint32 currentTime = 0;
+	Uint32 getCurrentTime() const { return currentTime; }
 
 	// Delta time
 	float mDeltaTime;

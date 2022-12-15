@@ -4,6 +4,7 @@
 #include "Object.h"
 #include <vector>
 #include "Button.h"
+#include "Logo.h"
 #include <string>
 #include "SoundManager.h"
 #include "TimeManager.h"

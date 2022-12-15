@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\InternalLauncher\Include\Logo.h" />
     <ClInclude Include="..\..\InternalLauncher\Include\Button.h" />
     <ClInclude Include="..\..\InternalLauncher\Include\GameManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\InternalLauncher\Source\Logo.cpp" />
     <ClCompile Include="..\..\InternalLauncher\Source\Button.cpp" />
     <ClCompile Include="..\..\InternalLauncher\Source\GameManager.cpp" />
     <ClCompile Include="..\..\InternalLauncher\Source\main.cpp" />
