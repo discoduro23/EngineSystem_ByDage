@@ -55,11 +55,10 @@ void GameManager::Update()
 		grM->AddText(BaseText);
 
 		//create logo
-		Logo* logo = new Logo("Logo", grM->GetWidth() / 2 - 100, grM->GetHeight() / 2 - 100, 200, 200);
+		Logo* logo = new Logo("Logo", grM->GetWidth() / 2 - 100, grM->GetHeight() / 2 + 50, 200, 200);
 		grM->LoadTexturesFromPath(logoPath, logo);
 		oM->AddObject(logo);
 		
-
 	}
 	
 }

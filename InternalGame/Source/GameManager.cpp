@@ -94,7 +94,7 @@ void GameManager::Update()
 
 	//Change texts
 	grM->ChangeWText("timer", std::to_string(1 + (int)tM->GetTimer(timerId)));
-	grM->ChangeWText("FPSValue", std::to_string((int)tM->GetFPS()));
+	grM->ChangeWText("FPSValue", std::to_string(tM->GetFPS()));
 
 	//Check if the timer is over
 	if (!tM->IsTimerActive(timerId)) {
