@@ -1,6 +1,22 @@
 #include "Object.h"
 
 
+void Object::UpdateParticles()
+{
+	for (int i = 0; i < TOTAL_PARTICLES; i++)
+	{
+		if (mParticles[i]->IsDead())
+		{
+			delete mParticles[i];
+			mParticles[i] = new Particle(mPosX, mPosY, mParticleTexture);
+		}
+		else
+		{
+			mParticles[i]->Update();
+		}
+	}
+}
+
 void Object::Update()
 {
 	//console log

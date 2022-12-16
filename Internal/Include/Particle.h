@@ -8,22 +8,10 @@
 
 class Particle
 {
-public:
-    //Initialize position and animation
-    Particle(int x, int y, SDL_Texture* texture, SDL_Texture* brightTexture = nullptr);
-
-    //Shows the particle
-    void render();
-
-    //Checks if particle is dead
-    bool IsDead();
-
-    //Update
-	void Update();
 
 private:
     //Offsets
-    int mPosX, mPosY;
+    float mPosX, mPosY;
 
     //Current frame of animation
     int mFrame;
@@ -33,4 +21,20 @@ private:
 
     //Type of particle
     SDL_Texture* mBrightTexture;
+    
+public:
+    //Initialize position and animation
+    Particle(float x, float y, SDL_Texture* texture, SDL_Texture* brightTexture = nullptr);
+    
+    //Checks if particle is dead
+    bool IsDead();
+
+    //Update
+	void Update();
+
+    SDL_Texture* getParticleTexture();
+    float getPosX() { return mPosX; };
+    float getPosY() { return mPosY; };
+
+
 };

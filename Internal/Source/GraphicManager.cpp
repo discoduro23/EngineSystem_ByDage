@@ -200,6 +200,14 @@ void GraphicManager::RenderAll()
 				0.0,
 				nullptr,
 				SDL_FLIP_NONE);
+
+			//There are particles?
+			if (ob->GetParticle() != nullptr)
+			{
+				//Render the particle
+				RenderParticle(ob);
+			}
+			
 		}
 	}
 	

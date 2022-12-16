@@ -22,6 +22,10 @@ void GameManager::Update()
 		std::string goblinDrumPath = "../../Media/sounds/GoblinDrum.wav";
 		std::string knightSlashPath = "../../Media/sounds/KnightSlash.wav";
 		std::string bgMusicPath = "../../Media/sounds/feedthemachine.mp3";
+		std::string particleRedPath = "../../Media/images/Particle/red.bmp";
+		std::string particleGreenPath = "../../Media/images/Particle/green.bmp";
+		std::string particleBluePath = "../../Media/images/Particle/blue.bmp";
+		std::string particleShimmerPath = "../../Media/images/Particle/shimmer.bmp";
 		
 #endif
 #if (!_DEBUG)
@@ -32,6 +36,10 @@ void GameManager::Update()
 		std::string goblinDrumPath = "./Media/sounds/GoblinDrum.wav";
 		std::string knightSlashPath = "./Media/sounds/KnightSlash.wav";
 		std::string bgMusicPath = "./Media/sounds/feedthemachine.mp3";
+		std::string particleRedPath = "./Media/images/Particle/red.bmp";
+		std::string particleGreenPath = "./Media/images/Particle/green.bmp";
+		std::string particleBluePath = "./Media/images/Particle/blue.bmp";
+		std::string particleShimmerPath = "./Media/images/Particle/shimmer.bmp";
 #endif
 
 

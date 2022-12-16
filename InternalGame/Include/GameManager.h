@@ -33,8 +33,8 @@ private:
 
 	
 public:
-	GameManager(std::string const& name, int x = 0, int y = 0, int w = 0, int h = 0, SDL_Texture* texture = nullptr) 
-		: Object(name, x, y, w, h, texture) {}
+	GameManager(std::string const& name, int x = 0, int y = 0, int w = 0, int h = 0, SDL_Texture* texture = nullptr, SDL_Texture* particleTexture = nullptr, SDL_Texture* brightTexture = nullptr)
+		: Object(name, x, y, w, h, texture, particleTexture, brightTexture, ) {}
 		
 	void Update() override;
 	
