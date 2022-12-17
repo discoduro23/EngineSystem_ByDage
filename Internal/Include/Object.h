@@ -42,13 +42,13 @@ protected:
 
 	
 public:
-	Object(std::string const& name, float x = 0, float y = 0, int w = 5, int h = 5, bool isCol = false, SDL_Texture* texture = nullptr, SDL_Texture* particleTexture = nullptr, SDL_Texture* brightTexture = nullptr)
+	Object(std::string const& name, float x = 0, float y = 0, int w = 5, int h = 5, bool isCol = false, SDL_Texture* texture = nullptr)
 	: mName(name), mPosX(x), mPosY(y), mWidth(w), mHeight(h), isCollisionable(isCol), mTexture(texture) {
 		
 	};
 	
-	Object(std::string const& name, float x = 0, float y = 0, int w = 5, int h = 5, SDL_Texture* particleTexture = nullptr, SDL_Texture* brightTexture = nullptr, bool isCol = false)
-		: mName(name), mPosX(x), mPosY(y), mWidth(w), mHeight(h), isCollisionable(isCol) {
+	Object(std::string const& name, SDL_Texture* texture = nullptr, SDL_Texture* particleTexture = nullptr, SDL_Texture* brightTexture = nullptr, float x = 0, float y = 0, int w = 5, int h = 5, bool isCol = false)
+		: mName(name), mPosX(x), mPosY(y), mWidth(w), mHeight(h), isCollisionable(isCol), mTexture(texture) {
 		for (size_t i = 0; i < TOTAL_PARTICLES; i++)
 		{
 			mParticles.push_back(new Particle(mPosX, mPosY, mWidth, mHeight, particleTexture, brightTexture));

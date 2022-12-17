@@ -54,17 +54,15 @@ void GameManager::Update()
 
 
 		//Make the knight
-		knight = new Knight("knight", grM->GetWidth() / 2 - 130, grM->GetHeight() / 2, 20, 20, 0, 
-			grM->LoadTexture(particleBluePath), grM->LoadTexture(particleShimmerPath), true);
+		knight = new Knight("knight", nullptr, grM->LoadTexture(particleBluePath), grM->LoadTexture(particleShimmerPath),
+			grM->GetWidth() / 2 - 130, grM->GetHeight() / 2, 20, 20, 0, true);
 		grM->LoadTexturesFromPath(knightFolderPath, knight);
 		knight->SetTexture("Step1");
-
-		//"Add object" section
 		oM->AddObject(knight);
 
 		//Make the goblin
-		goblin = new Goblin("goblin", grM->GetWidth() / 2 + 100, grM->GetHeight() / 2, 20, 20, 1,
-			grM->LoadTexture(particleGreenPath), grM->LoadTexture(particleShimmerPath), true);
+		goblin = new Goblin("goblin", nullptr, grM->LoadTexture(particleGreenPath), grM->LoadTexture(particleShimmerPath), 
+			grM->GetWidth() / 2 + 100, grM->GetHeight() / 2, 20, 20, 1, true);
 		grM->LoadTexturesFromPath(goblinFolderPath, goblin);
 		goblin->SetTexture("Step1");
 		oM->AddObject(goblin);
