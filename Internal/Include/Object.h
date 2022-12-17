@@ -12,7 +12,7 @@
 #include <vector>
 #include "Particle.h"
 
-#define TOTAL_PARTICLES 20
+#define TOTAL_PARTICLES (size_t)10
 
 class Object
 {
@@ -37,21 +37,21 @@ protected:
 	std::map<std::string, SDL_Texture*> mTextureArray;
 
 	//Particles
-	Particle* mParticles[TOTAL_PARTICLES];
-	
-	//The particle texture
-	SDL_Texture* mParticleTexture;
+	std::vector<Particle*> mParticles;
 
 
 	
 public:
-	Object(std::string const& name, float x = 0, float y = 0, int w = 0, int h = 0, bool isCol = false, SDL_Texture* texture = nullptr, SDL_Texture* particleTexture = nullptr, SDL_Texture* brightTexture = nullptr)
-	: mName(name), mPosX(x), mPosY(y), mWidth(w), mHeight(h), isCollisionable(isCol), mTexture(texture), mParticleTexture(particleTexture), mBrightTexture(brightTexture){
+	Object(std::string const& name, float x = 0, float y = 0, int w = 5, int h = 5, bool isCol = false, SDL_Texture* texture = nullptr, SDL_Texture* particleTexture = nullptr, SDL_Texture* brightTexture = nullptr)
+	: mName(name), mPosX(x), mPosY(y), mWidth(w), mHeight(h), isCollisionable(isCol), mTexture(texture) {
 		
-		//Initialize particles
-		for (int i = 0; i < TOTAL_PARTICLES; i++)
+	};
+	
+	Object(std::string const& name, float x = 0, float y = 0, int w = 5, int h = 5, SDL_Texture* particleTexture = nullptr, SDL_Texture* brightTexture = nullptr, bool isCol = false)
+		: mName(name), mPosX(x), mPosY(y), mWidth(w), mHeight(h), isCollisionable(isCol) {
+		for (size_t i = 0; i < TOTAL_PARTICLES; i++)
 		{
-			mParticles[i] = new Particle(mPosX, mPosY, particleTexture, brightTexture);
+			mParticles.push_back(new Particle(mPosX, mPosY, mWidth, mHeight, particleTexture, brightTexture));
 		}
 	};
 	
@@ -72,13 +72,8 @@ public:
 
 	//Particle
 	void UpdateParticles();
-	size_t GetParticleCount() const { return TOTAL_PARTICLES; }
+	size_t GetParticleCount() const { return mParticles.size(); }
 	Particle* GetParticle(int index) const { return mParticles[index]; }
-
-	//Pass the vector array
-	std::vector<Particle*> GetParticles() { return std::vector<Particle*>(mParticles, mParticles + TOTAL_PARTICLES); }
-	
-	
 	
 	
 	SDL_Rect GetRect() const { return { (int)mPosX, (int)mPosY, mWidth, mHeight }; };

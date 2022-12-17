@@ -190,9 +190,27 @@ void GraphicManager::RenderAll()
 	for (int i = 0; i < size;i++) {
 		ob = ObjectManager::GetInstance().GetAObject(i);
 		if (ob->GetTexture() != nullptr) {
+			//There are particles?
+			if (ob->GetParticleCount() > 0)
+			{
+				ob->UpdateParticles();
+				for (int j = 0; j < ob->GetParticleCount(); j++)
+				{
+					Render(
+						ob->GetParticle(j)->GetTexture(),
+						ob->GetParticle(j)->GetX(),
+						ob->GetParticle(j)->GetY(),
+						5,
+						5,
+						nullptr,
+						0.0,
+						nullptr,
+						SDL_FLIP_NONE);
+				}
+			}
 			Render(
-				ob->GetTexture(), 
-				ob->GetX(), 
+				ob->GetTexture(),
+				ob->GetX(),
 				ob->GetY(),
 				ob->GetWidth(),
 				ob->GetHeight(),
@@ -200,13 +218,6 @@ void GraphicManager::RenderAll()
 				0.0,
 				nullptr,
 				SDL_FLIP_NONE);
-
-			//There are particles?
-			if (ob->GetParticle() != nullptr)
-			{
-				//Render the particle
-				RenderParticle(ob);
-			}
 			
 		}
 	}

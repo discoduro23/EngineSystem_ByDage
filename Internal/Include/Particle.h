@@ -3,8 +3,9 @@
 #include <SDL_image.h>
 #include <stdio.h>
 #include <cstdlib>
+#include <ctime>
 
-#define TIME_ALIVE 10
+#define TIME_ALIVE 20
 
 class Particle
 {
@@ -13,8 +14,6 @@ private:
     //Offsets
     float mPosX, mPosY;
 
-    //Current frame of animation
-    int mFrame;
 
     //Type of particle
     SDL_Texture* mTexture;
@@ -23,18 +22,23 @@ private:
     SDL_Texture* mBrightTexture;
     
 public:
+
+    //Current frame of animation
+    int mFrame;
     //Initialize position and animation
-    Particle(float x, float y, SDL_Texture* texture, SDL_Texture* brightTexture = nullptr);
+    Particle(float x, float y, int width, int height, SDL_Texture* texture, SDL_Texture* brightTexture);
     
     //Checks if particle is dead
     bool IsDead();
+    void Respawn(float x, float y, int width , int height);
 
     //Update
 	void Update();
 
-    SDL_Texture* getParticleTexture();
-    float getPosX() { return mPosX; };
-    float getPosY() { return mPosY; };
+    SDL_Texture* GetTexture();
+    float GetX() const { return mPosX; };
+    float GetY() const { return mPosY; };
+    
 
 
 };

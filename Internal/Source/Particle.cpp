@@ -1,29 +1,53 @@
 #include "Particle.h"
 
-Particle::Particle(float x, float y, SDL_Texture* texture, SDL_Texture* brightTexture = nullptr) 
+Particle::Particle(float x, float y, int width , int height,  SDL_Texture* texture, SDL_Texture* brightTexture = nullptr) 
     : mTexture(texture), mBrightTexture(brightTexture)
 {
-
-    //Set offsets
-    mPosX = x - 50 + (rand() % 25);
-    mPosY = y - 50 + (rand() % 25);
-
+    //Set offsets randomly
+	if (width == 0 || height == 0)
+	{
+		mPosX = x - 5 + (rand() % 25);
+		mPosY = y - 5 + (rand() % 25);
+	}
+	else
+	{
+        mPosX = x + (rand() % width - width / 2);
+        mPosY = y + (rand() % height - height / 2);
+	}
+    
     //Initialize animation
     mFrame = rand() % 5;
 }
 
 bool Particle::IsDead()
 {
-	return TIME_ALIVE > mFrame;
+	return TIME_ALIVE < mFrame;
 }
 
 void Particle::Update()
 {
-	
+    srand(time(nullptr));
 	mFrame++;
 }
 
-SDL_Texture* Particle::getParticleTexture()
+void Particle::Respawn(float x, float y, int width, int height)
+{
+    if (width == 0 || height == 0)
+    {
+        mPosX = x - 5 + (rand() % 25);
+        mPosY = y - 5 + (rand() % 25);
+    }
+    else
+    {
+        mPosX = x + (rand() % width - width / 2);
+        mPosY = y + (rand() % height - height / 2);
+    }
+
+    //Initialize animation
+    mFrame = rand() % 5;
+}
+
+SDL_Texture* Particle::GetTexture()
 {
 
     if (mBrightTexture != nullptr)
