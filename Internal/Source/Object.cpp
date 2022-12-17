@@ -3,9 +3,9 @@
 
 void Object::UpdateParticles()
 {
+	
 	for (int i = 0; i < TOTAL_PARTICLES; i++)
 	{
-		
 		if (mParticles[i]->IsDead())
 		{
 			mParticles[i]->Respawn(mPosX, mPosY, mHeight, mWidth);

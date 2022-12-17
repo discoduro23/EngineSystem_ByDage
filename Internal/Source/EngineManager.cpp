@@ -4,6 +4,8 @@ int PostUpdateThread(void* data);
 
 bool EngineManager::Init()
 {
+
+	srand(time(nullptr));
 	//Create Engine
 	TimeManager::CreateSingleton();
 	InputManager::CreateSingleton();
@@ -113,9 +115,13 @@ void EngineManager::Close() {
 //threads
 void EngineManager::MuxUpdate() {
 	
+	//PreUpdate
 	PreUpdate();
+	
+	//Update
 	Update();
 	
+	//POSUPDATE
 	TimeManager* tM = TimeManager::GetInstancePtr();	
 	if (tM->GetFPStimer() > 1.0f){
 		tM->ResetFPStimer();

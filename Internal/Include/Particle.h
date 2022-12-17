@@ -3,7 +3,8 @@
 #include <SDL_image.h>
 #include <stdio.h>
 #include <cstdlib>
-#include <ctime>
+#include <iostream>
+#include <random>
 
 #define TIME_ALIVE 20
 
