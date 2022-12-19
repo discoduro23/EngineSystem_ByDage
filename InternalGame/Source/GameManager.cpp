@@ -6,7 +6,6 @@
 void GameManager::Update()
 {
 
-
 	//All inside isInit will be executed only once and at start
 	if (isInit) {
 		grM = GraphicManager::GetInstancePtr();
@@ -22,9 +21,8 @@ void GameManager::Update()
 		std::string goblinDrumPath = "../../Media/sounds/GoblinDrum.wav";
 		std::string knightSlashPath = "../../Media/sounds/KnightSlash.wav";
 		std::string bgMusicPath = "../../Media/sounds/feedthemachine.mp3";
-		std::string particleRedPath = "../../Media/images/Particle/red.bmp";
-		std::string particleGreenPath = "../../Media/images/Particle/green.bmp";
 		std::string particleBluePath = "../../Media/images/Particle/blue.bmp";
+		std::string particleRedPath = "../../Media/images/Particle/red.bmp";
 		std::string particleShimmerPath = "../../Media/images/Particle/shimmer.bmp";
 		
 #endif
@@ -36,9 +34,8 @@ void GameManager::Update()
 		std::string goblinDrumPath = "./Media/sounds/GoblinDrum.wav";
 		std::string knightSlashPath = "./Media/sounds/KnightSlash.wav";
 		std::string bgMusicPath = "./Media/sounds/feedthemachine.mp3";
-		std::string particleRedPath = "./Media/images/Particle/red.bmp";
-		std::string particleGreenPath = "./Media/images/Particle/green.bmp";
 		std::string particleBluePath = "./Media/images/Particle/blue.bmp";
+		std::string particleRedPath = "../../Media/images/Particle/red.bmp";
 		std::string particleShimmerPath = "./Media/images/Particle/shimmer.bmp";
 #endif
 
@@ -61,7 +58,7 @@ void GameManager::Update()
 		oM->AddObject(knight);
 
 		//Make the goblin
-		goblin = new Goblin("goblin", nullptr, grM->LoadTexture(particleGreenPath), grM->LoadTexture(particleShimmerPath), 
+		goblin = new Goblin("goblin", nullptr, grM->LoadTexture(particleRedPath), grM->LoadTexture(particleShimmerPath),
 			grM->GetWidth() / 2 + 100, grM->GetHeight() / 2, 20, 20, 1, true);
 		grM->LoadTexturesFromPath(goblinFolderPath, goblin);
 		goblin->SetTexture("Step1");

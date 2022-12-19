@@ -38,6 +38,7 @@ bool InputManager::MouseRightClick(void)
 
 
 
+
 //SDL_SCANCODE_UP
 //SDL_SCANCODE_DOWN
 //SDL_SCANCODE_LEFT

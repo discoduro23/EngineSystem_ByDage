@@ -40,4 +40,5 @@ void Knight::Update()
 
 	if ((int)(TimeManager::GetInstance().GetChrono(ChronoID) * 10) % 3 == 0) SetTexture("Step1");
 	else SetTexture("Step2");
+
 }

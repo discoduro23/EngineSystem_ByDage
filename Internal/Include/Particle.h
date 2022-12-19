@@ -34,12 +34,11 @@ public:
     void Respawn(float x, float y, int width , int height);
 
     //Update
-	void Update();
+	virtual void Update();
 
     SDL_Texture* GetTexture();
     float GetX() const { return mPosX; };
     float GetY() const { return mPosY; };
-    
-
-
+	void SetX(float x) { mPosX = x; };
+	void SetY(float y) { mPosY = y; };
 };

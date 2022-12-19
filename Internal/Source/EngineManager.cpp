@@ -35,6 +35,7 @@ bool EngineManager::Init()
 		return true;
 	}
 	
+	//check joysticks 
 	
 	return false;
 }

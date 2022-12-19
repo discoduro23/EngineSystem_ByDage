@@ -5,6 +5,8 @@
 #include <vector>
 #include <iostream>
 
+#define JOYSTICK_DEAD_ZONE 8000
+
 /**
 Input Manager class
 */
@@ -26,6 +28,7 @@ private:
   };
 
   std::vector<float> mousePosition();
+
   /*****************************************************************************/
 
 public:
@@ -39,7 +42,6 @@ public:
   
   bool MouseLeftClick(void);
   bool MouseRightClick(void);
-  
   /*****************************************************************************/
 
 };
