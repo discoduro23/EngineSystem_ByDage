@@ -98,8 +98,6 @@ void GameManager::Update()
 	}
 
 
-	grM->SetScale(4.0f, 4.0f);
-
 	
 	//Update texts
 	grM->ChangeWText("timer", std::to_string(1 + (int)tM->GetTimer(timerId)));
