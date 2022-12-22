@@ -157,6 +157,27 @@ bool GraphicManager::LoadTexturesFromPath(std::string relativePath, Object* obj)
 	return false;
 }
 
+void GraphicManager::SetViewport(SDL_Rect* rect)
+{
+	SDL_RenderSetViewport(mRenderer, rect);
+}
+
+void GraphicManager::SetViewport(int x, int y, int w, int h)
+{
+	SDL_Rect rect = { x, y, w, h };
+	SDL_RenderSetViewport(mRenderer, &rect);
+}
+
+void GraphicManager::SetScale(float scale)
+{
+	SDL_RenderSetScale(mRenderer, scale, scale);
+}
+
+void GraphicManager::SetScale(float scaleX, float scaleY)
+{
+	SDL_RenderSetScale(mRenderer, scaleX, scaleY);
+}
+
 void  GraphicManager::Render(SDL_Texture* texture, int x, int y, int w, int h, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip)
 {
 	if (texture == NULL)

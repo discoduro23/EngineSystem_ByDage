@@ -84,6 +84,14 @@ public:
 	SDL_Texture* LoadTexture(std::string);
 
 	bool LoadTexturesFromPath(std::string relativePath, Object* obj);
+
+	// Viewport
+	void SetViewport(SDL_Rect* rect);
+	void SetViewport(int x, int y, int w, int h);
+
+	// Scale
+	void SetScale(float scale);
+	void SetScale(float scaleX, float scaleY);
 	
 	// Get the renderer
 	SDL_Renderer* GetRenderer();

@@ -97,7 +97,11 @@ void GameManager::Update()
 
 	}
 
-	//Change texts
+
+	grM->SetScale(4.0f, 4.0f);
+
+	
+	//Update texts
 	grM->ChangeWText("timer", std::to_string(1 + (int)tM->GetTimer(timerId)));
 	grM->ChangeWText("FPSValue", std::to_string(tM->GetFPS()));
 
@@ -109,7 +113,7 @@ void GameManager::Update()
 		grM->ChangeWText("Score", std::to_string(score));
 	}
 
-	//Check collisions between
+	//Check collisions between 
 	if (PhysicsManager::GetInstance().CheckCollision(knight->GetRect(), goblin->GetRect())) {
 		score++;
 		sM->PlayASound(-1, "KnightSlash");
@@ -122,13 +126,10 @@ void GameManager::Update()
 
 	//Save and load (K to Save, L to load)
 	if (InputManager::GetInstance().GetKey(SDL_SCANCODE_K))
-	{
 		SaveGameState();
-	}
+	
 	if (InputManager::GetInstance().GetKey(SDL_SCANCODE_L))
-	{
 		LoadGameState();
-	}
 }
 
 void GameManager::Destroy()

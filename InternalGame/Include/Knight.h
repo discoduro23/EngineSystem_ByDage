@@ -9,7 +9,7 @@ private:
 	//The velocity of the dot
 	float mVelX = 10, mVelY = 10;
 
-	float velMax = 250;
+	float velMax = 200;
 
 	int moveMode = 0;
 
