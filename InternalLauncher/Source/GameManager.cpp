@@ -15,11 +15,11 @@ void GameManager::Update()
 		sM = SoundManager::GetInstancePtr();
 		
 #if (_DEBUG)
-		std::string backgroundPath = "../../Media/images/launcher.jpg";
-		std::string buttonPath = "../../Media/images/Buttons";
-		std::string pixelFontPath = "../../Media/fonts/PIXEL.TTF";
-		std::string bgMusicPath = "../../Media/sounds/feedthemachine.mp3";
-		std::string logoPath = "../../Media/images/3dLogo";
+		std::string backgroundPath = "../../Media/Launcher/images/launcher.jpg";
+		std::string buttonPath = "../../Media/Launcher/images/Buttons";
+		std::string pixelFontPath = "../../Media/Launcher/fonts/PIXEL.TTF";
+		std::string bgMusicPath = "../../Media/Launcher/sounds/feedthemachine.mp3";
+		std::string logoPath = "../../Media/Launcher/images/3dLogo";
 		
 #endif
 #if (!_DEBUG)

@@ -14,16 +14,16 @@ void GameManager::Update()
 		sM = SoundManager::GetInstancePtr();
 		
 #if (_DEBUG)
-		std::string backgroundPath = "../../Media/images/background.png";
-		std::string pixelFontPath = "../../Media/fonts/PIXEL.TTF";
-		std::string knightFolderPath = "../../Media/images/Knight/";
-		std::string goblinFolderPath = "../../Media/images/Goblin/";
-		std::string goblinDrumPath = "../../Media/sounds/GoblinDrum.wav";
-		std::string knightSlashPath = "../../Media/sounds/KnightSlash.wav";
-		std::string bgMusicPath = "../../Media/sounds/feedthemachine.mp3";
-		std::string particleBluePath = "../../Media/images/Particle/blue.bmp";
-		std::string particleRedPath = "../../Media/images/Particle/red.bmp";
-		std::string particleShimmerPath = "../../Media/images/Particle/shimmer.bmp";
+		std::string backgroundPath = "../../Media/HideAndWhere/images/background.png";
+		std::string pixelFontPath = "../../Media/HideAndWhere/fonts/PIXEL.TTF";
+		std::string knightFolderPath = "../../Media/HideAndWhere/images/Knight/";
+		std::string goblinFolderPath = "../../Media/HideAndWhere/images/Goblin/";
+		std::string goblinDrumPath = "../../Media/HideAndWhere/sounds/GoblinDrum.wav";
+		std::string knightSlashPath = "../../Media/HideAndWhere/sounds/KnightSlash.wav";
+		std::string bgMusicPath = "../../Media/HideAndWhere/sounds/feedthemachine.mp3";
+		std::string particleBluePath = "../../Media/HideAndWhere/images/Particle/blue.bmp";
+		std::string particleRedPath = "../../Media/HideAndWhere/images/Particle/red.bmp";
+		std::string particleShimmerPath = "../../Media/HideAndWhere/images/Particle/shimmer.bmp";
 		
 #endif
 #if (!_DEBUG)

@@ -11,14 +11,14 @@ void GameManager::Update()
 		//Load Zone!
 #if _DEBUG
 
-		std::string backgroundPath = "../../Media/images/background.png";
-		std::string dotPath = "../../Media/images/Dot/dot.bmp";
-		std::string dotARROWPath = "../../Media/images/Dot/dotARROW.bmp";
-		std::string dotWASDPath = "../../Media/images/Dot/dotWASD.bmp";
-		std::string particleRedPath = "../../Media/images/Particle/red.bmp";
-		std::string particleGreenPath = "../../Media/images/Particle/green.bmp";
-		std::string particleBluePath = "../../Media/images/Particle/blue.bmp";
-		std::string particleShimmerPath = "../../Media/images/Particle/shimmer.bmp";
+		std::string backgroundPath = "../../Media/SuperSecretBalls/images/background.png";
+		std::string dotPath = "../../Media/SuperSecretBalls/images/Dot/dot.bmp";
+		std::string dotARROWPath = "../../Media/SuperSecretBalls/images/Dot/dotARROW.bmp";
+		std::string dotWASDPath = "../../Media/SuperSecretBalls/images/Dot/dotWASD.bmp";
+		std::string particleRedPath = "../../Media/SuperSecretBalls/images/Particle/red.bmp";
+		std::string particleGreenPath = "../../Media/SuperSecretBalls/images/Particle/green.bmp";
+		std::string particleBluePath = "../../Media/SuperSecretBalls/images/Particle/blue.bmp";
+		std::string particleShimmerPath = "../../Media/SuperSecretBalls/images/Particle/shimmer.bmp";
 		
 #endif
 #if (!_DEBUG)
