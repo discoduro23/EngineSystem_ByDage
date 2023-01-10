@@ -18,6 +18,23 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\InternalGame2\Include\Cloud.h" />
+    <ClInclude Include="..\..\InternalGame2\Include\Coin.h" />
+    <ClInclude Include="..\..\InternalGame2\Include\GameManager.h" />
+    <ClInclude Include="..\..\InternalGame2\Include\Platform.h" />
+    <ClInclude Include="..\..\InternalGame2\Include\Player.h" />
+    <ClInclude Include="..\..\InternalGame2\Include\Spark.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\InternalGame2\Source\Cloud.cpp" />
+    <ClCompile Include="..\..\InternalGame2\Source\Coin.cpp" />
+    <ClCompile Include="..\..\InternalGame2\Source\GameManager.cpp" />
+    <ClCompile Include="..\..\InternalGame2\Source\main.cpp" />
+    <ClCompile Include="..\..\InternalGame2\Source\Platform.cpp" />
+    <ClCompile Include="..\..\InternalGame2\Source\Player.cpp" />
+    <ClCompile Include="..\..\InternalGame2\Source\Spark.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -132,9 +149,6 @@
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;Engines-SDL.lib;SDL2_mixer.lib;SDL2_ttf.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
