@@ -54,18 +54,12 @@ void GameManager::Update()
 
 
 		//Make the Player
-		Player = new Player("knight", nullptr, grM->LoadTexture(particleBluePath), grM->LoadTexture(particleShimmerPath),
+		player = new Player("knight", nullptr, grM->LoadTexture(particleBluePath), grM->LoadTexture(particleShimmerPath),
 			grM->GetWidth() / 2 - 130, grM->GetHeight() / 2, 20, 20, 0, true);
 		grM->LoadTexturesFromPath(knightFolderPath, knight);
 		knight->SetTexture("Step1");
 		oM->AddObject(knight);
 
-		//Make the goblin
-		goblin = new Goblin("goblin", nullptr, grM->LoadTexture(particleRedPath), grM->LoadTexture(particleShimmerPath),
-			grM->GetWidth() / 2 + 100, grM->GetHeight() / 2, 20, 20, 1, true);
-		grM->LoadTexturesFromPath(goblinFolderPath, goblin);
-		goblin->SetTexture("Step1");
-		oM->AddObject(goblin);
 
 		//Sounds
 		sM->LoadSound(goblinDrumPath, "GoblinDrum");

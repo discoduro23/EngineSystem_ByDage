@@ -18,6 +18,7 @@ private:
 	int timerId = 0;
 
 	//objects
+	Player* player = nullptr;
 
 
 	//score
