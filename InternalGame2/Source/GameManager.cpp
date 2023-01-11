@@ -14,16 +14,19 @@ void GameManager::Update()
 		sM = SoundManager::GetInstancePtr();
 
 #if (_DEBUG)
-		std::string backgroundPath = "../../Media/HideAndWhere/images/background.png";
-		std::string pixelFontPath = "../../Media/HideAndWhere/fonts/PIXEL.TTF";
-		std::string knightFolderPath = "../../Media/HideAndWhere/images/Knight/";
-		std::string goblinFolderPath = "../../Media/HideAndWhere/images/Goblin/";
-		std::string goblinDrumPath = "../../Media/HideAndWhere/sounds/GoblinDrum.wav";
-		std::string knightSlashPath = "../../Media/HideAndWhere/sounds/KnightSlash.wav";
-		std::string bgMusicPath = "../../Media/HideAndWhere/sounds/feedthemachine.mp3";
-		std::string particleBluePath = "../../Media/HideAndWhere/images/Particle/blue.bmp";
-		std::string particleRedPath = "../../Media/HideAndWhere/images/Particle/red.bmp";
-		std::string particleShimmerPath = "../../Media/HideAndWhere/images/Particle/shimmer.bmp";
+		//std::string backgroundPath = "../../Media/SusJump/images/background.png";
+		std::string pixelFontPath = "../../Media/SusJump/fonts/PIXEL.TTF";
+		std::string playerFolderPath = "../../Media/SusJump/player/AmongusBody/";
+		std::string playerHeadFolderPath = "../../Media/SusJump/player/Head/";
+		std::string worldFolderPath = "../../Media/SusJump/world/";
+		
+		/*
+		std::string goblinDrumPath = "../../Media/SusJump/sounds/GoblinDrum.wav";
+		std::string knightSlashPath = "../../Media/SusJump/sounds/KnightSlash.wav";
+		std::string bgMusicPath = "../../Media/SusJump/sounds/feedthemachine.mp3";
+		std::string particleBluePath = "../../Media/SusJump/images/Particle/blue.bmp";
+		std::string particleRedPath = "../../Media/SusJump/images/Particle/red.bmp";
+		std::string particleShimmerPath = "../../Media/SusJump/images/Particle/shimmer.bmp";*/
 
 #endif
 #if (!_DEBUG)
@@ -41,7 +44,7 @@ void GameManager::Update()
 
 
 		//Set the background
-		grM->SetBGTexture(grM->LoadTexture(backgroundPath));
+		//grM->SetBGTexture(grM->LoadTexture(backgroundPath));
 
 		//Set fonts
 		grM->loadFont(pixelFontPath, "pixel_40", 40);
@@ -50,8 +53,8 @@ void GameManager::Update()
 		grM->loadFont(pixelFontPath, "pixel_15", 15);
 
 
-		//Make the knight
-		knight = new Knight("knight", nullptr, grM->LoadTexture(particleBluePath), grM->LoadTexture(particleShimmerPath),
+		//Make the Player
+		Player = new Player("knight", nullptr, grM->LoadTexture(particleBluePath), grM->LoadTexture(particleShimmerPath),
 			grM->GetWidth() / 2 - 130, grM->GetHeight() / 2, 20, 20, 0, true);
 		grM->LoadTexturesFromPath(knightFolderPath, knight);
 		knight->SetTexture("Step1");

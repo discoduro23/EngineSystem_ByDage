@@ -11,6 +11,7 @@
 #include "GraphicManager.h"
 #include "PhysicsManager.h"
 #include "SaveManager.h"
+#include "Player.h"
 
 class GameManager :public Object {
 private:
