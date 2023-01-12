@@ -1,25 +1,53 @@
-#pragma once
-#include "Object.h"
-#include "InputManager.h"
-#include "GraphicManager.h"
-#include "TimeManager.h"
+#include <Player.h>
 
-class Player : public Object {
-private:
-	float mVelX = 10, mVelY = 10;
+void Player::move()
+{
+	//move down affected by gravity
+	if (mVelY < velMax)
+		mVelY += gravity * TimeManager::GetInstancePtr()->GetDeltaTime();
 
-	float velMax = 200;
+	if (mVelY <= 0)
+		SetTexture("Body2");
+	else if (mVelY > 0)
+		SetTexture("Body1");
+	//move left and right affected by input
+	if (InputManager::GetInstancePtr()->GetKey(SDL_SCANCODE_A))
+	{
+		if (mVelX > -velMax)
+			mVelX -= 0.5f;
+	}
+	else if (InputManager::GetInstancePtr()->GetKey(SDL_SCANCODE_D))
+	{
+		if (mVelX < velMax)
+			mVelX += 0.5f;
+	}
+	else
+	{
+		if (mVelX > 0)
+			mVelX -= 0.5f;
+		else if (mVelX < 0)
+			mVelX += 0.5f;
+	}
+	
+	//move up affected by input
+	
+	
+	//set the position
+	mPosX += mVelX * TimeManager::GetInstancePtr()->GetDeltaTime();
+	mPosY += mVelY * TimeManager::GetInstancePtr()->GetDeltaTime();
+	
+	//set the head position
+	if (head != nullptr)
+	{
+		if (mVelY < 0)
+			head->SetPosition(mPosX + 10, mPosY - 10);
+		else if (mVelY > 0)
+			head->SetPosition(mPosX + 7, mPosY - 9);
+	}
+}
 
-	int moveMode = 0;
-
-	int ChronoID = 0;
-
-public:
-	Player(std::string name, SDL_Texture* texture = nullptr, SDL_Texture* particleTexture = nullptr, SDL_Texture* brightTexture = nullptr, int x = 0, int y = 0, int w = 0, int h = 0, int moveMode = 0, bool isCol = true)
-		: Object(name, texture, particleTexture, brightTexture, x, y, w, h, isCol), moveMode(moveMode) {};
-
-	//Moves the dot
-	void move();
-
-	void Update() override;
-};
+void Player::Update()
+{
+	move();
+	
+}

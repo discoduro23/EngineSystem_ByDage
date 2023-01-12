@@ -22,6 +22,7 @@
     <ClInclude Include="..\..\InternalGame2\Include\Cloud.h" />
     <ClInclude Include="..\..\InternalGame2\Include\Coin.h" />
     <ClInclude Include="..\..\InternalGame2\Include\GameManager.h" />
+    <ClInclude Include="..\..\InternalGame2\Include\Head.h" />
     <ClInclude Include="..\..\InternalGame2\Include\Platform.h" />
     <ClInclude Include="..\..\InternalGame2\Include\Player.h" />
     <ClInclude Include="..\..\InternalGame2\Include\Spark.h" />
@@ -30,6 +31,7 @@
     <ClCompile Include="..\..\InternalGame2\Source\Cloud.cpp" />
     <ClCompile Include="..\..\InternalGame2\Source\Coin.cpp" />
     <ClCompile Include="..\..\InternalGame2\Source\GameManager.cpp" />
+    <ClCompile Include="..\..\InternalGame2\Source\Head.cpp" />
     <ClCompile Include="..\..\InternalGame2\Source\main.cpp" />
     <ClCompile Include="..\..\InternalGame2\Source\Platform.cpp" />
     <ClCompile Include="..\..\InternalGame2\Source\Player.cpp" />
@@ -121,7 +123,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\External\SDL2_Extension\include;..\..\External\SDL2\include;..\..\Internal\Include;..\..\InternalGame\Include;..\..\External\SDL2_mixer\include;..\..\External\SDL2_ttf\include;..\..\External\SDL_Multithreads\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\External\SDL2_Extension\include;..\..\External\SDL2\include;..\..\Internal\Include;..\..\InternalGame2\Include;..\..\External\SDL2_mixer\include;..\..\External\SDL2_ttf\include;..\..\External\SDL_Multithreads\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,7 +140,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\External\SDL2_Extension\include;..\..\External\SDL2\include;..\..\Internal\Include;..\..\InternalGame\Include;..\..\External\SDL2_mixer\include;..\..\External\SDL2_ttf\include;..\..\External\SDL_Multithreads\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\External\SDL2_Extension\include;..\..\External\SDL2\include;..\..\Internal\Include;..\..\InternalGame2\Include;..\..\External\SDL2_mixer\include;..\..\External\SDL2_ttf\include;..\..\External\SDL_Multithreads\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -1,4 +1,4 @@
-//GAME
+//GAME2
 
 #include <GameManager.h>
 
@@ -14,11 +14,12 @@ void GameManager::Update()
 		sM = SoundManager::GetInstancePtr();
 
 #if (_DEBUG)
-		//std::string backgroundPath = "../../Media/SusJump/images/background.png";
+		std::string backgroundPath = "../../Media/SusJump/background.png";
 		std::string pixelFontPath = "../../Media/SusJump/fonts/PIXEL.TTF";
 		std::string playerFolderPath = "../../Media/SusJump/player/AmongusBody/";
 		std::string playerHeadFolderPath = "../../Media/SusJump/player/Head/";
 		std::string worldFolderPath = "../../Media/SusJump/world/";
+		std::string particlePlayerPath = "../../Media/SusJump/particles/playerParticle.png";
 		
 		/*
 		std::string goblinDrumPath = "../../Media/SusJump/sounds/GoblinDrum.wav";
@@ -38,13 +39,13 @@ void GameManager::Update()
 		std::string knightSlashPath = "./Media/sounds/KnightSlash.wav";
 		std::string bgMusicPath = "./Media/sounds/feedthemachine.mp3";
 		std::string particleBluePath = "./Media/images/Particle/blue.bmp";
-		std::string particleRedPath = "../../Media/images/Particle/red.bmp";
+		std::string particleRedPath = "./Media/images/Particle/red.bmp";
 		std::string particleShimmerPath = "./Media/images/Particle/shimmer.bmp";
 #endif
 
 
 		//Set the background
-		//grM->SetBGTexture(grM->LoadTexture(backgroundPath));
+		grM->SetBGTexture(grM->LoadTexture(backgroundPath));
 
 		//Set fonts
 		grM->loadFont(pixelFontPath, "pixel_40", 40);
@@ -54,69 +55,82 @@ void GameManager::Update()
 
 
 		//Make the Player
-		player = new Player("knight", nullptr, grM->LoadTexture(particleBluePath), grM->LoadTexture(particleShimmerPath),
-			grM->GetWidth() / 2 - 130, grM->GetHeight() / 2, 20, 20, 0, true);
-		grM->LoadTexturesFromPath(knightFolderPath, knight);
-		knight->SetTexture("Step1");
-		oM->AddObject(knight);
+		player = new Player("knight", nullptr, grM->LoadTexture(particlePlayerPath), grM->LoadTexture(particlePlayerPath),
+			grM->GetWidth() / 2 - 130, grM->GetHeight() / 2, 50, 50, 0, true);
+		grM->LoadTexturesFromPath(playerFolderPath, player);
+		player->SetTexture("Body0");
+		oM->AddObject(player);
 
+		//Make the Player Head
+		Head* head = new Head("head", player->GetX(), player->GetY(), player->GetWidth()/1.2, player->GetHeight()/1.5, nullptr, 0, false);
+		grM->LoadTexturesFromPath(playerHeadFolderPath, head);
+		head->SetTexture("amoHead6");
+		oM->AddObject(head);
+		player->SetHead(head);
 
+		//Create the platforms
+		platforms.push_back(new Platform("platform1", grM->GetWidth()/2, grM->GetHeight()*2/3, 100, 25, grM->LoadTexture(worldFolderPath + "platform1.png"), 0, true));
+		grM->LoadTexturesFromPath(worldFolderPath, platforms[0]);
+		platforms[0]->SetTexture("Platform");
+		oM->AddObject(platforms[0]);
+		
+		platforms.push_back(new Platform("platform2", grM->GetWidth() / 2, grM->GetHeight() / 3, 100, 25, grM->LoadTexture(worldFolderPath + "platform1.png"), 0, true));
+		grM->LoadTexturesFromPath(worldFolderPath, platforms[1]);
+		platforms[1]->SetTexture("Platform");
+		oM->AddObject(platforms[1]);
+		
+		
 		//Sounds
-		sM->LoadSound(goblinDrumPath, "GoblinDrum");
-		sM->LoadSound(knightSlashPath, "KnightSlash");
+		//sM->LoadSound(goblinDrumPath, "GoblinDrum");
 
 		//Music By Dream Protocol in pixabay
-		sM->LoadMusic(bgMusicPath, "bgMusic");
+		/*sM->LoadMusic(bgMusicPath, "bgMusic");
 		sM->PlayMusic("bgMusic", -1);
-		sM->SetMusicVolume("bgMusic", 50);
+		sM->SetMusicVolume("bgMusic", 50);*/
 
 		//create text
-		Text* BaseText = new Text("BaseTxt", "Score:", { 255,255,255 }, 170, 150, "pixel_40");
-		grM->AddText(BaseText);
-
-		Text* ScoreText = new Text("Score", "0", { 180,20,20 }, grM->GetWidth() / 2 - 30, grM->GetHeight() / 2, "pixel_60");
-		grM->AddText(ScoreText);
-
-		Text* loseText = new Text("lose", "Goblin Survive Time:", { 255,255,255 }, 40, 40, "pixel_20");
-		grM->AddText(loseText);
-
-		Text* timerText = new Text("timer", "15", { 255,255,255 }, 350, 40, "pixel_20");
-		grM->AddText(timerText);
-
 		Text* Fps = new Text("FPS", "FPS:", { 255,255,255 }, 30, grM->GetHeight() - 50, "pixel_15");
 		grM->AddText(Fps);
 
 		Text* FpsValue = new Text("FPSValue", "0", { 255,255,255 }, 75, grM->GetHeight() - 50, "pixel_15");
 		grM->AddText(FpsValue);
+		
+		Text* Score = new Text("Score", "Score:", { 255,255,255 }, 30, grM->GetHeight() - 70, "pixel_15");
+		grM->AddText(Score);
 
 		//Set the timer
-		timerId = tM->StartTimer(15.0f);
 
+		
+		// if player is moving up, platforms move down
+		if (player->GetVelY() <= 0) {
+			for (auto& platform : platforms) {
+				//set velocity of platforms to velocity
+				platform->SetVelY(+5);
+			}
+		}
+		// if player is moving down, platforms move up
+		else if (player->GetVelY() > 0) {
+			for (auto& platform : platforms) {
+				//set velocity of platforms to velocity
+				platform->SetVelY(0);
+			}
+		}
 	}
 
 
 
 	//Update texts
-	grM->ChangeWText("timer", std::to_string(1 + (int)tM->GetTimer(timerId)));
 	grM->ChangeWText("FPSValue", std::to_string(tM->GetFPS()));
 
-	//Check if the timer is over
-	if (!tM->IsTimerActive(timerId)) {
-		score--;
-		sM->PlayASound(-1, "GoblinDrum");
-		timerId = tM->StartTimer(15.0f);
-		grM->ChangeWText("Score", std::to_string(score));
-	}
 
-	//Check collisions between 
-	if (PhysicsManager::GetInstance().CheckCollision(knight->GetRect(), goblin->GetRect())) {
-		score++;
-		sM->PlayASound(-1, "KnightSlash");
-		goblin->SetX(0 + rand() / (RAND_MAX / ((grM->GetWidth() - goblin->GetWidth()) - 0 + 1) + 1));
-		goblin->SetY(0 + rand() / (RAND_MAX / ((grM->GetHeight() - goblin->GetHeight()) - 0 + 1) + 1));
-		tM->StopTimer(timerId);
-		timerId = tM->StartTimer(10.0f);
-		grM->ChangeWText("Score", std::to_string(score));
+	//Check collisions between foreach platform with player
+	for (auto& platform : platforms) {
+		if (PhysicsManager::GetInstance().CheckCollision(player->GetRect(), platform->GetRect()) && player->GetVelY() > 0 &&
+			player->GetY() + player->GetHeight() < platform->GetY() + platform->GetHeight()) {
+			score++;
+			player->SetVelY(-200);
+			grM->ChangeWText("Score", std::to_string(score));
+		}
 	}
 
 	//Save and load (K to Save, L to load)
@@ -134,26 +148,24 @@ void GameManager::Destroy()
 void GameManager::SaveGameState()
 {
 	std::vector<std::string> saveData;
-	saveData.push_back(std::to_string(score));
+	/*saveData.push_back(std::to_string(score));
 	saveData.push_back(std::to_string(knight->GetX()));
 	saveData.push_back(std::to_string(knight->GetY()));
 	saveData.push_back(std::to_string(goblin->GetX()));
-	saveData.push_back(std::to_string(goblin->GetY()));
+	saveData.push_back(std::to_string(goblin->GetY()));*/
 
 	SaveManager::GetInstance().storeFile(saveData, "Game");
 }
 
 void GameManager::LoadGameState()
 {
-	tM->StopTimer(timerId);
-	timerId = tM->StartTimer(15.0f);
 
 	std::vector<std::string> saveData = SaveManager::GetInstance().readFile("Game");
-	score = std::stoi(saveData[0]);
+	/*score = std::stoi(saveData[0]);
 	knight->SetX(std::stof(saveData[1]));
 	knight->SetY(std::stof(saveData[2]));
 	goblin->SetX(std::stof(saveData[3]));
-	goblin->SetY(std::stof(saveData[4]));
+	goblin->SetY(std::stof(saveData[4]));*/
 
 	grM->ChangeWText("Score", std::to_string(score));
 

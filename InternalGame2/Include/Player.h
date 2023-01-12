@@ -3,23 +3,41 @@
 #include "InputManager.h"
 #include "GraphicManager.h"
 #include "TimeManager.h"
+#include "Head.h"
 
 class Player : public Object {
 private:
-	float mVelX = 10, mVelY = 10;
+	float mVelX = 10, mVelY = -200;
 
-	float velMax = 200;
-
-	int moveMode = 0;
-
-	int ChronoID = 0;
+	float velMax = 300;
+	
+	bool canMove = false;
+	
+	float gravity = 100.0f;
+	
+	Head* head = nullptr;
+	
+	//TimeManager* tM = TimeManager::GetInstancePtr();
 
 public:
 	Player(std::string name, SDL_Texture* texture = nullptr, SDL_Texture* particleTexture = nullptr, SDL_Texture* brightTexture = nullptr, int x = 0, int y = 0, int w = 0, int h = 0, int moveMode = 0, bool isCol = true)
-		: Object(name, texture, particleTexture, brightTexture, x, y, w, h, isCol), moveMode(moveMode) {};
+		: Object(name, texture, particleTexture, brightTexture, x, y, w, h, isCol) {};
 
 	//Moves the dot
 	void move();
 
 	void Update() override;
+	
+	void SetCanMove(bool canMove) { this->canMove = canMove; };
+	bool GetCanMove() { return canMove; };
+
+	float GetPosY() { return mPosY; };
+
+	void SetVelY(float velY) { mVelY = velY; };
+	float GetVelY() { return mVelY; };
+	
+	void SetGravity(float gravity) { this->gravity = gravity; };
+
+	void SetHead(Head* head) { this->head = head; };
+	Head* GetHead() { return head; };
 };

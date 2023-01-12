@@ -19,7 +19,7 @@ int main(int argc, char* args[])
 	EngineManager::CreateSingleton();
 	EngineManager* eM = EngineManager::GetInstancePtr();
 
-	eM->SetWindowSize(512, 480);
+	eM->SetWindowSize(720, 500);
 	eM->Init();
 
 	//Change the window name

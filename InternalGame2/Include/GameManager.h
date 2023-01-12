@@ -12,6 +12,8 @@
 #include "PhysicsManager.h"
 #include "SaveManager.h"
 #include "Player.h"
+#include "Platform.h"
+#include "Head.h"
 
 class GameManager :public Object {
 private:
@@ -19,10 +21,16 @@ private:
 
 	//objects
 	Player* player = nullptr;
-
+	
+	//vector of platforms
+	std::vector<Platform*> platforms;
 
 	//score
 	int score = 0;
+
+	//YParalax
+	int yParalax = 0;
+	
 
 	//managers
 	GraphicManager* grM = nullptr;
