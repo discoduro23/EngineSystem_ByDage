@@ -29,9 +29,6 @@ void Player::move()
 			mVelX += 0.5f;
 	}
 	
-	//move up affected by input
-	
-	
 	//set the position
 	mPosX += mVelX * TimeManager::GetInstancePtr()->GetDeltaTime();
 	float previousMPosY = mPosY;
@@ -40,11 +37,19 @@ void Player::move()
 	if (mPosY <= GraphicManager::GetInstancePtr()->GetHeight() / 4)
 	{
 		isOnMaxHeight = true;
+		std::cout << "Max height reached" << std::endl;
 		mPosY = previousMPosY;
 	}
-	else {
+	else if (mVelY > 0){
 		isOnMaxHeight = false;
+		std::cout << "Max height not reached" << std::endl;
 	}
+
+	//Appear on the other side of the screen
+	if (mPosX + mWidth < 0)
+		mPosX = GraphicManager::GetInstancePtr()->GetWidth();
+	else if (mPosX > GraphicManager::GetInstancePtr()->GetWidth())
+		mPosX = -mWidth;
 	
 	//set the head position
 	if (head != nullptr)

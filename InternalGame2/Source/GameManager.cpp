@@ -108,7 +108,7 @@ void GameManager::Update()
 	if (player->GetIsOnMaxHeight() == true) {
 		for (auto& platform : platforms) {
 			//set velocity of platforms to velocity
-			platform->SetVelY(+50);
+			platform->SetVelY(-1000 * player->GetVelY() *tM->GetDeltaTime());
 		}
 	}
 	// if player is moving down, platforms move up
