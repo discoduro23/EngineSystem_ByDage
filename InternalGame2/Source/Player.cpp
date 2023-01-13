@@ -3,7 +3,7 @@
 void Player::move()
 {
 	//move down affected by gravity
-	if (mVelY < velMax)
+	if (mVelY < velMaxY)
 		mVelY += gravity * TimeManager::GetInstancePtr()->GetDeltaTime();
 
 	if (mVelY <= 0)
@@ -13,12 +13,12 @@ void Player::move()
 	//move left and right affected by input
 	if (InputManager::GetInstancePtr()->GetKey(SDL_SCANCODE_A))
 	{
-		if (mVelX > -velMax)
+		if (mVelX > -velMaxX)
 			mVelX -= 0.5f;
 	}
 	else if (InputManager::GetInstancePtr()->GetKey(SDL_SCANCODE_D))
 	{
-		if (mVelX < velMax)
+		if (mVelX < velMaxX)
 			mVelX += 0.5f;
 	}
 	else
@@ -65,7 +65,7 @@ void Player::move()
 	//jump if below the ground
 	if (mPosY > GraphicManager::GetInstancePtr()->GetHeight() - mHeight)
 	{
-		mVelY = -200;
+		mVelY = -impulse;
 	}
 }
 
@@ -74,3 +74,4 @@ void Player::Update()
 	move();
 	
 }
+

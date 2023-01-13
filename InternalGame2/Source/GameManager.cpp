@@ -95,8 +95,8 @@ void GameManager::Update()
 		Text* FpsValue = new Text("FPSValue", "0", { 255,255,255 }, 75, grM->GetHeight() - 50, "pixel_15");
 		grM->AddText(FpsValue);
 		
-		Text* Score = new Text("Score", "Score:", { 255,255,255 }, 30, grM->GetHeight() - 70, "pixel_15");
-		grM->AddText(Score);
+		Text* Meters = new Text("Meters", "Meters:", { 255,255,255 }, 30, grM->GetHeight() - 70, "pixel_15");
+		grM->AddText(Meters);
 
 		//Set the timer
 
@@ -109,6 +109,16 @@ void GameManager::Update()
 		for (auto& platform : platforms) {
 			//set velocity of platforms to velocity
 			platform->SetVelY(-1000 * player->GetVelY() *tM->GetDeltaTime());
+
+			meters += -1 * player->GetVelY() * tM->GetDeltaTime()/100;
+			int metersInt = meters;
+			int metersFloats = meters * 100 - metersInt * 100;
+			grM->ChangeWText("Meters", "Meters: " + std::to_string(metersInt) + "." + std::to_string(metersFloats));
+			
+			//keypressed
+			if (metersInt >= 10 * difficulty) {
+				difficulty++;
+			}
 		}
 	}
 	// if player is moving down, platforms move up
@@ -127,9 +137,8 @@ void GameManager::Update()
 	for (auto& platform : platforms) {
 		if (PhysicsManager::GetInstance().CheckCollision(player->GetRect(), platform->GetRect()) && player->GetVelY() > 0 &&
 			player->GetY() + player->GetHeight() < platform->GetY() + platform->GetHeight()) {
-			score++;
-			player->SetVelY(-200);
-			grM->ChangeWText("Score", std::to_string(score));
+			player->AddVelY();
+			
 		}
 	}
 
@@ -167,6 +176,6 @@ void GameManager::LoadGameState()
 	goblin->SetX(std::stof(saveData[3]));
 	goblin->SetY(std::stof(saveData[4]));*/
 
-	grM->ChangeWText("Score", std::to_string(score));
+	grM->ChangeWText("Meters", std::to_string(meters));
 
 }

@@ -9,8 +9,13 @@ class Player : public Object {
 private:
 	float mVelX = 10, mVelY = -200;
 
-	float velMax = 300;
+	float velMaxX = 300;
+	float velMaxY = 300;
+
+	int difficulty = 1;
 	
+	float impulse = 200;
+
 	bool canMove = false;
 
 	bool isOnMaxHeight = false;
@@ -35,7 +40,7 @@ public:
 
 	float GetPosY() { return mPosY; };
 
-	void SetVelY(float velY) { mVelY = velY; };
+	void AddVelY() { mVelY = -impulse; };
 	float GetVelY() { return mVelY; };
 	
 	void SetGravity(float gravity) { this->gravity = gravity; };

@@ -5,9 +5,13 @@
 
 class Platform : public Object {
 private:
-	int mVelX = 0, mVelY = 0;
+	int mVelX = 100, mVelY = 0;
 	int velMax = 200;
 	int moveMode = 0;
+	
+	bool canMove = false;
+	int direction = 1;
+	
 public:
 	Platform(std::string name, float x, float y, int w, int h, SDL_Texture* texture = nullptr, int moveMode = 0, bool isCol = true)
 		: Object(name, x, y, w, h, isCol, texture), moveMode(moveMode) {};

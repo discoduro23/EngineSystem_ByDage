@@ -26,11 +26,13 @@ private:
 	std::vector<Platform*> platforms;
 
 	//score
-	int score = 0;
+	float meters = 0;
 
 	//YParalax
 	int yParalax = 0;
 	
+	//variables
+	int difficulty = 1;
 
 	//managers
 	GraphicManager* grM = nullptr;
