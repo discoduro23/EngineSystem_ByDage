@@ -34,7 +34,17 @@ void Player::move()
 	
 	//set the position
 	mPosX += mVelX * TimeManager::GetInstancePtr()->GetDeltaTime();
+	float previousMPosY = mPosY;
 	mPosY += mVelY * TimeManager::GetInstancePtr()->GetDeltaTime();
+
+	if (mPosY <= GraphicManager::GetInstancePtr()->GetHeight() / 4)
+	{
+		isOnMaxHeight = true;
+		mPosY = previousMPosY;
+	}
+	else {
+		isOnMaxHeight = false;
+	}
 	
 	//set the head position
 	if (head != nullptr)
@@ -43,6 +53,14 @@ void Player::move()
 			head->SetPosition(mPosX + 10, mPosY - 10);
 		else if (mVelY > 0)
 			head->SetPosition(mPosX + 7, mPosY - 9);
+	}
+
+
+	//testing--------------------------------------------------------------------------------
+	//jump if below the ground
+	if (mPosY > GraphicManager::GetInstancePtr()->GetHeight() - mHeight)
+	{
+		mVelY = -200;
 	}
 }
 

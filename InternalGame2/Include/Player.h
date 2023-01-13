@@ -12,6 +12,8 @@ private:
 	float velMax = 300;
 	
 	bool canMove = false;
+
+	bool isOnMaxHeight = false;
 	
 	float gravity = 100.0f;
 	
@@ -40,4 +42,6 @@ public:
 
 	void SetHead(Head* head) { this->head = head; };
 	Head* GetHead() { return head; };
+
+	bool GetIsOnMaxHeight() { return isOnMaxHeight; };
 };

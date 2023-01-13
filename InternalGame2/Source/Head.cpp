@@ -17,4 +17,6 @@ void Head::Update()
 		SetTexture("amoHead5");
 	else if (InputManager::GetInstancePtr()->GetKey(SDL_SCANCODE_7))
 		SetTexture("amoHead6");
+	else if (InputManager::GetInstancePtr()->GetKey(SDL_SCANCODE_8))
+		SetTexture("amoHead7");
 }

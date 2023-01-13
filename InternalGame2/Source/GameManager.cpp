@@ -64,20 +64,20 @@ void GameManager::Update()
 		//Make the Player Head
 		Head* head = new Head("head", player->GetX(), player->GetY(), player->GetWidth()/1.2, player->GetHeight()/1.5, nullptr, 0, false);
 		grM->LoadTexturesFromPath(playerHeadFolderPath, head);
-		head->SetTexture("amoHead6");
+		head->SetTexture("amoHead0");
 		oM->AddObject(head);
 		player->SetHead(head);
 
 		//Create the platforms
-		platforms.push_back(new Platform("platform1", grM->GetWidth()/2, grM->GetHeight()*2/3, 100, 25, grM->LoadTexture(worldFolderPath + "platform1.png"), 0, true));
-		grM->LoadTexturesFromPath(worldFolderPath, platforms[0]);
-		platforms[0]->SetTexture("Platform");
-		oM->AddObject(platforms[0]);
+		for (int i = 0; i < 5; i++) {
+			platforms.push_back(new Platform("platform"+i, rand() % grM->GetWidth() - 100, grM->GetHeight() * i / 5, 100, 25, nullptr, 0, true));
+			grM->LoadTexturesFromPath(worldFolderPath, platforms[i]);
+			platforms[i]->SetTexture("Platform");
+			oM->AddObject(platforms[i]);
+		}
 		
-		platforms.push_back(new Platform("platform2", grM->GetWidth() / 2, grM->GetHeight() / 3, 100, 25, grM->LoadTexture(worldFolderPath + "platform1.png"), 0, true));
-		grM->LoadTexturesFromPath(worldFolderPath, platforms[1]);
-		platforms[1]->SetTexture("Platform");
-		oM->AddObject(platforms[1]);
+		
+		
 		
 		
 		//Sounds
@@ -101,23 +101,23 @@ void GameManager::Update()
 		//Set the timer
 
 		
-		// if player is moving up, platforms move down
-		if (player->GetVelY() <= 0) {
-			for (auto& platform : platforms) {
-				//set velocity of platforms to velocity
-				platform->SetVelY(+5);
-			}
-		}
-		// if player is moving down, platforms move up
-		else if (player->GetVelY() > 0) {
-			for (auto& platform : platforms) {
-				//set velocity of platforms to velocity
-				platform->SetVelY(0);
-			}
-		}
+		
 	}
 
-
+	// if player is moving up, platforms move down
+	if (player->GetIsOnMaxHeight() == true) {
+		for (auto& platform : platforms) {
+			//set velocity of platforms to velocity
+			platform->SetVelY(+50);
+		}
+	}
+	// if player is moving down, platforms move up
+	else {
+		for (auto& platform : platforms) {
+			//set velocity of platforms to velocity
+			platform->SetVelY(0);
+		}
+	}
 
 	//Update texts
 	grM->ChangeWText("FPSValue", std::to_string(tM->GetFPS()));

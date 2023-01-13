@@ -1,6 +1,7 @@
 #pragma once
 #include "Object.h"
 #include "TimeManager.h"
+#include "GraphicManager.h"
 
 class Platform : public Object {
 private:
