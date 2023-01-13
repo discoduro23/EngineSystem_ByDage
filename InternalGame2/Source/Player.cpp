@@ -37,12 +37,10 @@ void Player::move()
 	if (mPosY <= GraphicManager::GetInstancePtr()->GetHeight() / 4)
 	{
 		isOnMaxHeight = true;
-		std::cout << "Max height reached" << std::endl;
 		mPosY = previousMPosY;
 	}
 	else if (mVelY > 0){
 		isOnMaxHeight = false;
-		std::cout << "Max height not reached" << std::endl;
 	}
 
 	//Appear on the other side of the screen
@@ -58,14 +56,6 @@ void Player::move()
 			head->SetPosition(mPosX + 10, mPosY - 10);
 		else if (mVelY > 0)
 			head->SetPosition(mPosX + 7, mPosY - 9);
-	}
-
-
-	//testing--------------------------------------------------------------------------------
-	//jump if below the ground
-	if (mPosY > GraphicManager::GetInstancePtr()->GetHeight() - mHeight)
-	{
-		mVelY = -impulse;
 	}
 }
 

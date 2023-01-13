@@ -70,7 +70,7 @@ void GameManager::Update()
 
 		//Create the platforms
 		for (int i = 0; i < 5; i++) {
-			platforms.push_back(new Platform("platform"+i, rand() % grM->GetWidth() - 100, grM->GetHeight() * i / 5, 100, 25, nullptr, 0, true));
+			platforms.push_back(new Platform("platform"+i, 100 + (rand() % (grM->GetWidth() - 200 )), grM->GetHeight() * i / 5, 100, 25, nullptr, 0, true));
 			grM->LoadTexturesFromPath(worldFolderPath, platforms[i]);
 			platforms[i]->SetTexture("Platform");
 			oM->AddObject(platforms[i]);
