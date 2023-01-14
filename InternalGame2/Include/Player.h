@@ -9,7 +9,7 @@ class Player : public Object {
 private:
 	float mVelX = 10, mVelY = -200;
 
-	float velMaxX = 300;
+	float velMaxX = 150;
 	float velMaxY = 300;
 
 	int difficulty = 1;
