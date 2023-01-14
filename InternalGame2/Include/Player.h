@@ -58,4 +58,5 @@ public:
 	Head* GetHead() { return head; };
 
 	bool GetIsOnMaxHeight() { return isOnMaxHeight; };
+
 };

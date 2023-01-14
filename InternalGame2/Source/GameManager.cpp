@@ -135,6 +135,15 @@ void GameManager::Update()
 	//Update texts
 	grM->ChangeWText("FPSValue", std::to_string(tM->GetFPS()));
 
+	//if player is dead reset game
+	if (player->GetIsDead() == true) {
+		meters = 0;
+		std::string metersString = std::to_string(meters);
+		metersString = metersString.substr(0, metersString.find(".") + 3);
+
+		grM->ChangeWText("Meters", "Meters: " + metersString);
+	}
+		
 
 	//Check collisions between foreach platform with player
 	for (auto& platform : platforms) {
