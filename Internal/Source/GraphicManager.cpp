@@ -229,6 +229,7 @@ void GraphicManager::RenderAll()
 						SDL_FLIP_NONE);
 				}
 			}
+			
 			Render(
 				ob->GetTexture(),
 				ob->GetX(),
@@ -242,8 +243,6 @@ void GraphicManager::RenderAll()
 			
 		}
 	}
-	
-	
 }
 
 SDL_Renderer* GraphicManager::GetRenderer()

@@ -32,8 +32,6 @@ private:
 	//YParalax
 	int yParalax = 0;
 	
-	//variables
-	int difficulty = 1;
 
 	//managers
 	GraphicManager* grM = nullptr;

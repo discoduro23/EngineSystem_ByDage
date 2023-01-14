@@ -11,8 +11,6 @@ private:
 
 	float velMaxX = 150;
 	float velMaxY = 300;
-
-	int difficulty = 1;
 	
 	float impulse = 200;
 

@@ -118,10 +118,6 @@ void GameManager::Update()
 			
 			grM->ChangeWText("Meters", "Meters: " + metersString);
 			
-			//keypressed
-			if (meters >= 10 * difficulty) {
-				difficulty++;
-			}
 		}
 	}
 	// if player is moving down, platforms dont move
