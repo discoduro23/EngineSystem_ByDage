@@ -17,8 +17,12 @@ private:
 	float impulse = 200;
 
 	bool canMove = false;
-
+	
 	bool isOnMaxHeight = false;
+	
+	bool isDead = false;
+	int deadTimer = 0;
+	float deadTime = 3.6f;
 	
 	float gravity = 100.0f;
 	
@@ -31,12 +35,17 @@ public:
 		: Object(name, texture, particleTexture, brightTexture, x, y, w, h, isCol) {};
 
 	//Moves the dot
-	void move();
+	void Move();
+
+	void DeadMove();
 
 	void Update() override;
 	
 	void SetCanMove(bool canMove) { this->canMove = canMove; };
 	bool GetCanMove() { return canMove; };
+	
+	void SetIsDead(bool isDead) { this->isDead = isDead; };
+	bool GetIsDead() { return isDead; };
 
 	float GetPosY() { return mPosY; };
 

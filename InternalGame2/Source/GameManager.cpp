@@ -111,17 +111,20 @@ void GameManager::Update()
 			platform->SetVelY(-1000 * player->GetVelY() *tM->GetDeltaTime());
 
 			meters += -1 * player->GetVelY() * tM->GetDeltaTime()/100;
-			int metersInt = meters;
-			int metersFloats = meters * 100 - metersInt * 100;
-			grM->ChangeWText("Meters", "Meters: " + std::to_string(metersInt) + "." + std::to_string(metersFloats));
+			
+			//convert meters to string with 2 float zeros
+			std::string metersString = std::to_string(meters);
+			metersString = metersString.substr(0, metersString.find(".") + 3);
+			
+			grM->ChangeWText("Meters", "Meters: " + metersString);
 			
 			//keypressed
-			if (metersInt >= 10 * difficulty) {
+			if (meters >= 10 * difficulty) {
 				difficulty++;
 			}
 		}
 	}
-	// if player is moving down, platforms move up
+	// if player is moving down, platforms dont move
 	else {
 		for (auto& platform : platforms) {
 			//set velocity of platforms to velocity

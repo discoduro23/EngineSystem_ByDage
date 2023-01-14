@@ -2,6 +2,7 @@
 
 #pragma once
 #include "Object.h"
+#include <iostream>
 #include <vector>
 #include <string>
 #include "SoundManager.h"
