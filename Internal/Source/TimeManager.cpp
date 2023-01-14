@@ -52,6 +52,8 @@ void TimeManager::Update(void){
     //Timer stuff
     for(int i = 0; i < MAX_TIMERS; i++){
         if(mTimerActive[i]){
+
+            
             mTimers[i] -= mDeltaTime;
             if(mTimers[i] <= 0.0f){
                 mTimerActive[i] = false;

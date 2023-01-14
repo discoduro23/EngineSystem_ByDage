@@ -121,7 +121,7 @@ void GameManager::Update()
 			}
 		}
 	}
-	// if player is moving down, platforms move up
+	// if player is moving down, platforms dont move
 	else {
 		for (auto& platform : platforms) {
 			//set velocity of platforms to velocity

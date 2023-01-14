@@ -15,4 +15,6 @@ public:
 	void SetPosition(float x, float y) { mPosX = x; mPosY = y; };
 	
 	void Update() override;
+
+	void setOutOfBounds() { mPosX = -100; mPosY = -100; };
 };

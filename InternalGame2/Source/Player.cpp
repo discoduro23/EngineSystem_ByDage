@@ -1,6 +1,6 @@
 #include <Player.h>
 
-void Player::move()
+void Player::Move()
 {
 	//move down affected by gravity
 	if (mVelY < velMaxY)
@@ -37,12 +37,10 @@ void Player::move()
 	if (mPosY <= GraphicManager::GetInstancePtr()->GetHeight() / 4)
 	{
 		isOnMaxHeight = true;
-		std::cout << "Max height reached" << std::endl;
 		mPosY = previousMPosY;
 	}
 	else if (mVelY > 0){
 		isOnMaxHeight = false;
-		std::cout << "Max height not reached" << std::endl;
 	}
 
 	//Appear on the other side of the screen
@@ -59,19 +57,45 @@ void Player::move()
 		else if (mVelY > 0)
 			head->SetPosition(mPosX + 7, mPosY - 9);
 	}
+	
+}
 
+void Player::DeadMove()
+{
+	//Move sinusoidal in the X axis among the middle of the screen using the time in TimeManager::GetInstancePtr()->GetTimer(deadTimer)
+	//and the deadTime
+	mPosX = GraphicManager::GetInstancePtr()->GetWidth() / 2 
+		+ sinf(TimeManager::GetInstancePtr()->GetTimer(deadTimer) * 2 * M_PI / deadTime) * GraphicManager::GetInstancePtr()->GetWidth() / 6;
 
-	//testing--------------------------------------------------------------------------------
-	//jump if below the ground
-	if (mPosY > GraphicManager::GetInstancePtr()->GetHeight() - mHeight)
-	{
-		mVelY = -impulse;
-	}
+	//Move up 
+	mPosY -= 100 * TimeManager::GetInstancePtr()->GetDeltaTime();
+	
 }
 
 void Player::Update()
 {
-	move();
+	// Check if is below the screen
+	if (mPosY > GraphicManager::GetInstancePtr()->GetHeight() && !isDead) {
+		this->SetTexture("Body3");
+		mVelY = 0;
+
+		deadTimer = TimeManager::GetInstancePtr()->StartTimer(deadTime);
+		head->setOutOfBounds();
+		isDead = true;
+	}
 	
+	if (!isDead)
+		Move();
+	else
+	{
+		if (!TimeManager::GetInstancePtr()->IsTimerActive(deadTimer))
+		{
+			//Reset the player
+			isDead = false;
+			SetTexture("Body1");
+		}
+		else
+			DeadMove();
+	}
 }
 
