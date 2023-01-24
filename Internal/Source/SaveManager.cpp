@@ -3,10 +3,10 @@
 std::vector<std::string> SaveManager::readFile(std::string gameName)
 {
 #if _DEBUG
-	std::string savePath = "../../Data/" + gameName + ".MDyG";
+	std::string savePath = "../../Media/Data/" + gameName + ".MDyG";
 #endif
 #if (!_DEBUG)
-	std::string savePath = "./Data/" + gameName + ".MDyG";
+	std::string savePath = "./Media/Data/" + gameName + ".MDyG";
 #endif
 
 

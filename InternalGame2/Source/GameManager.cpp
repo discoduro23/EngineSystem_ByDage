@@ -165,25 +165,38 @@ void GameManager::Destroy()
 void GameManager::SaveGameState()
 {
 	std::vector<std::string> saveData;
-	/*saveData.push_back(std::to_string(score));
-	saveData.push_back(std::to_string(knight->GetX()));
-	saveData.push_back(std::to_string(knight->GetY()));
-	saveData.push_back(std::to_string(goblin->GetX()));
-	saveData.push_back(std::to_string(goblin->GetY()));*/
+	
+	saveData.push_back(std::to_string(meters));
+	saveData.push_back(std::to_string(player->GetX()));
+	saveData.push_back(std::to_string(player->GetY()));
+	
+	//save all platforms positions
+	for (auto& platform : platforms) {
+		saveData.push_back(std::to_string(platform->GetX()));
+		saveData.push_back(std::to_string(platform->GetY()));
+	}
 
-	SaveManager::GetInstance().storeFile(saveData, "Game");
+	SaveManager::GetInstance().storeFile(saveData, "Game2");
 }
 
 void GameManager::LoadGameState()
 {
 
-	std::vector<std::string> saveData = SaveManager::GetInstance().readFile("Game");
-	/*score = std::stoi(saveData[0]);
-	knight->SetX(std::stof(saveData[1]));
-	knight->SetY(std::stof(saveData[2]));
-	goblin->SetX(std::stof(saveData[3]));
-	goblin->SetY(std::stof(saveData[4]));*/
+	std::vector<std::string> saveData = SaveManager::GetInstance().readFile("Game2");
+	
+	meters = (std::stof(saveData[0]));
+	player->SetX(std::stof(saveData[1]));
+	player->SetY(std::stof(saveData[2]));
+	
+	//load all platforms positions
+	for (int i = 0; i < platforms.size(); i++) {
+		platforms[i]->SetX(std::stof(saveData[3 + i * 2]));
+		platforms[i]->SetY(std::stof(saveData[4 + i * 2]));
+	}
+	
+	std::string metersString = std::to_string(meters);
+	metersString = metersString.substr(0, metersString.find(".") + 3);
 
-	grM->ChangeWText("Meters", std::to_string(meters));
+	grM->ChangeWText("Meters", "Meters: " + metersString);
 
 }
