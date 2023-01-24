@@ -35,7 +35,7 @@ void GameManager::Update()
 		std::string knightSlashPath = "./Media/sounds/KnightSlash.wav";
 		std::string bgMusicPath = "./Media/sounds/feedthemachine.mp3";
 		std::string particleBluePath = "./Media/images/Particle/blue.bmp";
-		std::string particleRedPath = "../../Media/images/Particle/red.bmp";
+		std::string particleRedPath = "./Media/images/Particle/red.bmp";
 		std::string particleShimmerPath = "./Media/images/Particle/shimmer.bmp";
 #endif
 

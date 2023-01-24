@@ -20,29 +20,17 @@ void GameManager::Update()
 		std::string playerHeadFolderPath = "../../Media/SusJump/player/Head/";
 		std::string worldFolderPath = "../../Media/SusJump/world/";
 		std::string particlePlayerPath = "../../Media/SusJump/particles/playerParticle.png";
-		
-		/*
-		std::string goblinDrumPath = "../../Media/SusJump/sounds/GoblinDrum.wav";
-		std::string knightSlashPath = "../../Media/SusJump/sounds/KnightSlash.wav";
-		std::string bgMusicPath = "../../Media/SusJump/sounds/feedthemachine.mp3";
-		std::string particleBluePath = "../../Media/SusJump/images/Particle/blue.bmp";
-		std::string particleRedPath = "../../Media/SusJump/images/Particle/red.bmp";
-		std::string particleShimmerPath = "../../Media/SusJump/images/Particle/shimmer.bmp";*/
 
 #endif
 #if (!_DEBUG)
-		std::string backgroundPath = "./Media/images/background.png";
+		std::string backgroundPath = "./Media/background.png";
 		std::string pixelFontPath = "./Media/fonts/PIXEL.TTF";
-		std::string knightFolderPath = "./Media/images/Knight/";
-		std::string goblinFolderPath = "./Media/images/Goblin/";
-		std::string goblinDrumPath = "./Media/sounds/GoblinDrum.wav";
-		std::string knightSlashPath = "./Media/sounds/KnightSlash.wav";
-		std::string bgMusicPath = "./Media/sounds/feedthemachine.mp3";
-		std::string particleBluePath = "./Media/images/Particle/blue.bmp";
-		std::string particleRedPath = "./Media/images/Particle/red.bmp";
-		std::string particleShimmerPath = "./Media/images/Particle/shimmer.bmp";
+		std::string playerFolderPath = "./Media/player/AmongusBody/";
+		std::string playerHeadFolderPath = "./Media/player/Head/";
+		std::string worldFolderPath = "./Media/world/";
+		std::string particlePlayerPath = "./Media/particles/playerParticle.png";
+		
 #endif
-
 
 		//Set the background
 		grM->SetBGTexture(grM->LoadTexture(backgroundPath));
