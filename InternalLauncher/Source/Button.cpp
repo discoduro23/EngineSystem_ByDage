@@ -27,10 +27,10 @@ void Button::handleevent()
 #endif
 #if (!_DEBUG)
 			
-			std::string command = ".\\" + GetName() + "\\" + GetName() + ".exe"; //no funciona, no se porque
+			std::string command = ".\\" + GetName() + "\\" + GetName() + ".exe -P";
 			
 			//WinExec((command).c_str(), SW_SHOW);
-			//system((command).c_str());
+			system((command).c_str());
 #endif
 			SDL_RestoreWindow(GraphicManager::GetInstance().GetWindow());
 	}	
