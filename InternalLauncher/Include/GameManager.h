@@ -20,6 +20,7 @@ private:
 
 	//objects
 	Button* HideAndWhere = nullptr;
+	Button* SusJump = nullptr;
 
 	//score
 	int score = 0;

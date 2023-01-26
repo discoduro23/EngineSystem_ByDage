@@ -12,7 +12,7 @@
 
 int main(int argc, char* args[])
 {
-
+	std::cout << args[0];
 	//Start the machine
 	EngineManager::CreateSingleton();
 	EngineManager* eM = EngineManager::GetInstancePtr();

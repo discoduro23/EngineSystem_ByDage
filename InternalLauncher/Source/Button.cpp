@@ -17,17 +17,20 @@ void Button::handleevent()
 		SetTexture(selected);
 		isInZone = true;
 	}
-	
+
 	if (InputManager::GetInstance().MouseLeftClick() && isInZone) {
 		SoundManager::GetInstance().StopMusic("bgMusic");
 		SDL_MinimizeWindow(GraphicManager::GetInstance().GetWindow());
-		std::cout << "Game Hide and Where loaded" << std::endl;
 #if (_DEBUG)
 			std::string command = "..\\..\\RELEASEGames\\" + GetName() + '\\' + GetName() + ".exe -P";
 			system((command).c_str());
 #endif
 #if (!_DEBUG)
-			system((".\\" + GetName() + '\\' + GetName() + ".exe -P").c_str()); //no funciona, no se porque
+			
+			std::string command = ".\\" + GetName() + "\\" + GetName() + ".exe"; //no funciona, no se porque
+			
+			//WinExec((command).c_str(), SW_SHOW);
+			//system((command).c_str());
 #endif
 			SDL_RestoreWindow(GraphicManager::GetInstance().GetWindow());
 	}	

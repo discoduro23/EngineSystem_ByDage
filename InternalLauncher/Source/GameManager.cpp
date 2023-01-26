@@ -47,8 +47,14 @@ void GameManager::Update()
 		HideAndWhere->SetTexture("GameHide");
 		HideAndWhere->setTextureName("GameHideSelect", "GameHide");
 
+		SusJump = new Button("SusJump", (grM->GetWidth() / 4) * 3 - 100, grM->GetHeight() / 2 - 70, 200, 200);
+		grM->LoadTexturesFromPath(buttonPath, SusJump);
+		SusJump->SetTexture("GameSusJump");
+		SusJump->setTextureName("GameSusJumpSelect", "GameSusJump");
+
 		//"Add object" section
 		oM->AddObject(HideAndWhere);
+		oM->AddObject(SusJump);
 		
 		//create text
 		Text* BaseText = new Text("BaseTxt", "Launcher", { 255,255,255 }, grM->GetWidth()/2-120, grM->GetHeight()/6, "pixel_40");
